@@ -149,6 +149,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryyController.cs" />
@@ -230,6 +231,7 @@
     </Compile>
     <Compile Include="Modal\FW\MetaData\Comment.metadata.cs" />
     <Compile Include="Modal\FW\MetaData\Dangkysudungphanmem.cs" />
+    <Compile Include="Modal\FW\MetaData\Dangkytaikhoan.cs" />
     <Compile Include="Modal\FW\MetaData\Post_user.cs" />
     <Compile Include="Modal\FW\MetaData\User.cs" />
     <Compile Include="Modal\FW\Partner_DT.cs">
@@ -257,6 +259,9 @@
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
     <Compile Include="Modal\FW\tbl_Uers.cs">
+      <DependentUpon>Webcompany.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modal\FW\tbl_Uers_Admin.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
     <Compile Include="Modal\FW\View_model\Comment_Most.cs" />
@@ -13307,6 +13312,7 @@
     <Content Include="Modal\FW\Webcompany.edmx.diagram">
       <DependentUpon>Webcompany.edmx</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -13368,6 +13374,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Image\" />
     <Folder Include="Image\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Search_Post\" />

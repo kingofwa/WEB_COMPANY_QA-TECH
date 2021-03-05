@@ -25,6 +25,7 @@
     <EntitySet Name="SoftWare_Case" EntityType="Web_companyModel.SoftWare_Case" />
     <EntitySet Name="tbl_Uers" EntityType="Web_companyModel.tbl_Uers" />
     <EntitySet Name="tbl_Register_Software_Client" EntityType="Web_companyModel.tbl_Register_Software_Client" />
+    <EntitySet Name="tbl_Uers_Admin" EntityType="Web_companyModel.tbl_Uers_Admin" />
   </EntityContainer>
   <ComplexType Name="f__Count_post_Result">
     <Property Type="Int32" Name="count_post" Nullable="true" />
@@ -339,5 +340,15 @@
     <Property Name="Option_sw" Type="Int32" />
     <Property Name="Id_Sw" Type="Int32" />
     <Property Name="Option_time" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_Uers_Admin">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email_user" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Password_user" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Image_user" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
   </EntityType>
 </Schema>

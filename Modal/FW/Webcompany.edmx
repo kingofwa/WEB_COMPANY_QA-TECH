@@ -244,6 +244,16 @@
           <Property Name="Id_Sw" Type="int" />
           <Property Name="Option_time" Type="int" />
         </EntityType>
+        <EntityType Name="tbl_Uers_Admin">
+          <Key>
+            <PropertyRef Name="Id_user" />
+          </Key>
+          <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email_user" Type="nvarchar" MaxLength="250" />
+          <Property Name="Password_user" Type="nvarchar" MaxLength="250" />
+          <Property Name="Image_user" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
         <Function Name="f__Count_post" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="__Count_post" />
         <Function Name="Binhlan_phanmem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="Binhluan_blog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -269,6 +279,7 @@
           <EntitySet Name="SoftWare_Case" EntityType="Self.SoftWare_Case" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Uers" EntityType="Self.tbl_Uers" Schema="dbo" Table="tbl.Uers" store:Type="Tables" />
           <EntitySet Name="tbl_Register_Software_Client" EntityType="Self.tbl_Register_Software_Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Uers_Admin" EntityType="Self.tbl_Uers_Admin" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -299,6 +310,7 @@
           <EntitySet Name="SoftWare_Case" EntityType="Web_companyModel.SoftWare_Case" />
           <EntitySet Name="tbl_Uers" EntityType="Web_companyModel.tbl_Uers" />
           <EntitySet Name="tbl_Register_Software_Client" EntityType="Web_companyModel.tbl_Register_Software_Client" />
+          <EntitySet Name="tbl_Uers_Admin" EntityType="Web_companyModel.tbl_Uers_Admin" />
           </EntityContainer>
         <ComplexType Name="f__Count_post_Result">
           <Property Type="Int32" Name="count_post" Nullable="true" />
@@ -613,6 +625,16 @@
           <Property Name="Option_sw" Type="Int32" />
           <Property Name="Id_Sw" Type="Int32" />
           <Property Name="Option_time" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_Uers_Admin">
+          <Key>
+            <PropertyRef Name="Id_user" />
+          </Key>
+          <Property Name="Id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email_user" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Password_user" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Image_user" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -976,6 +998,17 @@
                 <ScalarProperty Name="Pass_login" ColumnName="Pass_login" />
                 <ScalarProperty Name="Name_login" ColumnName="Name_login" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Uers_Admin">
+            <EntityTypeMapping TypeName="Web_companyModel.tbl_Uers_Admin">
+              <MappingFragment StoreEntitySet="tbl_Uers_Admin">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Image_user" ColumnName="Image_user" />
+                <ScalarProperty Name="Password_user" ColumnName="Password_user" />
+                <ScalarProperty Name="Email_user" ColumnName="Email_user" />
+                <ScalarProperty Name="Id_user" ColumnName="Id_user" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

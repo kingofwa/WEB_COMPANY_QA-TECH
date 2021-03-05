@@ -44,6 +44,7 @@ namespace Web_congty.Modal.FW
         public virtual DbSet<SoftWare_Case> SoftWare_Case { get; set; }
         public virtual DbSet<tbl_Uers> tbl_Uers { get; set; }
         public virtual DbSet<tbl_Register_Software_Client> tbl_Register_Software_Client { get; set; }
+        public virtual DbSet<tbl_Uers_Admin> tbl_Uers_Admin { get; set; }
     
         public virtual ObjectResult<f__Count_post_Result> f__Count_post()
         {

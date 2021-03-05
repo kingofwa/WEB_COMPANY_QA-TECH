@@ -127,6 +127,10 @@ namespace Web_congty.Controllers
                 {
                     ViewBag.phanmem = phanmem[0].Sw_name;
                     ViewBag.hinhanhphanmem = phanmem[0].Sw_image;
+                    var thongtin = db.Information_company.ToList();
+                    ViewBag.sdt = thongtin[0].Phone_hot;
+                    ViewBag.bank = thongtin[0].Bank_number;
+                    ViewBag.email = thongtin[0].Email_true;
                     ViewBag.thongbao = "Đăng ký thất bại";
                 }
             }
@@ -138,13 +142,12 @@ namespace Web_congty.Controllers
                         eve.Entry.Entity.GetType().Name, eve.Entry.State);
                     foreach (var ve in eve.ValidationErrors)
                     {
-                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"","test git",
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
                             ve.PropertyName, ve.ErrorMessage);
                     }
                 }
                 throw;
             }
-            
             return View();
         }
     }

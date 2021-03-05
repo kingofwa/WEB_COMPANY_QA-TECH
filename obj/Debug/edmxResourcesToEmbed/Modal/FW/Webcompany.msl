@@ -360,5 +360,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Uers_Admin">
+      <EntityTypeMapping TypeName="Web_companyModel.tbl_Uers_Admin">
+        <MappingFragment StoreEntitySet="tbl_Uers_Admin">
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Image_user" ColumnName="Image_user" />
+          <ScalarProperty Name="Password_user" ColumnName="Password_user" />
+          <ScalarProperty Name="Email_user" ColumnName="Email_user" />
+          <ScalarProperty Name="Id_user" ColumnName="Id_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
