@@ -138,12 +138,13 @@ namespace Web_congty.Controllers
                         eve.Entry.Entity.GetType().Name, eve.Entry.State);
                     foreach (var ve in eve.ValidationErrors)
                     {
-                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"","test git",
                             ve.PropertyName, ve.ErrorMessage);
                     }
                 }
                 throw;
             }
+            
             return View();
         }
     }
