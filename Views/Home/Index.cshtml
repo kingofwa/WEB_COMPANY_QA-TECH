@@ -1,0 +1,230 @@
+﻿@{
+    ViewBag.Title = "AQ-TECH";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Start hero slider/ Owl Carousel Slider -->
+@RenderPage("Slide_home.cshtml")
+<!-- End Carousel -->
+<section id="tw-intro" class="tw-intro-area">
+    @RenderPage("Intro.cshtml")
+</section>
+<!-- Intro section End -->
+
+<section id="tw-case" class="tw-case">
+  @RenderPage("SoftWare.cshtml")
+</section>
+<!-- TW case end -->
+
+<section id="tw-analysis" class="tw-analysis-area">
+    <div class="analysis-bg-pattern d-none d-md-inline-block">
+        <img class="wow fadeInUp" src="~/public/Client/images/check-seo/cloud.png" alt="">
+        <img class="wow fadeInUp" src="/public/Client/images/check-seo/cloud2.png" alt="">
+        <img class="wow fadeInUp" src="/public/Client/images/check-seo/announce.png" alt="">
+        <img class="wow fadeInUp" src="/public/Client/images/check-seo/chart.png" alt="">
+    </div>
+    <!-- End Analysis Pattern img -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center wow fadeInDown">
+                <h2 class="column-title">
+                    Mời đặt 
+                    <span class="text-white">Câu hỏi</span>
+                </h2>
+                <div class="analysis-form">
+                    <form class="form-vertical">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-12 no-padding">
+                                <div class="form-group tw-form-round-shape">
+                                    <input type="url" id="url" name="url" placeholder="Câu hỏi của bạn ?" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 no-padding">
+                                <div class="form-group tw-form-round-shape">
+                                    <input type="email" id="email" name="email" placeholder="Email liên hệ" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-12 no-padding">
+                                <div class="form-group">
+                                    <input type="submit" value="Gửi câu hỏi">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End Form -->
+                </div>
+                <!-- End Analysis form -->
+            </div>
+            <!-- Col End -->
+        </div>
+        <!-- End Row -->
+    </div>
+    <!-- End container -->
+</section>
+<!-- End Analysis Section -->
+
+
+
+<section id="tw-features" class="tw-features-area">
+   @RenderPage("Maketting.cshtml")
+</section>
+<!-- End Features section -->
+
+
+<section id="tw-facts" class="tw-facts">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <div class="tw-facts-box">
+                    <div class="facts-img">
+                        <img src="/public/client/images/icon/fact1.png" alt="" class="img-fluid">
+                    </div>
+                    <!-- End Fatcs image -->
+                    <div class="facts-content">
+                        <h4 class="facts-title">Khách hàng</h4>
+                        <span class="counter">20000</span>
+                        <sup>+</sup>
+                    </div>
+                    <!-- Facts Content End -->
+                </div>
+                <!-- Facts Box End -->
+            </div>
+            <!-- Col End -->
+            <div class="col-md-3 text-center">
+                <div class="tw-facts-box">
+                    <div class="facts-img">
+                        <img src="/public/client/images/icon/fact2.png" alt="" class="img-fluid">
+                    </div>
+                    <!-- End Facts Image -->
+                    <div class="facts-content">
+                        <h4 class="facts-title">Dự án</h4>
+                        <span class="counter">100</span>
+                        <sup>+</sup>
+                    </div>
+                    <!-- End Facts Content -->
+                </div>
+                <!-- End Facts Box -->
+            </div>
+            <!-- Col End -->
+            <div class="col-md-3 text-center">
+                <div class="tw-facts-box">
+                    <div class="facts-img">
+                        <img src="/public/client/images/icon/fact3.png" alt="" class="img-fluid">
+                    </div>
+                    <!-- End Facts Image -->
+                    <div class="facts-content">
+                        <h4 class="facts-title">Thành công</h4>
+                        <span class="counter">98</span>
+                        <sup>%</sup>
+                    </div>
+                    <!-- End Facts Content -->
+                </div>
+                <!-- End Facts Box -->
+            </div>
+            <!-- Col End -->
+            <div class="col-md-3 text-center">
+                <div class="tw-facts-box">
+                    <div class="facts-img">
+                        <img src="/public/client/images/icon/fact4.png" alt="" class="img-fluid">
+                    </div>
+                    <!-- End Facts Image -->
+                    <div class="facts-content">
+                        <h4 class="facts-title">Giải thưởng</h4>
+                        <span class="counter">7</span>
+                        <sup>+</sup>
+                    </div>
+                    <!-- End Facts Content -->
+                </div>
+                <!-- End Facts Box -->
+            </div>
+            <!-- Col End -->
+        </div>
+        <!-- Row End -->
+    </div>
+    <!-- Container End -->
+</section>
+<!-- Facts End -->
+
+
+<section id="tw-service" class="tw-service">
+    @RenderPage("Service.cshtml")
+</section>
+<!-- Tw Service End -->
+
+
+<section id="work-process" class="work-process">
+    <div class="work-bg-pattern d-none d-lg-inline-block">
+        <img src="~/public/Client/images/process/work_process.png" alt="" class="img-fluid">
+    </div>
+    <!-- End Work BG Pattern -->
+    <div class="container">
+        <div class="row text-center">
+            <div class="col section-heading">
+                <h2>
+                    Quy trình <span>Làm việc</span>
+                </h2>
+                <span class="animate-border ml-auto mr-auto tw-mt-20"></span>
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Row -->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="tw-work-process">
+                    <div class="process-wrapper d-table">
+                        <div class="process-inner d-table-cell">
+                            <img src="~/public/Client/images/icon/process1.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <p>01. Tìm ý tưởng</p>
+                </div>
+            </div>
+            <!-- End Col -->
+            <div class="col-md-3">
+                <div class="tw-work-process">
+                    <div class="process-wrapper bg-orange d-table">
+                        <div class="process-inner d-table-cell">
+                            <img src="~/public/Client/images/icon/process2.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <p>02.  Nghiên cứu dự án</p>
+                </div>
+            </div>
+            <!-- End Col -->
+            <div class="col-md-3">
+                <div class="tw-work-process">
+                    <div class="process-wrapper bg-blue d-table">
+                        <div class="process-inner d-table-cell">
+                            <img src="~/public/Client/images/icon/process3.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <p>03. Bắt đầu Tối ưu hóa</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="tw-work-process">
+                    <div class="process-wrapper bg-yellow d-table">
+                        <div class="process-inner d-table-cell">
+                            <img src="~/public/Client/images/icon/process4.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                    <p>04. Đạt được mục tiêu</p>
+                </div>
+            </div>
+            <div class="col-md-12 text-center"><a href="#" class="btn btn-primary tw-mt-80">Xem chi tiết</a></div>
+        </div>
+    </div>
+</section>
+<!-- End Word Process -->
+
+
+<section id="tw-testimonial-bg" class="tw-testimonial-bg">
+   @RenderPage("FechBack.cshtml")
+</section>
+<!-- Testimonial end -->
+
+<section id="tw-blog" class="tw-blog">
+    @RenderPage("Blog_PB.cshtml")
+</section>
+
+
+<!-- End Tw Client -->

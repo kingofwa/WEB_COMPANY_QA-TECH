@@ -1,0 +1,73 @@
+﻿@{
+    var list_danhmucmenu = ViewData["list_danhmucmenu"] as List<Web_congty.Modal.FW.Categories>;
+    var list_con = ViewData["list_con"] as List<Web_congty.Modal.FW.Brand>;
+}
+
+<div class="tw-head">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand tw-nav-brand" href="/Home/index">
+                <img class="Logo" src="" alt="Quocanh">
+            </a>
+            <!-- End of Navbar Brand -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- End of Navbar toggler -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav ">
+                    <li class="nav-item"><a class="nav-link" href="/Cong-ty-co-phan-cong-nghe-va-thiet-bi-quoc-anh">Trang chủ</a></li>
+
+                    <li class="nav-item dropdown tw-megamenu-wrapper show">
+                        <a class="nav-link" href="/SoftWare/Index" data-toggle="dropdown" aria-expanded="true">
+                            Danh mục
+                            <span class="tw-indicator">
+                                <i class="fa fa-angle-down"></i>
+                            </span>
+                        </a>
+                        <div id="tw-megamenu" class="dropdown-menu tw-mega-menu show">
+                            <div class="row">
+                                @{
+                                    foreach (var item in list_danhmucmenu)
+                                    {
+                                        <div class="col-md-12 col-lg-3 no-padding">
+                                            <ul>
+                                                <li class="tw-megamenu-title">
+                                                    <h3>@item.C_name</h3>
+                                                </li>
+                                                @foreach (var item_danhmuc in list_con.Where(y => y.id_categories == item.Id).ToList())
+                                                {
+                                                    <li><a href="/ListOfBlog/Index/@item_danhmuc.Id">@item_danhmuc.Name</a></li>
+                                                }
+                                            </ul>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    </li>
+                    <!-- End Dropdown -->
+                    <li class="nav-item"><a class="nav-link" href="/Phan-mem-cong-ty-co-phan-cong-nghe-va-thiet-bi-quoc-anh">Phần mềm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Danh-sach-du-an-ky-thuat-cty-quoc-anh">Kỹ thuật</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/tin-tuc">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ho-tro-giai-dap-thac-mac">Hỗ trợ</a></li>
+                </ul>
+                <!-- End Navbar Nav -->
+            </div>
+            <!-- End of navbar collapse -->
+            <div class="tw-offcanvas-menu d-none d-md-inline-block">
+                <i class="fa fa-search"></i>
+                <div class="tw-menu-bar inline-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <!-- End of offcanvas -->
+        </nav>
+        <!-- End of Nav -->
+    </div>
+    <!-- End of Container -->
+</div>
+<!-- End tw head -->

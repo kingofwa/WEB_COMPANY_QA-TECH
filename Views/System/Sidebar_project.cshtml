@@ -1,0 +1,56 @@
+﻿@{
+    var list_project_sidebar = ViewData["list_project_sidebar"] as List<Web_congty.Modal.FW.Project_system>;
+}
+<div class="sidebar sidebar-right">
+    <div class="widget widget-search">
+        <div id="search" class="input-group">
+            <input class="form-control" placeholder="Tìm kiếm ..." type="search">
+            <span>
+                <i class="icon icon-search"></i>
+            </span>
+        </div>
+    </div>
+    <div class="widget recent-posts">
+        <h3 class="widget-title">Dự án nỗi bật</h3>
+        <span class="animate-border border-offwhite tw-mt-20"></span>
+        <ul class="unstyled clearfix">
+            @{
+                foreach (var item_sidebar in list_project_sidebar)
+                {
+                    <li class="media">
+                        <div class="media-left media-middle">
+                            <img alt="QA_TECH" src="@item_sidebar.Hinhanhmota">
+                        </div>
+                        <div class="media-body media-middle">
+                            <h4 class="entry-title">
+                                <a href="/System/Details/@item_sidebar.Id">@item_sidebar.Ten_DuAn</a>
+                            </h4>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+    <div class="widget widget-adds">
+        <a href="#">
+            <img src="#" alt="QA_tech" class="img-fluid anhquangcao">
+        </a>
+    </div>
+    <!-- End Widget Adds -->
+    <!-- Recent post end -->
+    <div class="widget widget-tags">
+        <h3 class="widget-title">Popular Tags</h3>
+        <span class="animate-border border-offwhite tw-mt-20"></span>
+        <ul class="unstyled clearfix">
+            <li><a href="#">Financial</a></li>
+            <li><a href="#">Our Advisor</a></li>
+            <li><a href="#">Euro 2017</a></li>
+            <li><a href="#">Euro Business</a></li>
+            <li><a href="#">Business Awards</a></li>
+            <li><a href="#">Market</a></li>
+            <li><a href="#">30K</a></li>
+            <li><a href="#">Euro 2017</a></li>
+        </ul>
+    </div>
+</div>

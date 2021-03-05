@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ca9660a263254eb7bc612cc1a2960a47" Name="Diagram1">
+        <EntityTypeShape EntityType="Web_companyModel.About_custommers" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Brand" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Categories" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Comment" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Web_companyModel.FechBack_Cus" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Information_company" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Introduction" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Maketting" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Partner_DT" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Post" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Post_user" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Project_system" Width="1.5" PointX="8.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Services" Width="1.5" PointX="2.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Web_companyModel.Slider" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Web_companyModel.SoftWare_Case" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Web_companyModel.tbl_Uers" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Web_companyModel.tbl_Register_Software_Client" Width="1.5" PointX="6.75" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

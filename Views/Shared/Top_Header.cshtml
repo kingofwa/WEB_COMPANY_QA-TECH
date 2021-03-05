@@ -1,0 +1,179 @@
+﻿
+@using Web_congty.Modal.FW
+<div class="offcanvas-menu">
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="offcanvas-wrapper">
+                    <div class="offcanvas-inner">
+                        <a href="/Home/index" class="logo">
+                            <img class="Logo" src="" alt="">
+                        </a>
+                        <p class="Slogan">
+
+                        </p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="contact-us">
+                                    <div class="contact-icon">
+                                        <i class="icon icon-map2"></i>
+                                    </div>
+                                    <!-- End contact Icon -->
+                                    <div class="contact-info">
+                                        <h3 class="diachi"></h3>
+                                    </div>
+                                    <!-- End Contact Info -->
+                                </div>
+                                <!-- End Contact Us -->
+                            </div>
+                            <!-- End Col -->
+                            <div class="col-md-12">
+                                <div class="contact-us">
+                                    <div class="contact-icon">
+                                        <i class="icon icon-phone3"></i>
+                                    </div>
+                                    <!-- End contact Icon -->
+                                    <div class="contact-info">
+                                        <h3 class="sodienthoai"></h3>
+                                        <p>Gọi cho chúng tôi</p>
+                                    </div>
+                                    <!-- End Contact Info -->
+                                </div>
+                                <!-- End Contact Us -->
+                            </div>
+                            <!-- End Col -->
+                            <div class="col-md-12">
+                                <div class="contact-us">
+                                    <div class="contact-icon">
+                                        <i class="icon icon-envelope2"></i>
+                                    </div>
+                                    <!-- End contact Icon -->
+                                    <div class="contact-info">
+                                        <h3 class="Email_CPN"></h3>
+                                        <p> Hỗ trợ 24/7</p>
+                                    </div>
+                                    <!-- End Contact Info -->
+                                </div>
+                                <!-- End Contact Us -->
+                            </div>
+                            <!-- End Col -->
+                        </div>
+                        <!-- End Contact Row -->
+                        <div class="footer-social-link">
+                            <ul>
+                                <li><a class="Facebook" href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a class="Twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a class="Google" href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a class="Youtube" href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-subscribe">
+                            <h3>
+                                Đăng ký
+                                <span class="noanimate-border"></span>
+                            </h3>
+                            <form action="#">
+                                <div class="form-row">
+                                    <div class="col tw-footer-form">
+                                        <input type="email" class="form-control" placeholder="Email của bạn">
+                                        <button type="submit"><i class="fa fa-send"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Offcanvas inner end -->
+                    <button class="menu-close-btn"><i class="fa fa-close"></i></button>
+                </div>
+                <!-- Offcanvas wrapper end -->
+            </div>
+            <!-- Col End -->
+        </div>
+        <!-- Row End -->
+    </div>
+    <!-- Container End -->
+</div>
+<!-- Off canvas menu End -->
+
+<div class="tw-top-bar tw-top-bar-angle lepvc">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 text-left">
+                <div class="top-contact-info">
+                    <span><i class="icon icon-map-marker2"></i><small class="diachi"></small></span>
+                    <span><i class="icon icon-envelope"></i><small class="email"></small></span>
+                    <span><i class="icon icon-phone3"></i><small class="sodienthoai"></small></span>
+                </div>
+            </div>
+            <!-- Col End -->
+            <div class="col-md-4 ml-auto text-right">
+                <div class="register_login">
+                    @if (Session["Taikhoan"] != null)
+                    {
+                        tbl_Uers tv = (tbl_Uers)Session["Taikhoan"];
+                        <a class="xinchao" href="/Profile_User/Profile/@tv.Id"><i class="fa fa-hand-peace-o"></i> @tv.name </a>
+                        <a class="dangxuat" href="/Login/Dangxuat"><i class="fa fa-sign-out"></i> Đăng xuất</a>
+                    }
+                    else
+                    {
+                        <a class="dangky" href="/Register/Dangky"><i class="fa fa-registered"></i> Đăng ký</a>
+                        <a class="dangnhap" href="#" id="show_modal_login"><i class="fa fa-sign-in"></i> Đăng nhập</a>
+                    }
+                </div>
+
+                <div class="top-social-links">
+                    <a class="Youtube" href="#" target="_blank"><i class="fa fa-youtube-play"></i></a>
+                    <a class="Twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a class="Google" href="#" target="_blank"><i class="fa fa-google-plus"></i></a>
+                    <a class="Facebook" href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+            <!-- Col End -->
+        </div>
+        <!-- Row End -->
+    </div>
+    <!-- Container End -->
+</div>
+
+@*//modal dang nhap*@
+<div id="myModal_Login" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="animate-border tw-mb-40 tw-mt-20"></span>
+                <button data-dismiss="modal" class="menu-close-btn"><i class="fa fa-close"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-8">
+                        @using (Ajax.BeginForm("Dangnhap", "Login", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Thongbao" }))
+                        {
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="textTendangnhap" placeholder="Email" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group">
+                                        <input class="form-control" name="matkhau" placeholder="Mật khẩu" type="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-primary text-left" id="neuchuacotaikhoan"></p>
+                            <p class="text-danger text-left" id="Thongbao"></p>
+                            <div class="clearfix text-left">
+                                <button class="khongpadding btn btn-primary" type="submit">Đăng Nhập</button>
+                            </div>
+                        }
+                    </div>
+                    <div class="col-4 align-self-md-center">
+                        <img src="/public/client/images/about/login.png" alt="" class="img-fluid">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

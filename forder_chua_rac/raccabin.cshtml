@@ -1,0 +1,270 @@
+﻿
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc
+@using Web_congty.Modal.FW
+@model tbl_Uers
+<!--Điện thoại: {{Phone}} <br />
+       Email: {{Email}}<br />
+       Địa chỉ: {{Address}}<br />-->
+<div id="banner-area" class="banner-area" style="background-image:url(/public/Client/images/banner/banner5.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="banner-heading">
+                    <h1 class="banner-title">Đăng ký</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner area end -->
+<section id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tw-about-bin">
+                    <h2 class="column-title">Đăng ký tài khoản</h2>
+                    <span class="animate-border tw-mb-40 tw-mt-20"></span>
+                    <div class="comments-form mt-3">
+                        @using (Html.BeginForm())
+                        {
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBox("name", "", new { @class = "form-control", placeholder = "Tên tài khoản" })
+                                    </div>
+                                </div>
+                                <!-- Col 4 end -->
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBox("email", "", new { @class = "form-control", placeholder = "Email của bạn" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.Password("password", "", new { @class = "form-control", placeholder = "Mật khẩu" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.Password("password2", "", new { @class = "form-control", placeholder = "Nhập lại mật khẩu" })
+                                        @*<input class="form-control" onchange="KiemTra_matkhau()" placeholder="Nhập lại mật khẩu" id="" type="password">*@
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBox("phone", "", new { @class = "form-control", placeholder = "Số điện thoại" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBox("addred", "", new { @class = "form-control", placeholder = "Địa chỉ" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.DropDownList("question")
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBox("reply", "", new { @class = "form-control", placeholder = "Câu trả lời" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Ảnh đại diện</label>
+                                    <div class="form-group">
+                                        <input class="form-control" id="Image_cus" type="file">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    @Html.MathCaptcha()
+                                </div>
+                            </div>
+                            <div class="clearfix text-right">
+                                <button class="btn btn-primary" type="submit">Đăng ký</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 align-self-md-center">
+                <img src="/public/client/images/about/images.jpg" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+    <span style="color:red">@ViewBag.thongbao</span>
+</section>
+<!-- Main container end -->
+
+
+
+
+<div id="comments" class="comments-area">
+    <h3 class="comments-heading">@ViewBag.tongso Bình luận</h3>
+    <ul class="comments-list">
+        @foreach (var item_comment in list_commment_result)
+        {
+            <li>
+                <div class="comment">
+                    <div class="row">
+                        <div class="col-1" id="this_hide_col_1">
+                            <div class="vote_comment">
+                                <div class="vote_up" onclick="VoteUP(@item_comment.Id)">
+                                    <i class="fa fa-caret-up fa-4x"></i>
+                                </div>
+                                <div class="number_vote" id="number_vote_@item_comment.Id">
+                                    @item_comment.Vote
+                                </div>
+                                <div class="vote_dowl" onclick="VoteDOWN(@item_comment.Id)">
+                                    <i class="fa fa-caret-down fa-4x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-11 col-xs-12">
+                            @if (item_comment.Image_cus != null)
+                            {
+                                <img class="comment-avatar_lepvc" alt="" src="@item_comment.Image_cus">
+                            }
+                            else
+                            {
+                                <img class="comment-avatar_lepvc" alt="" src="/public/Client/images/icon-image/avatar1.jpg">
+                            }
+
+                            <div class="comment-body">
+                                <div class="meta-data">
+                                    <span class="float-right">
+                                        <b class="collapsed" role="tab" id="headingOne_@item_comment.Id" data-toggle="collapse" data-parent="#accordion" href="#collapseOne_@item_comment.Id" aria-expanded="true" aria-controls="collapseOne_@item_comment.Id">
+                                            <small class="replay_comment">Trả lời</small>
+                                        </b>
+                                    </span>
+                                    <span class="comment-author"><a href="/Profile_User/Profile/@item_comment.Id_uer">@item_comment.name</a></span>
+                                    <span class="comment-date">@item_comment.Time.GetValueOrDefault().ToString("dd/MM/yyyy")</span>
+                                </div>
+                                <div class="comment-content-lepvc">
+                                    <p class="mb-0">
+                                        <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+                                        @item_comment.Noi_dung
+                                    </p>
+                                    <span class="felling_is_of_your"><i onclick="Show_felling_ul_hide(@item_comment.Id)" class="fa fa-bandcamp"></i></span>
+                                    <input type="hidden" id="css_move_@item_comment.Id" value="1" />
+                                    <ul class="felling_ul_hide" id="show_ul_li_@item_comment.Id">
+                                        <li class="felling_vote"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <li class="felling_vote"><i class="fa fa-thumbs-o-up"></i></li>
+                                        <li class="felling_vote"><i class="fa fa-heart" aria-hidden="true"></i></li>
+                                        <li class="felling_vote"><i class="fa fa-smile-o" aria-hidden="true"></i></li>
+                                        <li class="felling_vote"><i class="fa fa-thumbs-down" aria-hidden="true"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion" role="tablist">
+                    <div id="collapseOne_@item_comment.Id" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne_@item_comment.Id" style="">
+                        <div class="card-block">
+                            <form>
+                                <div class="form-group position-relative">
+                                    <input type="hidden" id="id_post" value="@ViewBag.Id_details">
+                                    <input class="form-control" id="noidung_@item_comment.Id" type="text" />
+                                    <div class="traloi_binhluan">
+                                        <i onclick="Send_comment(@item_comment.Id)" class="fa fa-level-up fa-2x" title="Gửi"></i>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                @foreach (var item in list_reply_comment)
+                {
+                    if (item_comment.Id == item.Id_reply)
+                    {
+                        <ul class="comments-reply">
+                            <li>
+                                <div class="comment">
+                                    @if (item.Image_cus != null)
+                                    {
+                                        <img class="comment-avatar float-left" src="@item.Image_cus" alt="">
+                                    }
+                                    else
+                                    {
+                                        <img class="comment-avatar float-left" alt="" src="/public/Client/images/icon-image/author.jpg">
+                                    }
+                                    <div class="comment-body">
+                                        <div class="meta-data">
+                                            <span class="float-right">
+                                                <a class="comment-reply" href="#"></a>@*//Trả lời*@
+                                            </span>
+                                            <span class="comment-author">@item.name</span>
+                                            <span class="comment-date">@item.Time.GetValueOrDefault().ToString("dd/MM/yyyy")</span>
+                                        </div>
+                                        <div class="comment-content">
+                                            <p class="mb-0">
+                                                @item.Noi_dung
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    }
+                }
+            </li>
+        }
+    </ul>
+    <!-- Comments-list ul end -->
+</div>
+<!-- Comments Area End -->
+<div class="comments-form comment-border">
+    <h3 class="title-normal">Để lại bình luận của bạn</h3>
+    @using (Html.BeginForm("Comment", "Blog_details"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group" id="traloi">
+                    <input type="hidden" name="ID" value="@ViewBag.Id_details">
+                    @Html.TextBoxFor(model => model.Noi_dung, new { @class = "form-control", placeholder = "Bình luận của bạn ...." })
+                    @Html.ValidationMessageFor(model => model.Noi_dung)
+                </div>
+            </div>
+        </div>
+        <div class="clearfix text-right">
+            <button class="btn btn-primary" type="submit">Bình luận</button>
+        </div>
+    }
+</div>
+
+
+
+
+
+<div class="col-md-8 lepvc_table d-none">
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="width:28%;">Tên</th>
+                <th style="width:30%;">Địa chỉ</th>
+                <th style="width:12%;">SĐT</th>
+                <th style="width:30%;">Hình ảnh</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input id="HoVaTen_User" type="text" class="input_edit_user" /></td>
+                <td><input id="DiaChi_User" type="text" class="input_edit_user" /></td>
+                <td><input id="Sodienthoai_User" type="text" class="input_edit_user" /></td>
+                <td>
+                    <a href="#" class="new_Btn"><img id="Hinhanh_User" src="" alt="QA_TECH" style="width:50px;height:50px;" /></a>
+                    <input id="html_btn" type='file' />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="btn btn-xs btn-primary float-lg-right" onclick="CapNhat()"> Cập nhật </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@{ 
+    var list_softw = ViewData["list_softw"] as List<Web_congty.Modal.FW.SoftWare_Case>;
+}
+<div class="container">
+    <div class="row text-center">
+        <div class="col section-heading wow fadeInLeft">
+            <h2>
+                <span>Phần mềm</span>
+                <small>Nỗi bật</small>
+            </h2>
+            <span class="animate-border border-offwhite ml-auto mr-auto tw-mt-20"></span>
+        </div>
+        <!-- End Col -->
+    </div>
+    <!-- End Row -->
+    <div class="row">
+        <div class="col-md-12 wow fadeInRight">
+            <div class="testimonial-box-carousel owl-carousel">
+                @{ 
+                    var i = 1;
+                }
+                @foreach (var item in list_softw)
+                {
+                    <div class="tw-testimonial-box-software_qa">
+                        <div class="case-img height_software_home study-bg-@i">
+                            <img src="@item.Sw_image" alt="" class="img-fluid" style="height:100%">
+                        </div>
+                        <div class="casestudy-content">
+                            <a href="/Details_SW_/Index/@item.Id">
+                                <h4>@item.Sw_name</h4>
+                            </a>
+                            <p>@item.Sw_title</p>
+                        </div>
+                    </div>
+                    i++;
+                }
+            </div>
+            <div class="col-md-12 text-center"><a href="/SoftWareHome/Index" class="btn btn-primary btn-lg tw-mt-80">Xem tất cả</a></div>
+        </div>
+    </div>
+</div>
+<!-- Container End -->

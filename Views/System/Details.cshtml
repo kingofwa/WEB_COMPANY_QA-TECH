@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewBag.Title = @ViewBag.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    var list_project = ViewData["list_project"] as List<Web_congty.Modal.FW.View_model.ProjectNextOrLast>;
+
+    var list_project_sidebar = ViewData["list_project_sidebar"] as List<Web_congty.Modal.FW.Project_system>;
+
+}
+@*@Html.Raw(System.Web.HttpUtility.HtmlDecode(@item.ChiTietDuAn))*@
+@{
+    foreach (var item in ViewBag.details)
+    {
+        <div id="banner-area" class="banner-area bg-overlay case-bg-overlay" style="background-image:url(@item.Hinhanhmota)">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="banner-heading case-banner-heading">
+                            <h1 class="banner-case-title"><span>@item.Ten_DuAn</span> </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Banner area end -->
+        <section id="main-container" class="main-container">
+            <div class="container-fluid">
+                <div class="col text-center">
+                    <div class="section-heading">
+                        <h2>
+                            <span>Hình ảnh</span>
+                        </h2>
+                        <span class="animate-border ml-auto mr-auto tw-mt-20 tw-mb-40"></span>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-12">
+                            <div class="row">
+                                @{
+                                    if (ViewBag.listhinhanh != null)
+                                    {
+                                        foreach (var item_hinhanh in ViewBag.listhinhanh)
+                                        {
+                                            <div class="col-md-4">
+                                                <div class="tw-case-study-box">
+                                                    <div class="case-img study-bg-lepvc">
+                                                        <a href=""><img src="@item_hinhanh" alt="QA_TECH" class="img-fluid lepvc__"></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <h1 class="text-center">@ViewBag.messenger</h1>
+                                    }
+                                }
+                            </div>
+
+                            <div class="container">
+                                @{
+                                    foreach (var item_project_nextOrFirt in list_project)
+                                    {
+                                        <nav class="post-navigation clearfix">
+                                            @if (item_project_nextOrFirt.Name_news_first != null)
+                                            {
+                                                <div class="post-previous">
+                                                    <a href="/System/Details/@item_project_nextOrFirt.Id_first">
+                                                        <h3>
+                                                            @item_project_nextOrFirt.Name_news_first
+                                                        </h3>
+                                                        <span><i class="icon icon-arrow-left"></i>Trước</span>
+                                                    </a>
+                                                    <div class="media-left lepvc__ media-middle">
+                                                        <img alt="QA_TECH" src="@item_project_nextOrFirt.Image_first">
+                                                    </div>
+                                                </div>
+                                            }
+                                            @if (item_project_nextOrFirt.Name_news_last != null)
+                                            {
+                                                <div class="post-next">
+                                                    <a href="/System/Details/@item_project_nextOrFirt.Id_last">
+                                                        <h3>
+                                                            @item_project_nextOrFirt.Name_news_last
+                                                        </h3>
+                                                        <span>Kế tiếp <i class="icon icon-arrow-right"></i></span>
+                                                    </a>
+                                                    <div class="media-right  media-middle">
+                                                        <img alt="QA_TECH" src="@item_project_nextOrFirt.Image_last">
+                                                    </div>
+                                                </div>
+                                            }
+                                        </nav>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <!-- Content Col end -->
+                        <div class="col-lg-3 col-md-12">
+                            @RenderPage("Sidebar_project.cshtml")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}
+
+

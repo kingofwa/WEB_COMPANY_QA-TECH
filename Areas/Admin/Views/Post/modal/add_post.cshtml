@@ -1,0 +1,53 @@
+﻿
+@{
+    var list_danhmuc = ViewData["list_danhmuc"] as List<Web_congty.Modal.FW.Brand>;
+}
+
+<div class="modal fade" id="Modal_posts">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-cyan">
+                <h4 class="modal-title">ADD NEWS POST</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <input type="hidden" id="Id_post" value="0">
+                            <label for="Name" class="col-1">Tên</label>
+                            <input type="text" class="form-control col-5" id="Name">
+                            <label for="Id_brand" class="col-1">Danh mục</label>
+                            <select class="form-control col-5" id="Id_brand">
+                                @foreach (var item in list_danhmuc)
+                                {
+                                    <option value="@item.Id" class="form-control">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Title" class="col-1">Tiêu đề </label>
+                            <input type="text" class="form-control col-11" id="Title">
+                        </div>
+                        <div class="form-group row">
+                            <label for="Author" class="col-1">Tác giả</label>
+                            <input type="text" class="form-control col-5" id="Author">
+                            <label for="Image" class="col-1">Ảnh chính</label>
+                            <p><a class="btn btn-primary btn-sm d-block" onclick="BrowseServer_Image()">Chọn hình</a></p>
+                            <input type="hidden" id="Image" />
+                            <p id="show_image_Image"></p>
+                        </div>
+                        <div class="form-group col-12">
+                            <textarea rows="10" cols="1" id="Details" name="nameGoesHere"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <button type="button" id="Save_post" class="btn btn-primary float-right">Lưu</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

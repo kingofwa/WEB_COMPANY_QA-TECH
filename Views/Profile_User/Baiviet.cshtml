@@ -1,0 +1,127 @@
+﻿
+@{
+    var baivietcuaban = ViewData["baivietcuaban"] as List<Web_congty.Modal.FW.Post_user>;
+    var list_folow_me_____ = ViewData["list_folow_me_____"] as List<Web_congty.Modal.FW.View_model.__Folow_me>;
+    
+}
+<nav aria-label="breadcrumb" style="background:#ddd;">
+    <ol class="breadcrumb">
+        <li id="baiviet_user_client" class="breadcrumb-item active"><a href="#">Bài viết</a></li>
+        <li id="dangtheodoi_user" class="breadcrumb-item"><a href="#">Đang theo dõi</a></li>
+    </ol>
+</nav>
+
+
+<div class="bai_dang_cua_ban">
+    @if (ViewBag.thogbaooo != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+            <strong>@ViewBag.thogbaooo!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+    <div class="tw-faq-content mt-4">
+        <div id="accordion" role="tablist">
+            @{
+                if (baivietcuaban != null)
+                {
+                    foreach (var item_baiviet in baivietcuaban)
+                    {
+                        <div class="card ">
+                            <div class="card-header collapsed" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne_@item_baiviet.Id" aria-expanded="false" aria-controls="collapseOne">
+                                <h4>
+                                    @{
+                                        var ngayhientai = DateTime.Now.Day;
+                                        var thanghientai = DateTime.Now.Month;
+                                        var namhientai = DateTime.Now.Year;
+                                        var namdangbai = "";
+                                        var thangdangbai = "";
+                                        for (var j = 0; j < baivietcuaban.Count(); j++)
+                                        {
+                                            var ngaydangtruocdo = Convert.ToInt32(ViewBag.daynow[j]);
+                                            var thangdangtruocdo = Convert.ToInt32(ViewBag.monthnow[j]);
+                                            var namdangtruocdo = Convert.ToInt32(ViewBag.yearnow[j]);
+
+                                            var ngaydang = Convert.ToInt32(item_baiviet.Time_up.GetValueOrDefault().Day);
+                                            var thangdang = Convert.ToInt32(item_baiviet.Time_up.GetValueOrDefault().Month);
+                                            var namdang = Convert.ToInt32(item_baiviet.Time_up.GetValueOrDefault().Year);
+                                            var ngaydangtruocdo2 = ngayhientai - ngaydang;
+                                            var thangdangtruocdo2 = thanghientai - thangdang;
+                                            var namdangtruocdo2 = namhientai - namdang;
+
+                                            if (namdangtruocdo == namdangtruocdo2 && thangdangtruocdo == thangdangtruocdo2 && ngaydangtruocdo == ngaydangtruocdo2)
+                                            {
+                                                var nam = namdangtruocdo2;
+                                                if(nam > 0)
+                                                {
+                                                    namdangbai = nam + " " + "năm";
+                                                }
+                                                var thang = thangdangtruocdo2;
+                                                if (thang > 0)
+                                                {
+                                                    thangdangbai = thang + "tháng";
+                                                }
+                                                <small><b>@namdangbai @thangdangbai @ViewBag.daynow[j]</b> ngày trước</small>
+                                            }
+                                        }
+                                    }
+                                    <a>@item_baiviet.Name <i class="faq-indicator fa fa-plus"></i></a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne_@item_baiviet.Id" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" style="">
+                                <div class="card-block">
+                                    @item_baiviet.Title
+                                    <span><p><a href="/Post_details_My_User/Detals_Post/@item_baiviet.Id">Xem chi tiết...</a></p></span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            }
+        </div>
+        <!-- End Accordion -->
+    </div>
+</div>
+
+
+<div class="dang_theo_doi" style="display:none;">
+    @if (ViewBag.Un_folow_me != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show mt-3" role="alert">
+            <strong>@ViewBag.Un_folow_me!</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+<div class="row">
+    @{
+        if (list_folow_me_____ != null)
+        {
+            foreach (var item_folow in list_folow_me_____)
+            {
+                <div class="col-md-4 col-6">
+                    <a href="/Profile_User/Profile/@item_folow.id_folow">
+                        <div class="card">
+                            @if (item_folow.Image_folow != null)
+                            {
+                                <img id="hinhanh" class="card-img-top" src="@item_folow.Image_folow" alt="Card image cap">
+                            }
+                            else
+                            {
+                                <img id="hinhanh" class="card-img-top" src="~/Public/Client/images/defaul_avatar.jpg" alt="Card image cap">
+                            }
+                            <div class="card-body">
+                                <h6 class="card-title">@item_folow.name_folow</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+    }
+</div>
+</div>
+

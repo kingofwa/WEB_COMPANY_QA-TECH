@@ -1,0 +1,1005 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Web_companyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="About_custommers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="AC_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="AC_email" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="150" />
+          <Property Name="id_categories" Type="int" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="C_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="C_status" Type="bit" />
+          <Property Name="C_note" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_uer" Type="int" />
+          <Property Name="Noi_dung" Type="nvarchar(max)" />
+          <Property Name="Time" Type="date" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="felling" Type="int" />
+          <Property Name="Vote" Type="int" />
+          <Property Name="Type_comment" Type="int" />
+          <Property Name="Id_post" Type="int" />
+          <Property Name="Id_reply" Type="int" />
+          <Property Name="id_user_vote" Type="varchar" MaxLength="250" />
+          <Property Name="Id_software" Type="int" />
+        </EntityType>
+        <EntityType Name="FechBack_Cus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="F_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="F_content" Type="nvarchar" MaxLength="250" />
+          <Property Name="F_email" Type="varchar" MaxLength="150" />
+          <Property Name="F_Status" Type="int" />
+          <Property Name="F_image" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Information_company">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name_CPN" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone_hot" Type="int" />
+          <Property Name="Bank_number" Type="int" />
+          <Property Name="Email_true" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone" Type="int" />
+          <Property Name="Email" Type="nvarchar" MaxLength="250" />
+          <Property Name="Facebook" Type="varchar" MaxLength="250" />
+          <Property Name="Email_CPN" Type="varchar" MaxLength="250" />
+          <Property Name="Youtube" Type="varchar" MaxLength="250" />
+          <Property Name="Google" Type="varchar" MaxLength="250" />
+          <Property Name="Viber" Type="varchar" MaxLength="250" />
+          <Property Name="Slogan" Type="nvarchar" MaxLength="250" />
+          <Property Name="Addred" Type="nvarchar" MaxLength="150" />
+          <Property Name="Logo" Type="varchar" MaxLength="250" />
+          <Property Name="Register" Type="date" />
+          <Property Name="Notification_TB" Type="nvarchar" MaxLength="500" />
+          <Property Name="Advertisement_QC" Type="varchar" MaxLength="500" />
+          <Property Name="Best_Company" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Introduction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Intro_name" Type="nvarchar" MaxLength="500" />
+          <Property Name="Intro_desc" Type="nvarchar(max)" />
+          <Property Name="Intro_image" Type="varchar" MaxLength="150" />
+          <Property Name="Intro_link" Type="varchar" MaxLength="250" />
+          <Property Name="Intro_title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Intro_status" Type="bit" />
+        </EntityType>
+        <EntityType Name="Maketting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="M_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="M_title" Type="nvarchar" MaxLength="250" />
+          <Property Name="M_link" Type="varchar" MaxLength="250" />
+          <Property Name="M_image" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Partner_DT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name_partner" Type="nvarchar" MaxLength="250" />
+          <Property Name="image_partner" Type="varchar" MaxLength="150" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Id_brand" Type="int" />
+          <Property Name="Image" Type="varchar" MaxLength="250" />
+          <Property Name="Author" Type="nvarchar" MaxLength="150" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" />
+          <Property Name="Details" Type="nvarchar(max)" />
+          <Property Name="Prominence_Nb" Type="bit" />
+          <Property Name="Common_Pb" Type="bit" />
+          <Property Name="Time_up_post" Type="date" />
+          <Property Name="Type_post" Type="bit" />
+          <Property Name="View_client" Type="int" />
+        </EntityType>
+        <EntityType Name="Post_user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Id_uer" Type="int" />
+          <Property Name="Id_brand" Type="int" />
+          <Property Name="Image" Type="varchar" MaxLength="500" />
+          <Property Name="Author" Type="nvarchar" MaxLength="150" />
+          <Property Name="Status" Type="bit" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Details" Type="nvarchar(max)" />
+          <Property Name="View_client" Type="int" />
+          <Property Name="Time_up" Type="datetime" />
+          <Property Name="Type_post" Type="bit" />
+          <Property Name="Common" Type="bit" />
+        </EntityType>
+        <EntityType Name="Project_system">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Ten_DuAn" Type="nvarchar" MaxLength="150" />
+          <Property Name="Ten_KySu" Type="nvarchar" MaxLength="150" />
+          <Property Name="Tongtien_DuAn" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Diachi_DuAn" Type="nvarchar" MaxLength="250" />
+          <Property Name="Thoigiankhoicong" Type="date" />
+          <Property Name="Thoigianhoanthanh" Type="date" />
+          <Property Name="Hinhanhchitiet" Type="nvarchar(max)" />
+          <Property Name="Hinhanhmota" Type="varchar" MaxLength="250" />
+          <Property Name="Motangan" Type="nvarchar" MaxLength="250" />
+          <Property Name="ChiTietDuAn" Type="nvarchar(max)" />
+          <Property Name="Ghi_chu" Type="nvarchar" MaxLength="500" />
+          <Property Name="TheLoai_DuAn" Type="int" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Services_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Services_title" Type="nvarchar" MaxLength="250" />
+          <Property Name="Services_link" Type="varchar" MaxLength="250" />
+          <Property Name="Services_image" Type="varchar" MaxLength="250" />
+          <Property Name="Services_desc" Type="nvarchar(max)" />
+          <Property Name="Services_status" Type="bit" />
+          <Property Name="Services_maketting" Type="bit" />
+          <Property Name="Services_note" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="S_name" Type="nvarchar" MaxLength="250" />
+          <Property Name="S_description" Type="nvarchar" MaxLength="500" />
+          <Property Name="S_link" Type="varchar" MaxLength="250" />
+          <Property Name="S_image" Type="varchar" MaxLength="150" />
+          <Property Name="S_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="SoftWare_Case">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Sw_title" Type="nvarchar" MaxLength="150" />
+          <Property Name="Sw_name" Type="nvarchar" MaxLength="150" />
+          <Property Name="Sw_image" Type="varchar" MaxLength="250" />
+          <Property Name="Sw_link" Type="varchar" MaxLength="250" />
+          <Property Name="Sw_Status" Type="bit" />
+          <Property Name="Sw_note" Type="nvarchar" MaxLength="500" />
+          <Property Name="Sw_desc" Type="nvarchar(max)" />
+          <Property Name="Sw_author" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_Uers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="150" />
+          <Property Name="email" Type="nvarchar" MaxLength="250" />
+          <Property Name="password" Type="nvarchar" MaxLength="150" />
+          <Property Name="Image_cus" Type="nvarchar" MaxLength="250" />
+          <Property Name="Day" Type="date" />
+          <Property Name="Run_status" Type="int" />
+          <Property Name="phone" Type="int" />
+          <Property Name="question" Type="nvarchar" MaxLength="500" />
+          <Property Name="reply" Type="nvarchar" MaxLength="500" />
+          <Property Name="addred" Type="nvarchar" MaxLength="250" />
+          <Property Name="type_uer" Type="int" />
+          <Property Name="public_private" Type="int" />
+          <Property Name="folow" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="tbl_Register_Software_Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_login" Type="nvarchar" MaxLength="150" />
+          <Property Name="Pass_login" Type="nvarchar" MaxLength="150" />
+          <Property Name="Name_Client" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone_Client" Type="int" />
+          <Property Name="Email_CLient" Type="varchar" MaxLength="250" />
+          <Property Name="Addred_Client" Type="nvarchar" MaxLength="500" />
+          <Property Name="Name_Businet" Type="nvarchar" MaxLength="500" />
+          <Property Name="Send_messenger" Type="nvarchar" MaxLength="500" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Option_sw" Type="int" />
+          <Property Name="Id_Sw" Type="int" />
+          <Property Name="Option_time" Type="int" />
+        </EntityType>
+        <Function Name="f__Count_post" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="__Count_post" />
+        <Function Name="Binhlan_phanmem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Binhluan_blog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="Client_register_now_software" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="DANH_MUC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="list_comment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="List_reply_comment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="Web_companyModelStoreContainer">
+          <EntitySet Name="About_custommers" EntityType="Self.About_custommers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FechBack_Cus" EntityType="Self.FechBack_Cus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Information_company" EntityType="Self.Information_company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Introduction" EntityType="Self.Introduction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Maketting" EntityType="Self.Maketting" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partner_DT" EntityType="Self.Partner_DT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post_user" EntityType="Self.Post_user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project_system" EntityType="Self.Project_system" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SoftWare_Case" EntityType="Self.SoftWare_Case" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Uers" EntityType="Self.tbl_Uers" Schema="dbo" Table="tbl.Uers" store:Type="Tables" />
+          <EntitySet Name="tbl_Register_Software_Client" EntityType="Self.tbl_Register_Software_Client" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Web_companyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="f__Count_post" ReturnType="Collection(Web_companyModel.f__Count_post_Result)" />
+          <FunctionImport Name="Binhlan_phanmem" ReturnType="Collection(Web_companyModel.Binhlan_phanmem_Result)" />
+          <FunctionImport Name="Binhluan_blog" ReturnType="Collection(Web_companyModel.Binhluan_blog_Result)" />
+          <FunctionImport Name="Client_register_now_software" ReturnType="Collection(Web_companyModel.Client_register_now_software_Result)" />
+          <FunctionImport Name="DANH_MUC" ReturnType="Collection(Web_companyModel.DANH_MUC_Result)" />
+          <FunctionImport Name="list_comment" ReturnType="Collection(Web_companyModel.list_comment_Result)" />
+          <FunctionImport Name="List_reply_comment" ReturnType="Collection(Web_companyModel.List_reply_comment_Result)" />
+          <EntitySet Name="About_custommers" EntityType="Web_companyModel.About_custommers" />
+          <EntitySet Name="Brand" EntityType="Web_companyModel.Brand" />
+          <EntitySet Name="Categories" EntityType="Web_companyModel.Categories" />
+          <EntitySet Name="Comment" EntityType="Web_companyModel.Comment" />
+          <EntitySet Name="FechBack_Cus" EntityType="Web_companyModel.FechBack_Cus" />
+          <EntitySet Name="Information_company" EntityType="Web_companyModel.Information_company" />
+          <EntitySet Name="Introduction" EntityType="Web_companyModel.Introduction" />
+          <EntitySet Name="Maketting" EntityType="Web_companyModel.Maketting" />
+          <EntitySet Name="Partner_DT" EntityType="Web_companyModel.Partner_DT" />
+          <EntitySet Name="Post" EntityType="Web_companyModel.Post" />
+          <EntitySet Name="Post_user" EntityType="Web_companyModel.Post_user" />
+          <EntitySet Name="Project_system" EntityType="Web_companyModel.Project_system" />
+          <EntitySet Name="Services" EntityType="Web_companyModel.Services" />
+          <EntitySet Name="Slider" EntityType="Web_companyModel.Slider" />
+          <EntitySet Name="SoftWare_Case" EntityType="Web_companyModel.SoftWare_Case" />
+          <EntitySet Name="tbl_Uers" EntityType="Web_companyModel.tbl_Uers" />
+          <EntitySet Name="tbl_Register_Software_Client" EntityType="Web_companyModel.tbl_Register_Software_Client" />
+          </EntityContainer>
+        <ComplexType Name="f__Count_post_Result">
+          <Property Type="Int32" Name="count_post" Nullable="true" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="150" />
+          <Property Type="Int32" Name="id_categories" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="Binhlan_phanmem_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Id_software" Nullable="true" />
+          <Property Type="Int32" Name="Id_uer" Nullable="true" />
+          <Property Type="String" Name="Noi_dung" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="DateTime" Name="Time" Nullable="true" />
+          <Property Type="String" Name="Sw_name" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="Binhluan_blog_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Id_post" Nullable="true" />
+          <Property Type="Int32" Name="Id_uer" Nullable="true" />
+          <Property Type="String" Name="Noi_dung" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="DateTime" Name="Time" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Name_user" Nullable="true" MaxLength="150" />
+        </ComplexType>
+        <ComplexType Name="Client_register_now_software_Result">
+          <Property Type="String" Name="Sw_name" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Addred_Client" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="Id_Sw" Nullable="true" />
+          <Property Type="String" Name="Name_Businet" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="Name_Client" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="Option_sw" Nullable="true" />
+          <Property Type="Int32" Name="Option_time" Nullable="true" />
+          <Property Type="Int32" Name="Phone_Client" Nullable="true" />
+          <Property Type="String" Name="Send_messenger" Nullable="true" MaxLength="500" />
+          <Property Type="Int32" Name="Status" Nullable="true" />
+          <Property Type="String" Name="Email_CLient" Nullable="true" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="DANH_MUC_Result">
+          <Property Type="String" Name="C_name" Nullable="true" MaxLength="250" />
+          <Property Type="Boolean" Name="C_status" Nullable="true" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="id_categories" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="150" />
+          <Property Type="Boolean" Name="status" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="list_comment_Result">
+          <Property Type="String" Name="name" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Image_cus" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="felling" Nullable="true" />
+          <Property Type="Int32" Name="Id_post" Nullable="true" />
+          <Property Type="Int32" Name="Id_reply" Nullable="true" />
+          <Property Type="Int32" Name="Id_uer" Nullable="true" />
+          <Property Type="String" Name="Noi_dung" Nullable="true" />
+          <Property Type="Boolean" Name="Status" Nullable="true" />
+          <Property Type="DateTime" Name="Time" Nullable="true" />
+          <Property Type="Int32" Name="Type_comment" Nullable="true" />
+          <Property Type="Int32" Name="Vote" Nullable="true" />
+          <Property Type="Int32" Name="Id_software" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="List_reply_comment_Result">
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="Image_cus" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="Time" Nullable="true" />
+          <Property Type="String" Name="Noi_dung" Nullable="true" />
+          <Property Type="Int32" Name="Id_comment" Nullable="false" />
+          <Property Type="Int32" Name="Id_post" Nullable="true" />
+          <Property Type="Int32" Name="Type_comment" Nullable="true" />
+          <Property Type="Int32" Name="Id_reply" Nullable="true" />
+          <Property Type="Int32" Name="Id_software" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="About_custommers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="AC_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="AC_email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="id_categories" Type="Int32" />
+          <Property Name="status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="C_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="C_status" Type="Boolean" />
+          <Property Name="C_note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_uer" Type="Int32" />
+          <Property Name="Noi_dung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="DateTime" Precision="0" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="felling" Type="Int32" />
+          <Property Name="Vote" Type="Int32" />
+          <Property Name="Type_comment" Type="Int32" />
+          <Property Name="Id_post" Type="Int32" />
+          <Property Name="Id_reply" Type="Int32" />
+          <Property Name="id_user_vote" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Id_software" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FechBack_Cus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="F_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="F_content" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="F_email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="F_Status" Type="Int32" />
+          <Property Name="F_image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Information_company">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name_CPN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_hot" Type="Int32" />
+          <Property Name="Bank_number" Type="Int32" />
+          <Property Name="Email_true" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Facebook" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Email_CPN" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Youtube" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Google" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Viber" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Slogan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Addred" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Logo" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Register" Type="DateTime" Precision="0" />
+          <Property Name="Notification_TB" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Advertisement_QC" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Best_Company" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Introduction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Intro_name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Intro_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Intro_image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Intro_link" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Intro_title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Intro_status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Maketting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="M_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="M_title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="M_link" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="M_image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Partner_DT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name_partner" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="image_partner" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Id_brand" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Author" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Prominence_Nb" Type="Boolean" />
+          <Property Name="Common_Pb" Type="Boolean" />
+          <Property Name="Time_up_post" Type="DateTime" Precision="0" />
+          <Property Name="Type_post" Type="Boolean" />
+          <Property Name="View_client" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Post_user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Id_uer" Type="Int32" />
+          <Property Name="Id_brand" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Author" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Boolean" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="View_client" Type="Int32" />
+          <Property Name="Time_up" Type="DateTime" Precision="3" />
+          <Property Name="Type_post" Type="Boolean" />
+          <Property Name="Common" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Project_system">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Ten_DuAn" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Ten_KySu" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Tongtien_DuAn" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Diachi_DuAn" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Thoigiankhoicong" Type="DateTime" Precision="0" />
+          <Property Name="Thoigianhoanthanh" Type="DateTime" Precision="0" />
+          <Property Name="Hinhanhchitiet" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hinhanhmota" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Motangan" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ChiTietDuAn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ghi_chu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TheLoai_DuAn" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Services_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Services_title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Services_link" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Services_image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Services_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Services_status" Type="Boolean" />
+          <Property Name="Services_maketting" Type="Boolean" />
+          <Property Name="Services_note" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="S_name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="S_description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="S_link" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="S_image" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="S_active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SoftWare_Case">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Sw_title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Sw_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Sw_image" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sw_link" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sw_Status" Type="Boolean" />
+          <Property Name="Sw_note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Sw_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Sw_author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbl_Uers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Image_cus" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Day" Type="DateTime" Precision="0" />
+          <Property Name="Run_status" Type="Int32" />
+          <Property Name="phone" Type="Int32" />
+          <Property Name="question" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="reply" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="addred" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="type_uer" Type="Int32" />
+          <Property Name="public_private" Type="Int32" />
+          <Property Name="folow" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Register_Software_Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_login" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Pass_login" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Name_Client" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Phone_Client" Type="Int32" />
+          <Property Name="Email_CLient" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Addred_Client" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Name_Businet" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Send_messenger" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Option_sw" Type="Int32" />
+          <Property Name="Id_Sw" Type="Int32" />
+          <Property Name="Option_time" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Web_companyModelStoreContainer" CdmEntityContainer="Entities">
+          <FunctionImportMapping FunctionImportName="f__Count_post" FunctionName="Web_companyModel.Store.f__Count_post">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Web_companyModel.f__Count_post_Result">
+                <ScalarProperty Name="count_post" ColumnName="count_post" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Binhlan_phanmem" FunctionName="Web_companyModel.Store.Binhlan_phanmem">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Web_companyModel.Binhlan_phanmem_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_software" ColumnName="Id_software" />
+                <ScalarProperty Name="Id_uer" ColumnName="Id_uer" />
+                <ScalarProperty Name="Noi_dung" ColumnName="Noi_dung" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Sw_name" ColumnName="Sw_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Binhluan_blog" FunctionName="Web_companyModel.Store.Binhluan_blog">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Web_companyModel.Binhluan_blog_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_post" ColumnName="Id_post" />
+                <ScalarProperty Name="Id_uer" ColumnName="Id_uer" />
+                <ScalarProperty Name="Noi_dung" ColumnName="Noi_dung" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Name_user" ColumnName="Name_user" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Client_register_now_software" FunctionName="Web_companyModel.Store.Client_register_now_software">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Web_companyModel.Client_register_now_software_Result">
+                <ScalarProperty Name="Sw_name" ColumnName="Sw_name" />
+                <ScalarProperty Name="Addred_Client" ColumnName="Addred_Client" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_Sw" ColumnName="Id_Sw" />
+                <ScalarProperty Name="Name_Businet" ColumnName="Name_Businet" />
+                <ScalarProperty Name="Name_Client" ColumnName="Name_Client" />
+                <ScalarProperty Name="Option_sw" ColumnName="Option_sw" />
+                <ScalarProperty Name="Option_time" ColumnName="Option_time" />
+                <ScalarProperty Name="Phone_Client" ColumnName="Phone_Client" />
+                <ScalarProperty Name="Send_messenger" ColumnName="Send_messenger" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Email_CLient" ColumnName="Email_CLient" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DANH_MUC" FunctionName="Web_companyModel.Store.DANH_MUC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Web_companyModel.DANH_MUC_Result">
+                <ScalarProperty Name="C_name" ColumnName="C_name" />
+                <ScalarProperty Name="C_status" ColumnName="C_status" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="list_comment" FunctionName="Web_companyModel.Store.list_comment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Web_companyModel.list_comment_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Image_cus" ColumnName="Image_cus" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="felling" ColumnName="felling" />
+                <ScalarProperty Name="Id_post" ColumnName="Id_post" />
+                <ScalarProperty Name="Id_reply" ColumnName="Id_reply" />
+                <ScalarProperty Name="Id_uer" ColumnName="Id_uer" />
+                <ScalarProperty Name="Noi_dung" ColumnName="Noi_dung" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Type_comment" ColumnName="Type_comment" />
+                <ScalarProperty Name="Vote" ColumnName="Vote" />
+                <ScalarProperty Name="Id_software" ColumnName="Id_software" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="List_reply_comment" FunctionName="Web_companyModel.Store.List_reply_comment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Web_companyModel.List_reply_comment_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Image_cus" ColumnName="Image_cus" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Noi_dung" ColumnName="Noi_dung" />
+                <ScalarProperty Name="Id_comment" ColumnName="Id_comment" />
+                <ScalarProperty Name="Id_post" ColumnName="Id_post" />
+                <ScalarProperty Name="Type_comment" ColumnName="Type_comment" />
+                <ScalarProperty Name="Id_reply" ColumnName="Id_reply" />
+                <ScalarProperty Name="Id_software" ColumnName="Id_software" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="About_custommers">
+            <EntityTypeMapping TypeName="Web_companyModel.About_custommers">
+              <MappingFragment StoreEntitySet="About_custommers">
+                <ScalarProperty Name="AC_email" ColumnName="AC_email" />
+                <ScalarProperty Name="AC_name" ColumnName="AC_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brand">
+            <EntityTypeMapping TypeName="Web_companyModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="Web_companyModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="C_note" ColumnName="C_note" />
+                <ScalarProperty Name="C_status" ColumnName="C_status" />
+                <ScalarProperty Name="C_name" ColumnName="C_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comment">
+            <EntityTypeMapping TypeName="Web_companyModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="Id_software" ColumnName="Id_software" />
+                <ScalarProperty Name="id_user_vote" ColumnName="id_user_vote" />
+                <ScalarProperty Name="Id_reply" ColumnName="Id_reply" />
+                <ScalarProperty Name="Id_post" ColumnName="Id_post" />
+                <ScalarProperty Name="Type_comment" ColumnName="Type_comment" />
+                <ScalarProperty Name="Vote" ColumnName="Vote" />
+                <ScalarProperty Name="felling" ColumnName="felling" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Noi_dung" ColumnName="Noi_dung" />
+                <ScalarProperty Name="Id_uer" ColumnName="Id_uer" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FechBack_Cus">
+            <EntityTypeMapping TypeName="Web_companyModel.FechBack_Cus">
+              <MappingFragment StoreEntitySet="FechBack_Cus">
+                <ScalarProperty Name="F_image" ColumnName="F_image" />
+                <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+                <ScalarProperty Name="F_email" ColumnName="F_email" />
+                <ScalarProperty Name="F_content" ColumnName="F_content" />
+                <ScalarProperty Name="F_name" ColumnName="F_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Information_company">
+            <EntityTypeMapping TypeName="Web_companyModel.Information_company">
+              <MappingFragment StoreEntitySet="Information_company">
+                <ScalarProperty Name="Best_Company" ColumnName="Best_Company" />
+                <ScalarProperty Name="Advertisement_QC" ColumnName="Advertisement_QC" />
+                <ScalarProperty Name="Notification_TB" ColumnName="Notification_TB" />
+                <ScalarProperty Name="Register" ColumnName="Register" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Addred" ColumnName="Addred" />
+                <ScalarProperty Name="Slogan" ColumnName="Slogan" />
+                <ScalarProperty Name="Viber" ColumnName="Viber" />
+                <ScalarProperty Name="Google" ColumnName="Google" />
+                <ScalarProperty Name="Youtube" ColumnName="Youtube" />
+                <ScalarProperty Name="Email_CPN" ColumnName="Email_CPN" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email_true" ColumnName="Email_true" />
+                <ScalarProperty Name="Bank_number" ColumnName="Bank_number" />
+                <ScalarProperty Name="Phone_hot" ColumnName="Phone_hot" />
+                <ScalarProperty Name="Name_CPN" ColumnName="Name_CPN" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Introduction">
+            <EntityTypeMapping TypeName="Web_companyModel.Introduction">
+              <MappingFragment StoreEntitySet="Introduction">
+                <ScalarProperty Name="Intro_status" ColumnName="Intro_status" />
+                <ScalarProperty Name="Intro_title" ColumnName="Intro_title" />
+                <ScalarProperty Name="Intro_link" ColumnName="Intro_link" />
+                <ScalarProperty Name="Intro_image" ColumnName="Intro_image" />
+                <ScalarProperty Name="Intro_desc" ColumnName="Intro_desc" />
+                <ScalarProperty Name="Intro_name" ColumnName="Intro_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Maketting">
+            <EntityTypeMapping TypeName="Web_companyModel.Maketting">
+              <MappingFragment StoreEntitySet="Maketting">
+                <ScalarProperty Name="M_image" ColumnName="M_image" />
+                <ScalarProperty Name="M_link" ColumnName="M_link" />
+                <ScalarProperty Name="M_title" ColumnName="M_title" />
+                <ScalarProperty Name="M_name" ColumnName="M_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partner_DT">
+            <EntityTypeMapping TypeName="Web_companyModel.Partner_DT">
+              <MappingFragment StoreEntitySet="Partner_DT">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="image_partner" ColumnName="image_partner" />
+                <ScalarProperty Name="Name_partner" ColumnName="Name_partner" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Post">
+            <EntityTypeMapping TypeName="Web_companyModel.Post">
+              <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="View_client" ColumnName="View_client" />
+                <ScalarProperty Name="Type_post" ColumnName="Type_post" />
+                <ScalarProperty Name="Time_up_post" ColumnName="Time_up_post" />
+                <ScalarProperty Name="Common_Pb" ColumnName="Common_Pb" />
+                <ScalarProperty Name="Prominence_Nb" ColumnName="Prominence_Nb" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id_brand" ColumnName="Id_brand" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Post_user">
+            <EntityTypeMapping TypeName="Web_companyModel.Post_user">
+              <MappingFragment StoreEntitySet="Post_user">
+                <ScalarProperty Name="Common" ColumnName="Common" />
+                <ScalarProperty Name="Type_post" ColumnName="Type_post" />
+                <ScalarProperty Name="Time_up" ColumnName="Time_up" />
+                <ScalarProperty Name="View_client" ColumnName="View_client" />
+                <ScalarProperty Name="Details" ColumnName="Details" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Id_brand" ColumnName="Id_brand" />
+                <ScalarProperty Name="Id_uer" ColumnName="Id_uer" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_system">
+            <EntityTypeMapping TypeName="Web_companyModel.Project_system">
+              <MappingFragment StoreEntitySet="Project_system">
+                <ScalarProperty Name="TheLoai_DuAn" ColumnName="TheLoai_DuAn" />
+                <ScalarProperty Name="Ghi_chu" ColumnName="Ghi_chu" />
+                <ScalarProperty Name="ChiTietDuAn" ColumnName="ChiTietDuAn" />
+                <ScalarProperty Name="Motangan" ColumnName="Motangan" />
+                <ScalarProperty Name="Hinhanhmota" ColumnName="Hinhanhmota" />
+                <ScalarProperty Name="Hinhanhchitiet" ColumnName="Hinhanhchitiet" />
+                <ScalarProperty Name="Thoigianhoanthanh" ColumnName="Thoigianhoanthanh" />
+                <ScalarProperty Name="Thoigiankhoicong" ColumnName="Thoigiankhoicong" />
+                <ScalarProperty Name="Diachi_DuAn" ColumnName="Diachi_DuAn" />
+                <ScalarProperty Name="Tongtien_DuAn" ColumnName="Tongtien_DuAn" />
+                <ScalarProperty Name="Ten_KySu" ColumnName="Ten_KySu" />
+                <ScalarProperty Name="Ten_DuAn" ColumnName="Ten_DuAn" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="Web_companyModel.Services">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="Services_note" ColumnName="Services_note" />
+                <ScalarProperty Name="Services_maketting" ColumnName="Services_maketting" />
+                <ScalarProperty Name="Services_status" ColumnName="Services_status" />
+                <ScalarProperty Name="Services_desc" ColumnName="Services_desc" />
+                <ScalarProperty Name="Services_image" ColumnName="Services_image" />
+                <ScalarProperty Name="Services_link" ColumnName="Services_link" />
+                <ScalarProperty Name="Services_title" ColumnName="Services_title" />
+                <ScalarProperty Name="Services_name" ColumnName="Services_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Slider">
+            <EntityTypeMapping TypeName="Web_companyModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="S_active" ColumnName="S_active" />
+                <ScalarProperty Name="S_image" ColumnName="S_image" />
+                <ScalarProperty Name="S_link" ColumnName="S_link" />
+                <ScalarProperty Name="S_description" ColumnName="S_description" />
+                <ScalarProperty Name="S_name" ColumnName="S_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SoftWare_Case">
+            <EntityTypeMapping TypeName="Web_companyModel.SoftWare_Case">
+              <MappingFragment StoreEntitySet="SoftWare_Case">
+                <ScalarProperty Name="Sw_author" ColumnName="Sw_author" />
+                <ScalarProperty Name="Sw_desc" ColumnName="Sw_desc" />
+                <ScalarProperty Name="Sw_note" ColumnName="Sw_note" />
+                <ScalarProperty Name="Sw_Status" ColumnName="Sw_Status" />
+                <ScalarProperty Name="Sw_link" ColumnName="Sw_link" />
+                <ScalarProperty Name="Sw_image" ColumnName="Sw_image" />
+                <ScalarProperty Name="Sw_name" ColumnName="Sw_name" />
+                <ScalarProperty Name="Sw_title" ColumnName="Sw_title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Uers">
+            <EntityTypeMapping TypeName="Web_companyModel.tbl_Uers">
+              <MappingFragment StoreEntitySet="tbl_Uers">
+                <ScalarProperty Name="folow" ColumnName="folow" />
+                <ScalarProperty Name="public_private" ColumnName="public_private" />
+                <ScalarProperty Name="type_uer" ColumnName="type_uer" />
+                <ScalarProperty Name="addred" ColumnName="addred" />
+                <ScalarProperty Name="reply" ColumnName="reply" />
+                <ScalarProperty Name="question" ColumnName="question" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="Run_status" ColumnName="Run_status" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Image_cus" ColumnName="Image_cus" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Register_Software_Client">
+            <EntityTypeMapping TypeName="Web_companyModel.tbl_Register_Software_Client">
+              <MappingFragment StoreEntitySet="tbl_Register_Software_Client">
+                <ScalarProperty Name="Option_time" ColumnName="Option_time" />
+                <ScalarProperty Name="Id_Sw" ColumnName="Id_Sw" />
+                <ScalarProperty Name="Option_sw" ColumnName="Option_sw" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Send_messenger" ColumnName="Send_messenger" />
+                <ScalarProperty Name="Name_Businet" ColumnName="Name_Businet" />
+                <ScalarProperty Name="Addred_Client" ColumnName="Addred_Client" />
+                <ScalarProperty Name="Email_CLient" ColumnName="Email_CLient" />
+                <ScalarProperty Name="Phone_Client" ColumnName="Phone_Client" />
+                <ScalarProperty Name="Name_Client" ColumnName="Name_Client" />
+                <ScalarProperty Name="Pass_login" ColumnName="Pass_login" />
+                <ScalarProperty Name="Name_login" ColumnName="Name_login" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
