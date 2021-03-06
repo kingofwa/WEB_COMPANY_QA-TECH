@@ -16,49 +16,7 @@
 <!-- TW case end -->
 
 <section id="tw-analysis" class="tw-analysis-area">
-    <div class="analysis-bg-pattern d-none d-md-inline-block">
-        <img class="wow fadeInUp" src="~/public/Client/images/check-seo/cloud.png" alt="">
-        <img class="wow fadeInUp" src="/public/Client/images/check-seo/cloud2.png" alt="">
-        <img class="wow fadeInUp" src="/public/Client/images/check-seo/announce.png" alt="">
-        <img class="wow fadeInUp" src="/public/Client/images/check-seo/chart.png" alt="">
-    </div>
-    <!-- End Analysis Pattern img -->
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8 text-center wow fadeInDown">
-                <h2 class="column-title">
-                    Mời đặt 
-                    <span class="text-white">Câu hỏi</span>
-                </h2>
-                <div class="analysis-form">
-                    <form class="form-vertical">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-4 col-md-12 no-padding">
-                                <div class="form-group tw-form-round-shape">
-                                    <input type="url" id="url" name="url" placeholder="Câu hỏi của bạn ?" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 no-padding">
-                                <div class="form-group tw-form-round-shape">
-                                    <input type="email" id="email" name="email" placeholder="Email liên hệ" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-12 no-padding">
-                                <div class="form-group">
-                                    <input type="submit" value="Gửi câu hỏi">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- End Form -->
-                </div>
-                <!-- End Analysis form -->
-            </div>
-            <!-- Col End -->
-        </div>
-        <!-- End Row -->
-    </div>
-    <!-- End container -->
+    @RenderPage("Question.cshtml")
 </section>
 <!-- End Analysis Section -->
 
@@ -210,7 +168,6 @@
                     <p>04. Đạt được mục tiêu</p>
                 </div>
             </div>
-            <div class="col-md-12 text-center"><a href="#" class="btn btn-primary tw-mt-80">Xem chi tiết</a></div>
         </div>
     </div>
 </section>

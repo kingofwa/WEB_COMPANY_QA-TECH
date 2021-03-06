@@ -255,6 +255,9 @@
     <Compile Include="Modal\FW\SoftWare_Case.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modal\FW\tbl_Question_client.cs">
+      <DependentUpon>Webcompany.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modal\FW\tbl_Register_Software_Client.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
@@ -13313,6 +13316,7 @@
       <DependentUpon>Webcompany.edmx</DependentUpon>
     </Content>
     <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\traloicauhoicuakhach.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -13329,6 +13333,7 @@
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="tempalate\Newsforder.html" />
+    <Content Include="tempalate\traloikhachhang.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -13370,6 +13375,7 @@
     <Content Include="Views\Register_Software\Choose.cshtml" />
     <Content Include="Views\Shared\Top_Header.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Home\Question.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

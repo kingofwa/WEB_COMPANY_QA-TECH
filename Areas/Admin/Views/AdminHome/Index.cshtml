@@ -110,7 +110,7 @@
         </div>
     </div>
 </div>
-
+<hr />
 
 <div class="waraper_home pt-2">
     <div class="col-12">
@@ -120,13 +120,22 @@
                     <div class="container-fluid">
                         <ul class="nav nav-tabs">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#home">Bình luận phần mềm</a>
+                                <a class="nav-link active" href="#home">
+                                    BÌNH LUẬN PHẦN MỀM
+                                    <span class="badge badge-warning">@ViewBag.danhsach_comment_phanmem</span>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#menu2">Bình luận Blog</a>
+                                <a class="nav-link" href="#menu2">
+                                    BÌNH LUẬN BLOG
+                                    <span class="badge badge-warning">@ViewBag.danhsach_comment_baiviet</span>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#menu1">Bài viết</a>
+                                <a class="nav-link" href="#menu1">
+                                    CHƯA TRẢ LỜI KHÁCH
+                                    <span class="badge badge-warning">@ViewBag.danhsach_cauhoicuakhachhang</span>
+                                </a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -134,9 +143,7 @@
                                 @RenderPage("duyetbinhluan_phanmem.cshtml")
                             </div>
                             <div id="menu1" class="tab-pane fade">
-
-                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
+                                @RenderPage("traloicauhoicuakhach.cshtml")
                             </div>
                             <div id="menu2" class="tab-pane fade">
                                 @RenderPage("duyetbinhluan_blog.cshtml")

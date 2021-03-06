@@ -71,5 +71,26 @@ namespace Web_congty.Controllers
             ViewData["list_con"] = list_con;
             return PartialView();
        }
+
+        public JsonResult Question_CLient(string question,string email)
+        {
+            var value = false;
+            try
+            {
+                var Question_client_now = new tbl_Question_client();
+                Question_client_now.Conten_question = question;
+                Question_client_now.Email_question = email;
+                Question_client_now.Status = 1;
+                Question_client_now.Time_question = DateTime.Now;
+                db.tbl_Question_client.Add(Question_client_now);
+                db.SaveChanges();
+                value = true;
+            }
+            catch
+            {
+                value = false;
+            }
+            return Json(value, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -226,6 +226,16 @@
           <Property Name="public_private" Type="int" />
           <Property Name="folow" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="tbl_Question_client">
+          <Key>
+            <PropertyRef Name="Id_question" />
+          </Key>
+          <Property Name="Id_question" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Conten_question" Type="nvarchar(max)" />
+          <Property Name="Email_question" Type="nvarchar" MaxLength="250" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Time_question" Type="datetime" />
+        </EntityType>
         <EntityType Name="tbl_Register_Software_Client">
           <Key>
             <PropertyRef Name="Id" />
@@ -278,6 +288,7 @@
           <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SoftWare_Case" EntityType="Self.SoftWare_Case" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Uers" EntityType="Self.tbl_Uers" Schema="dbo" Table="tbl.Uers" store:Type="Tables" />
+          <EntitySet Name="tbl_Question_client" EntityType="Self.tbl_Question_client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Register_Software_Client" EntityType="Self.tbl_Register_Software_Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Uers_Admin" EntityType="Self.tbl_Uers_Admin" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -309,6 +320,7 @@
           <EntitySet Name="Slider" EntityType="Web_companyModel.Slider" />
           <EntitySet Name="SoftWare_Case" EntityType="Web_companyModel.SoftWare_Case" />
           <EntitySet Name="tbl_Uers" EntityType="Web_companyModel.tbl_Uers" />
+          <EntitySet Name="tbl_Question_client" EntityType="Web_companyModel.tbl_Question_client" />
           <EntitySet Name="tbl_Register_Software_Client" EntityType="Web_companyModel.tbl_Register_Software_Client" />
           <EntitySet Name="tbl_Uers_Admin" EntityType="Web_companyModel.tbl_Uers_Admin" />
           </EntityContainer>
@@ -607,6 +619,16 @@
           <Property Name="type_uer" Type="Int32" />
           <Property Name="public_private" Type="Int32" />
           <Property Name="folow" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_Question_client">
+          <Key>
+            <PropertyRef Name="Id_question" />
+          </Key>
+          <Property Name="Id_question" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Conten_question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email_question" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Time_question" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="tbl_Register_Software_Client">
           <Key>
@@ -979,6 +1001,17 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Question_client">
+            <EntityTypeMapping TypeName="Web_companyModel.tbl_Question_client">
+              <MappingFragment StoreEntitySet="tbl_Question_client">
+                <ScalarProperty Name="Time_question" ColumnName="Time_question" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Email_question" ColumnName="Email_question" />
+                <ScalarProperty Name="Conten_question" ColumnName="Conten_question" />
+                <ScalarProperty Name="Id_question" ColumnName="Id_question" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -341,6 +341,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Question_client">
+      <EntityTypeMapping TypeName="Web_companyModel.tbl_Question_client">
+        <MappingFragment StoreEntitySet="tbl_Question_client">
+          <ScalarProperty Name="Time_question" ColumnName="Time_question" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Email_question" ColumnName="Email_question" />
+          <ScalarProperty Name="Conten_question" ColumnName="Conten_question" />
+          <ScalarProperty Name="Id_question" ColumnName="Id_question" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbl_Register_Software_Client">
       <EntityTypeMapping TypeName="Web_companyModel.tbl_Register_Software_Client">
         <MappingFragment StoreEntitySet="tbl_Register_Software_Client">

@@ -36,11 +36,11 @@
                                     <td>
                                         @if (@item.Status == false)
                                         {
-                                            <a id="color_status_@item.Id" class="badge badge-warning" onclick='(@item.Id)'>Duyệt bình luận</a>
+                                            <a id="binhluan_blog_color_status_@item.Id" class="badge badge-warning" onclick=Duyet_Binh_Luan_Blog(@item.Id)>Duyệt bình luận</a>
                                         }
                                         else
                                         {
-                                            <a id="color_status_@item.Id" class="badge badge-success" onclick='(@item.Id)'>Duyệt xong</a>
+                                            <a id="binhluan_blog_color_status_@item.Id" class="badge badge-success" onclick=Duyet_Binh_Luan_Blog(@item.Id)>Duyệt xong</a>
                                         }
                                     </td>
                                     <td>@item.Time.GetValueOrDefault().ToString("dd/MM/yyyy")</td>

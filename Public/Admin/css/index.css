@@ -80,3 +80,9 @@ tr.dungthang {
 tr.dungnam {
     background-color: #5695d8 !important;
 }
+
+span.badge.badge-warning {
+    position: absolute;
+    top: -8px;
+    font-size: 14px;
+}
