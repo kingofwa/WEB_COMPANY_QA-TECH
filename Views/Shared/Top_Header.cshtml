@@ -112,12 +112,12 @@
                     @if (Session["Taikhoan"] != null)
                     {
                         tbl_Uers tv = (tbl_Uers)Session["Taikhoan"];
-                        <a class="xinchao" href="/Profile_User/Profile/@tv.Id"><i class="fa fa-hand-peace-o"></i> @tv.name </a>
+                        <a class="xinchao" href="/thong-tin-ca-nhan-@tv.name-@tv.Id"><i class="fa fa-hand-peace-o"></i> @tv.name </a>
                         <a class="dangxuat" href="/Login/Dangxuat"><i class="fa fa-sign-out"></i> Đăng xuất</a>
                     }
                     else
                     {
-                        <a class="dangky" href="/Register/Dangky"><i class="fa fa-registered"></i> Đăng ký</a>
+                        <a class="dangky" href="/dang-ky-tai-khoan"><i class="fa fa-registered"></i> Đăng ký</a>
                         <a class="dangnhap" href="#" id="show_modal_login"><i class="fa fa-sign-in"></i> Đăng nhập</a>
                     }
                 </div>

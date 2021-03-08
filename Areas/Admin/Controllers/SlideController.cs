@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Web_congty.Areas.Admin.Controllers;
 using Web_congty.Modal.FW;
 
 namespace Web_congty.Areas.Admin.Views.AdminHome
 {
-    public class SlideController : Controller
+    public class SlideController : BaseController
     {
         Web_companyEntities db = new Web_companyEntities();
         // GET: Admin/Slide

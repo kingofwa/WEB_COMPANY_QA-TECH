@@ -18,10 +18,10 @@ namespace Web_congty.Controllers
         }
         public ActionResult Detals_News(int id)
         {
-            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
-            {
-                return RedirectToAction("Dangky", "Register");
-            }
+            //if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+            //{
+            //    return RedirectToAction("Dangky", "Register");
+            //}
             var list_data_news = db.Post.Where(x => x.Status == true && x.Id == id).ToList();
             ViewData["list_data_news"] = list_data_news;
             if (list_data_news.Any())
@@ -131,6 +131,11 @@ namespace Web_congty.Controllers
 
         public JsonResult Vote_up(int id)
         {
+            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+            {
+                var thongbao = "Mời đăng nhập để bình chọn";
+                return Json(thongbao, JsonRequestBehavior.AllowGet);
+            }
             var tv = (tbl_Uers)Session["Taikhoan"];
             var up_vote = db.Comment.Find(id);
             if (up_vote.id_user_vote == null)
@@ -178,6 +183,11 @@ namespace Web_congty.Controllers
         }
         public JsonResult Vote_down(int id)
         {
+            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+            {
+                var thongbao = "Mời đăng nhập để bình chọn";
+                return Json(thongbao, JsonRequestBehavior.AllowGet);
+            }
             var tv = (tbl_Uers)Session["Taikhoan"];
             var up_vote = db.Comment.Find(id);
             if (up_vote.id_user_vote == null)
@@ -226,6 +236,11 @@ namespace Web_congty.Controllers
 
         public JsonResult Reply_Comment(int id, string noidung, int id_post)
         {
+            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+            {
+                var thongbao = "Mời đăng nhập để trả lời bình luận";
+                return Json(thongbao, JsonRequestBehavior.AllowGet);
+            }
             var value = false;
             try
             {

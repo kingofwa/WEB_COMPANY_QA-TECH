@@ -7,7 +7,7 @@ using Web_congty.Modal.FW;
 
 namespace Web_congty.Areas.Admin.Controllers
 {
-    public class Project_SystemController : Controller
+    public class Project_SystemController : BaseController
     {
         Web_companyEntities db = new Web_companyEntities();
         // GET: Admin/Project_System

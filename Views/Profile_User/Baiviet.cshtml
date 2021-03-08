@@ -32,42 +32,8 @@
                         <div class="card ">
                             <div class="card-header collapsed" role="tab" id="headingOne" data-toggle="collapse" data-parent="#accordion" href="#collapseOne_@item_baiviet.Id" aria-expanded="false" aria-controls="collapseOne">
                                 <h4>
-                                    @{
-                                        var ngayhientai = DateTime.Now.Day;
-                                        var thanghientai = DateTime.Now.Month;
-                                        var namhientai = DateTime.Now.Year;
-                                        var namdangbai = "";
-                                        var thangdangbai = "";
-                                        for (var j = 0; j < baivietcuaban.Count(); j++)
-                                        {
-                                            var ngaydangtruocdo = Convert.ToInt32(ViewBag.daynow[j]);
-                                            var thangdangtruocdo = Convert.ToInt32(ViewBag.monthnow[j]);
-                                            var namdangtruocdo = Convert.ToInt32(ViewBag.yearnow[j]);
-
-                                            var ngaydang = Convert.ToInt32(item_baiviet.Time_up.GetValueOrDefault().Day);
-                                            var thangdang = Convert.ToInt32(item_baiviet.Time_up.GetValueOrDefault().Month);
-                                            var namdang = Convert.ToInt32(item_baiviet.Time_up.GetValueOrDefault().Year);
-                                            var ngaydangtruocdo2 = ngayhientai - ngaydang;
-                                            var thangdangtruocdo2 = thanghientai - thangdang;
-                                            var namdangtruocdo2 = namhientai - namdang;
-
-                                            if (namdangtruocdo == namdangtruocdo2 && thangdangtruocdo == thangdangtruocdo2 && ngaydangtruocdo == ngaydangtruocdo2)
-                                            {
-                                                var nam = namdangtruocdo2;
-                                                if(nam > 0)
-                                                {
-                                                    namdangbai = nam + " " + "năm";
-                                                }
-                                                var thang = thangdangtruocdo2;
-                                                if (thang > 0)
-                                                {
-                                                    thangdangbai = thang + "tháng";
-                                                }
-                                                <small><b>@namdangbai @thangdangbai @ViewBag.daynow[j]</b> ngày trước</small>
-                                            }
-                                        }
-                                    }
                                     <a>@item_baiviet.Name <i class="faq-indicator fa fa-plus"></i></a>
+                                    <small>( đăng lúc <span>@item_baiviet.Time_up.GetValueOrDefault().ToString("dd/MM/yyyy")</span>)</small>
                                 </h4>
                             </div>
                             <div id="collapseOne_@item_baiviet.Id" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne" style="">
@@ -103,7 +69,7 @@
             foreach (var item_folow in list_folow_me_____)
             {
                 <div class="col-md-4 col-6">
-                    <a href="/Profile_User/Profile/@item_folow.id_folow">
+                    <a href="/thong-tin-ca-nhan-@item_folow.name_folow-@item_folow.id_folow">
                         <div class="card">
                             @if (item_folow.Image_folow != null)
                             {

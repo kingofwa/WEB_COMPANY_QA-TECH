@@ -44,28 +44,28 @@ namespace Web_congty.Controllers
             if (baivietcuaban.Count != 0)
             {
                 ViewData["baivietcuaban"] = baivietcuaban;
-                //hiển thị số ngày đăng bài trước đó
-                var ngaydangtruocdo = "";
-                var thangdangtruocdo = "";
-                var namdangtruocdo = "";
-                var ngayhientai = DateTime.Now.Day;
-                var thanghientai = DateTime.Now.Month;
-                var namhientai = DateTime.Now.Year;
-                for (var j = 0; j < baivietcuaban.Count(); j++)
-                {
-                    var a = baivietcuaban[j].Time_up.GetValueOrDefault().Day;
-                    ngaydangtruocdo += ngayhientai - a + "|";
-                    var b = baivietcuaban[j].Time_up.GetValueOrDefault().Month;
-                    thangdangtruocdo += thanghientai - b + "|";
-                    var c = baivietcuaban[j].Time_up.GetValueOrDefault().Year;
-                    namdangtruocdo += namhientai - c + "|";
-                }
-                var ngaydangtruocdo_splip = ngaydangtruocdo.Split('|');
-                var thangdangtruocdo_splip = thangdangtruocdo.Split('|');
-                var namdangtruocdo_splip = namdangtruocdo.Split('|');
-                ViewBag.daynow = ngaydangtruocdo_splip;
-                ViewBag.monthnow = thangdangtruocdo_splip;
-                ViewBag.yearnow = namdangtruocdo_splip;
+                ////hiển thị số ngày đăng bài trước đó
+                //var ngaydangtruocdo = "";
+                //var thangdangtruocdo = "";
+                //var namdangtruocdo = "";
+                //var ngayhientai = DateTime.Now.Day;
+                //var thanghientai = DateTime.Now.Month;
+                //var namhientai = DateTime.Now.Year;
+                //for (var j = 0; j < baivietcuaban.Count(); j++)
+                //{
+                //    var a = baivietcuaban[j].Time_up.GetValueOrDefault().Day;
+                //    ngaydangtruocdo += ngayhientai - a + "|";
+                //    var b = baivietcuaban[j].Time_up.GetValueOrDefault().Month;
+                //    thangdangtruocdo += thanghientai - b + "|";
+                //    var c = baivietcuaban[j].Time_up.GetValueOrDefault().Year;
+                //    namdangtruocdo += namhientai - c + "|";
+                //}
+                //var ngaydangtruocdo_splip = ngaydangtruocdo.Split('|');
+                //var thangdangtruocdo_splip = thangdangtruocdo.Split('|');
+                //var namdangtruocdo_splip = namdangtruocdo.Split('|');
+                //ViewBag.daynow = ngaydangtruocdo_splip;
+                //ViewBag.monthnow = thangdangtruocdo_splip;
+                //ViewBag.yearnow = namdangtruocdo_splip;
             }
             else
             {

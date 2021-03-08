@@ -65,10 +65,11 @@ function VoteUP(id) {
         url: "/Details_SW_/Vote_up",
         data: data,
         success: function (result) {
-            if (result != null) {
+            if (result == "Mời đăng nhập để bình chọn") {
                 toastr.warning(result)
                 $("#myModal_Login").modal("show");
-                $("#neuchuacotaikhoan").append('Nếu chưa có tài khoản <a href="/Register/Dangky"><b>Vào đây<b/> !</a>')
+                $("#neuchuacotaikhoan").html("");
+                $("#neuchuacotaikhoan").append('Nếu chưa có tài khoản <a href="/dang-ky-tai-khoan"><b>Vào đây<b/> !</a>')
             } else {
                 if (result == parseInt(number_vote)) {
                     toastr.warning("Bạn chỉ được bình chọn một lần !")
@@ -97,9 +98,10 @@ function VoteDOWN(id) {
         url: "/Details_SW_/Vote_down",
         data: data,
         success: function (result) {
-            if (result != null) {
+            if (result == "Mời đăng nhập để bình chọn") {
                 toastr.warning(result)
                 $("#myModal_Login").modal("show");
+                $("#neuchuacotaikhoan").html("");
                 $("#neuchuacotaikhoan").append('Nếu chưa có tài khoản <a href="/Register/Dangky"><b>Vào đây<b/> !</a>')
             } else {
                 if (result == parseInt(number_vote)) {

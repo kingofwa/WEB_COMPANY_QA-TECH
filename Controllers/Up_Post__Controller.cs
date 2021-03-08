@@ -18,7 +18,7 @@ namespace Web_congty.Controllers
         }
 
         [HttpPost , ValidateInput(false)]
-        public ActionResult Up_Post__(Post_user post , HttpPostedFileBase image)
+        public ActionResult Up_Post__(Post_user post)// , HttpPostedFileBase image
         {
             if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
             {
@@ -30,13 +30,13 @@ namespace Web_congty.Controllers
             ViewBag.user = a.Id;
             if(a != null)
             {
-                if (image != null)
-                {
-                    string file_name = System.IO.Path.GetFileName(image.FileName);
-                    string Url_image = Server.MapPath("~/Image/"+image);
-                    image.SaveAs(Url_image);
-                    post.Image = "/Image/"+file_name;
-                }
+                //if (image != null)
+                //{
+                //    string file_name = System.IO.Path.GetFileName(image.FileName);
+                //    string Url_image = Server.MapPath("~/Image/"+image);
+                //    image.SaveAs(Url_image);
+                //    post.Image = "/Image/"+file_name;
+                //}
                 if (ModelState.IsValid)
                 {
                     post.Time_up = DateTime.Now;

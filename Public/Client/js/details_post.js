@@ -10,11 +10,18 @@
         url: "/Blog_details/Vote_up",
         data: data,
         success: function (result) {
-            if (result == parseInt(number_vote)) {
-                toastr.warning("Bạn chỉ được bình chọn một lần !")
+            if (result == "Mời đăng nhập để bình chọn") {
+                toastr.warning(result)
+                $("#myModal_Login").modal("show");
+                $("#neuchuacotaikhoan").html("");
+                $("#neuchuacotaikhoan").append('Nếu chưa có tài khoản <a href="/dang-ky-tai-khoan"><b>Vào đây<b/> !</a>')
             } else {
-                $("#number_vote_" + id).html(result)
-                toastr.success("Cảm ơn bạn đã bình chọn bình luận hay nhất !")
+                if (result == parseInt(number_vote)) {
+                    toastr.warning("Bạn chỉ được bình chọn một lần !")
+                } else {
+                    $("#number_vote_" + id).html(result)
+                    toastr.success("Cảm ơn bạn đã bình chọn bình luận hay nhất !")
+                }
             }
         },
         error: function () {
@@ -36,11 +43,18 @@ function VoteDOWN(id) {
         url: "/Blog_details/Vote_down",
         data: data,
         success: function (result) {
-            if (result == parseInt(number_vote)) {
-                toastr.warning("Bạn chỉ được bình chọn một lần !")
+            if (result == "Mời đăng nhập để bình chọn") {
+                toastr.warning(result)
+                $("#myModal_Login").modal("show");
+                $("#neuchuacotaikhoan").html("");
+                $("#neuchuacotaikhoan").append('Nếu chưa có tài khoản <a href="/dang-ky-tai-khoan"><b>Vào đây<b/> !</a>')
             } else {
-                $("#number_vote_" + id).html(result)
-                toastr.success("Cảm ơn bạn đã bình chọn bình luận hay nhất !")
+                if (result == parseInt(number_vote)) {
+                    toastr.warning("Bạn chỉ được bình chọn một lần !")
+                } else {
+                    $("#number_vote_" + id).html(result)
+                    toastr.success("Cảm ơn bạn đã bình chọn bình luận hay nhất !")
+                }
             }
         },
         error: function () {
@@ -69,7 +83,12 @@ function Send_comment(id) {
             url: "/Blog_details/Reply_Comment",
             data: data,
             success: function (result) {
-                if (result) {
+                if (result == "Mời đăng nhập để trả lời bình luận") {
+                    toastr.warning(result)
+                    $("#myModal_Login").modal("show");
+                    $("#neuchuacotaikhoan").html("");
+                    $("#neuchuacotaikhoan").append('Nếu chưa có tài khoản <a href="/dang-ky-tai-khoan"><b>Vào đây<b/> !</a>')
+                } else {
                     window.location.reload();
                 }
             },

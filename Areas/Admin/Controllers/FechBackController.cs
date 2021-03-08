@@ -7,7 +7,7 @@ using Web_congty.Modal.FW;
 
 namespace Web_congty.Areas.Admin.Controllers
 {
-    public class FechBackController : Controller
+    public class FechBackController : BaseController
     {
         // GET: Admin/FechBack
         Web_companyEntities db = new Web_companyEntities();

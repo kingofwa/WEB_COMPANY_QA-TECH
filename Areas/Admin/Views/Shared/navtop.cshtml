@@ -9,11 +9,11 @@
     <ul class="navbar-nav ml-auto">
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
-            <a class="nav-link" data-toggle="dropdown" href="#">
-                <small><b>Tài khoản</b></small> <i class="far fa-user"></i>
-            </a>
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <small><b>@Session["Taikhoan"].ToString()</b></small> <i class="far fa-user"></i>
+                </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <a href="#" class="dropdown-item">
+                <a href="@Url.Action("LogOut", "Admin_login")" class="dropdown-item">
                     Đăng xuất
                     <span class="float-right text-muted text-sm"><i class="fas fa-sign-out-alt"></i></span>
                 </a>

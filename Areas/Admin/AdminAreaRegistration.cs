@@ -17,8 +17,9 @@ namespace Web_congty.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index",Controller="AdminHome", id = UrlParameter.Optional }
+                new { action = "Login", Controller= "Admin_login", id = UrlParameter.Optional }
             );
+           
         }
     }
 }

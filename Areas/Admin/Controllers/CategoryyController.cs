@@ -7,7 +7,7 @@ using Web_congty.Modal.FW;
 
 namespace Web_congty.Areas.Admin.Controllers
 {
-    public class CategoryyController : Controller
+    public class CategoryyController : BaseController
     {
         // GET: Admin/Categoryy
         Web_companyEntities db = new Web_companyEntities();

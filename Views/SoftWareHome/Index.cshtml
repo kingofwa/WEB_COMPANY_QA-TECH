@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "SoftWare";
+    ViewBag.Title = "Phần mềm ";
     var list_softw = ViewData["list_softw"] as List<Web_congty.Modal.FW.SoftWare_Case>;
 }
 
@@ -72,9 +72,8 @@
                                     color = "bg-violet";
                                     break;
                             }
-
                             <div class="cases-img  cases-bg @color">
-                                <a href="/chi-tiet-phan-mem/@item.Id">
+                                <a href="/chi-tiet-phan-mem-@item.Sw_title-@item.Sw_name-@item.Id">
                                     <img src="@item.Sw_image" alt="" class="img-fluid">
                                     <div class="p-3">
                                         <h3>@item.Sw_name</h3>

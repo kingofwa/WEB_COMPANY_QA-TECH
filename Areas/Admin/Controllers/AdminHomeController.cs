@@ -8,7 +8,7 @@ using Web_congty.Modal.FW;
 
 namespace Web_congty.Areas.Admin.Controllers
 {
-    public class AdminHomeController : Controller
+    public class AdminHomeController : BaseController
     {
         Web_companyEntities db = new Web_companyEntities();
         // GET: Admin/Home
@@ -26,8 +26,8 @@ namespace Web_congty.Areas.Admin.Controllers
             var list_question = db.tbl_Question_client.Where(x => x.Status == 1).ToList();
             ViewData["list_question"] = list_question;
             ViewBag.danhsach_cauhoicuakhachhang = list_question.Count();
-            ViewBag.danhsach_comment_phanmem = list_comment_phanmem.Count();
-            ViewBag.danhsach_comment_baiviet = list_comment_baiviet.Count();
+            ViewBag.danhsach_comment_phanmem = list_comment_phanmem.Where(x=>x.Status == false).Count();
+            ViewBag.danhsach_comment_baiviet = list_comment_baiviet.Where(x => x.Status == false).Count();
             return View();
         }
 

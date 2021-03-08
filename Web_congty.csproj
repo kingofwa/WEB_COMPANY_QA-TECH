@@ -151,6 +151,8 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Admin_loginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseControllerController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryyController.cs" />
     <Compile Include="Areas\Admin\Controllers\FechBackController.cs" />
@@ -162,6 +164,8 @@
     <Compile Include="Areas\Admin\Controllers\ServiceController.cs" />
     <Compile Include="Areas\Admin\Controllers\SlideController.cs" />
     <Compile Include="Areas\Admin\Controllers\SoftWareController.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\Because_chooseController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
@@ -186,6 +190,7 @@
     <Compile Include="Modal\FW\About_custommers.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modal\FW\AccountModel.cs" />
     <Compile Include="Modal\FW\Brand.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
@@ -204,6 +209,7 @@
     <Compile Include="Modal\FW\Introduction.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modal\FW\LoginModel.cs" />
     <Compile Include="Modal\FW\MailHelper.cs" />
     <Compile Include="Modal\FW\Binhlan_phanmem_Result.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
@@ -267,6 +273,7 @@
     <Compile Include="Modal\FW\tbl_Uers_Admin.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modal\FW\UserDao.cs" />
     <Compile Include="Modal\FW\View_model\Comment_Most.cs" />
     <Compile Include="Modal\FW\View_model\NextOrLast_News.cs" />
     <Compile Include="Modal\FW\View_model\ProjectNextOrLast.cs" />
@@ -13317,6 +13324,7 @@
     </Content>
     <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\traloicauhoicuakhach.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin_login\Login.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -13381,6 +13389,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Image\" />
+    <Folder Include="Areas\Admin\Views\BaseController\" />
     <Folder Include="Image\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Search_Post\" />

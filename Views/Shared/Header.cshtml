@@ -6,7 +6,7 @@
 <div class="tw-head">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light ">
-            <a class="navbar-brand tw-nav-brand" href="/Home/index">
+            <a class="navbar-brand tw-nav-brand" href="/Cong-ty-co-phan-cong-nghe-va-thiet-bi-quoc-anh">
                 <img class="Logo" src="" alt="Quocanh">
             </a>
             <!-- End of Navbar Brand -->
@@ -38,7 +38,7 @@
                                                 </li>
                                                 @foreach (var item_danhmuc in list_con.Where(y => y.id_categories == item.Id).ToList())
                                                 {
-                                                    <li><a href="/ListOfBlog/Index/@item_danhmuc.Id">@item_danhmuc.Name</a></li>
+                                                    <li><a href="/danh-muc-@item.C_name-@item_danhmuc.Name-@item_danhmuc.Id">@item_danhmuc.Name</a></li>
                                                 }
                                             </ul>
                                         </div>
@@ -51,7 +51,7 @@
                     <li class="nav-item"><a class="nav-link" href="/Phan-mem-cong-ty-co-phan-cong-nghe-va-thiet-bi-quoc-anh">Phần mềm</a></li>
                     <li class="nav-item"><a class="nav-link" href="/Danh-sach-du-an-ky-thuat-cty-quoc-anh">Kỹ thuật</a></li>
                     <li class="nav-item"><a class="nav-link" href="/tin-tuc">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/ho-tro-giai-dap-thac-mac">Hỗ trợ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/ve-chung-toi-qua-trinh-hinh-thanh-va-phat-trien-html">Về chúng tôi</a></li>
                 </ul>
                 <!-- End Navbar Nav -->
             </div>
