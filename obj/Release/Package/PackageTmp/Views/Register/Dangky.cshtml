@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Dangky";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc
+@using Web_congty.Modal.FW
+@model tbl_Uers
+
+<div id="banner-area" class="banner-area" style="background-image:url(/public/Client/images/banner/banner5.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="banner-heading">
+                    @{
+                        if (Session["Taikhoan"] != null)
+                        {
+                            <h1 class="banner-title">Đăng ký</h1>
+                        }
+                        else
+                        {
+                            <h6 class="banner-title" style="font-size: 40px;">Đăng ký tài khoản</h6>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner area end -->
+<section id="main-container" class="main-container">
+    <div class="container">
+        @{
+            if (@ViewBag.thongbao != null)
+            {
+                <div class="alert alert-warning alert-dismissible fade show" role="alert" id="success-alert">
+                    <strong><b class="text-danger">@ViewBag.thongbao</b> !!!</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+        }
+        <div class="row">
+            <div class="col-md-8">
+                <div class="tw-about-bin">
+                    <h2 class="column-title">Đăng ký tài khoản</h2>
+                    <span class="animate-border tw-mb-40 tw-mt-20"></span>
+                    <div class="comments-form mt-3">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.name, new { @class = "form-control", placeholder = "Tên tài khoản" })
+                                        @Html.ValidationMessageFor(model => model.name)
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.email, new { @class = "form-control", placeholder = "Email của bạn" })
+                                        @Html.ValidationMessageFor(model => model.email)
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.password, new { @class = "form-control", placeholder = "Mật khẩu", Type = "password" })
+                                        @Html.ValidationMessageFor(model => model.password)
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.Password("password2", "", new { @class = "form-control", placeholder = "Nhập lại mật khẩu" })
+                                        @*<input class="form-control" onchange="KiemTra_matkhau()" placeholder="Nhập lại mật khẩu" id="" type="password">*@
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.phone, new { @class = "form-control", placeholder = "Số điện thoại" })
+                                        @Html.ValidationMessageFor(model => model.phone)
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBox("addred", "", new { @class = "form-control", placeholder = "Địa chỉ" })
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.DropDownList("question")
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        @Html.TextBoxFor(model => model.reply, new { @class = "form-control", placeholder = "Câu trả lời" })
+                                        @Html.ValidationMessageFor(model => model.reply)
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Ảnh đại diện</label>
+                                    <div class="form-group">
+                                        <input class="form-control" id="Image_cus" type="file">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    @Html.Captcha(7)
+                                </div>
+                            </div>
+                            <div class="clearfix text-right">
+                                <button class="btn btn-primary" type="submit">Đăng ký</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 align-self-md-center">
+                @*<img src="/public/client/images/about/images.jpg" alt="" class="img-fluid">*@
+                <img src="~/Public/Client/images/dangkyphanmem.jpg"class="img-fluid" />
+            </div>
+        </div>
+    </div>
+    
+</section>
+<!-- Main container end -->

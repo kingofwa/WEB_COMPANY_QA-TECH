@@ -92,5 +92,35 @@ namespace Web_congty.Controllers
             }
             return Json(value, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult Register_revice_news_client(string email)
+        {
+            var value = false;
+            try
+            {
+               var list_email_register = db.tbl_KH_Register_Receive_News.ToList();
+                for(var i = 0; i < list_email_register.Count; i++)
+                {
+                    string email_register = list_email_register[i].Email_KH;
+                    if (email_register == email)
+                    {
+                        var thongbao = "Email" +" "+ email +" "+ "đã đăng ký nhận tin";
+                        var data = new { thongbao = thongbao };
+                        return Json(data, JsonRequestBehavior.AllowGet);
+                    }
+                }
+                var Email_register__ = new tbl_KH_Register_Receive_News();
+                Email_register__.Email_KH = email;
+                Email_register__.Time_KH = DateTime.Now;
+                db.tbl_KH_Register_Receive_News.Add(Email_register__);
+                db.SaveChanges();
+                value = true;
+            }
+            catch
+            {
+                value = false;
+            }
+            return Json(value, JsonRequestBehavior.AllowGet);
+        }
     }
 }

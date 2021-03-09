@@ -1,0 +1,49 @@
+﻿
+
+<div class="modal fade" id="Modal_services">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-cyan">
+                <h5 class="card-title text-white  text-uppercase">Thông tin</h5>
+                <span class="text-danger" data-dismiss="modal" aria-label="Close" aria-hidden="true"><i class="fa fa-times"></i></span>
+            </div>
+            <div class="QA_modal-body">
+                <form id="QA_admin_Modal_work_form_slide" class="row">
+                    <input type="hidden" id="Id_service" value="0">
+                    <div class="form-group col-12">
+                        <label for="">Tên <code>*</code></label>
+                        <input type="text" id="Services_name" class="form-control">
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="">Tiêu đề <code>*</code></label>
+                        <input type="text" id="Services_title" class="form-control">
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="">Link<code>*</code></label>
+                        <input type="text" id="Services_link" class="form-control">
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="">Chi tiết <code>*</code></label>
+                        <input type="text" id="Services_desc" class="form-control">
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="">Ghi chú <code>*</code></label>
+                        <input type="text" id="Services_note" class="form-control">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="">Hình</label>
+                        <p><a class="btn btn-primary btn-sm d-block" onclick="BrowseServerService()">Chọn ảnh</a></p>
+                        <input type="hidden" id="Services_image" />
+                        <p id="show_image_service"></p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-room justify-content-between d-inline-block black">
+                <button type="submit" id="Save_service" class="btn btn-xs btn-primary float-right mt-2 m-2"><i class="fa fa-save"></i> Lưu</button>
+                <button class="btn btn-xs btn-danger float-right mt-2 m-2" data-dismiss="modal"><i class="fa fa-times"></i> Hủy</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

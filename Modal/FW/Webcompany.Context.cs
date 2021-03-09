@@ -43,6 +43,7 @@ namespace Web_congty.Modal.FW
         public virtual DbSet<Slider> Slider { get; set; }
         public virtual DbSet<SoftWare_Case> SoftWare_Case { get; set; }
         public virtual DbSet<tbl_Uers> tbl_Uers { get; set; }
+        public virtual DbSet<tbl_KH_Register_Receive_News> tbl_KH_Register_Receive_News { get; set; }
         public virtual DbSet<tbl_Question_client> tbl_Question_client { get; set; }
         public virtual DbSet<tbl_Register_Software_Client> tbl_Register_Software_Client { get; set; }
         public virtual DbSet<tbl_Uers_Admin> tbl_Uers_Admin { get; set; }

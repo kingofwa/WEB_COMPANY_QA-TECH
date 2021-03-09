@@ -1,0 +1,110 @@
+﻿
+@{
+    var list_post = ViewData["list_post"] as List<Web_congty.Modal.FW.Post>;
+}
+@section Scripts{
+    <script src="~/Public/Admin/js/post.js"></script>
+    <script src="~/Public/Admin/plugins/ckfinder/ckfinder.js"></script>
+    <script src="~/Public/Admin/plugins/ckeditor4-major/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('Details')
+    </script>
+}
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <div class="menu-crud float-lg-right mt-2">
+                    <ul>
+                        <li class="d-inline-block mr-2">
+                            <a id="Modal_post" class="btn btn-xs btn-success "><i class="fas fa-plus mr-1"></i> Thêm</a>
+                        </li>
+                        <li class="d-inline-block mr-2">
+                            <a class="btn btn-xs btn-warning text-white disabled" id="edit_post"><i class="fas fa-user-edit mr-1"></i> Sữa</a>
+                        </li>
+                        <li class="d-inline-block">
+                            <a class="btn btn-xs btn-danger text-white disabled" id="delete_post"><i class="fas fa-trash-alt mr-1"></i> Xóa</a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+    <div class="col-md-12">
+        <div class="content-category">
+            <table class="table text-center table-bordered table-hover" id="myTable">
+                <thead>
+                    <tr>
+                        <th style="width:5%;">#</th>
+                        <th>Tên bài viết</th>
+                        <th>Mô tả</th>
+                        <th>Tác giả</th>
+                        <th>Status</th>
+                        <th>Nỗi bật</th>
+                        <th>Phổ biến</th>
+                        <th>Video/image</th>
+                    </tr>
+                </thead>
+                <tbody id="show-body">
+                    @{
+                        foreach (var item in list_post)
+                        {
+                            <tr id="row_@item.Id">
+                                <td>
+                                    <input type="radio" name="radiocheck" class="activecheckedit" id="typehide_@item.Id" value="@item.Id" />
+                                </td>
+                                <td> @item.Name</td>
+                                <td>@item.Title</td>
+                                <td>@item.Author</td>
+                                <td>
+                                    @if (@item.Status == true)
+                                    {
+                                        <a id="color_status_@item.Id" class="btn btn-xs btn-success" onclick='Post(@item.Id)'>Kích hoạt</a>
+                                    }
+                                    else
+                                    {
+                                        <a id="color_status_@item.Id" class="btn btn-xs btn-danger" onclick='Post(@item.Id)'>Khóa</a>
+                                    }
+                                </td>
+                                <td>
+                                    @if (@item.Prominence_Nb == true)
+                                    {
+                                        <a id="color_status_nb_@item.Id" class="btn btn-xs btn-success" onclick='Save_Prominence(@item.Id)'>Kích hoạt</a>
+                                    }
+                                    else
+                                    {
+                                        <a id="color_status_nb_@item.Id" class="btn btn-xs btn-danger" onclick='Save_Prominence(@item.Id)'>Khóa</a>
+                                    }
+                                </td>
+                                <td>
+                                    @if (@item.Common_Pb == true)
+                                    {
+                                        <a id="color_status_pb_@item.Id" class="btn btn-xs btn-success" onclick='Save_Common(@item.Id)'>Kích hoạt</a>
+                                    }
+                                    else
+                                    {
+                                        <a id="color_status_pb_@item.Id" class="btn btn-xs btn-danger" onclick='Save_Common(@item.Id)'>Khóa</a>
+                                    }
+                                </td>
+                                <td>
+                                    @if (@item.Type_post == true)
+                                    {
+                                        <a id="color_status_type_@item.Id" class="btn btn-xs btn-success" onclick='Save_Type_post(@item.Id)'>Ảnh</a>
+                                    }
+                                    else
+                                    {
+                                        <a id="color_status_type_@item.Id" class="btn btn-xs btn-primary" onclick='Save_Type_post(@item.Id)'>Video</a>
+                                    }
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div><!-- het col-md-12 category -->
+
+
+</div>
+@RenderPage("modal/add_post.cshtml")

@@ -40,7 +40,7 @@ namespace Web_congty
            );
             //Vì sao lại chọn chúng tôi
             routes.MapRoute(
-                url: "vi-sao-lai-nen-chon-san-pham-cua-chung-toi",
+                url: "vi-sao-lai-nen-chon-san-pham-cua-chung-toi-{nameintro}",
                 name: "vi sao nen chọn chúng tôi",
                 defaults: new { controller = "Because_choose", action = "BecauChoose" }
             ); 

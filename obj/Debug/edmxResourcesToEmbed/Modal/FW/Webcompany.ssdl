@@ -221,6 +221,14 @@
     <Property Name="public_private" Type="int" />
     <Property Name="folow" Type="varchar(max)" />
   </EntityType>
+  <EntityType Name="tbl_KH_Register_Receive_News">
+    <Key>
+      <PropertyRef Name="Id_KH" />
+    </Key>
+    <Property Name="Id_KH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email_KH" Type="nvarchar" MaxLength="250" />
+    <Property Name="Time_KH" Type="datetime" />
+  </EntityType>
   <EntityType Name="tbl_Question_client">
     <Key>
       <PropertyRef Name="Id_question" />
@@ -283,6 +291,7 @@
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SoftWare_Case" EntityType="Self.SoftWare_Case" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Uers" EntityType="Self.tbl_Uers" Schema="dbo" Table="tbl.Uers" store:Type="Tables" />
+    <EntitySet Name="tbl_KH_Register_Receive_News" EntityType="Self.tbl_KH_Register_Receive_News" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Question_client" EntityType="Self.tbl_Question_client" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Register_Software_Client" EntityType="Self.tbl_Register_Software_Client" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Uers_Admin" EntityType="Self.tbl_Uers_Admin" Schema="dbo" store:Type="Tables" />

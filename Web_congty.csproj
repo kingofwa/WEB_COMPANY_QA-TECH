@@ -261,6 +261,9 @@
     <Compile Include="Modal\FW\SoftWare_Case.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modal\FW\tbl_KH_Register_Receive_News.cs">
+      <DependentUpon>Webcompany.tt</DependentUpon>
+    </Compile>
     <Compile Include="Modal\FW\tbl_Question_client.cs">
       <DependentUpon>Webcompany.tt</DependentUpon>
     </Compile>
@@ -11985,6 +11988,7 @@
     <Content Include="Public\Client\images\testimonial\testimonialbg1.jpg" />
     <Content Include="Public\Client\images\testimonial\testimonial_white.jpg" />
     <Content Include="Public\Client\js\bootstrap.min.js" />
+    <Content Include="Public\Client\js\dangkynhanbaiviet.js" />
     <Content Include="Public\Client\js\details_post.js" />
     <Content Include="Public\Client\js\details_sw.js" />
     <Content Include="Public\Client\js\easy-pie-chart.js" />
@@ -11994,6 +11998,7 @@
     <Content Include="Public\Client\js\jquery.counterup.min.js" />
     <Content Include="Public\Client\js\jquery.magnific.popup.js" />
     <Content Include="Public\Client\js\main.js" />
+    <Content Include="Public\Client\js\Map_vechungtoi.js" />
     <Content Include="Public\Client\js\owl-carousel.2.3.0.min.js" />
     <Content Include="Public\Client\js\popper.min.js" />
     <Content Include="Public\Client\js\register.js" />
@@ -13392,6 +13397,7 @@
     <Folder Include="Areas\Admin\Views\BaseController\" />
     <Folder Include="Image\" />
     <Folder Include="Models\" />
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\Search_Post\" />
   </ItemGroup>
   <ItemGroup>

@@ -21,9 +21,10 @@
         <EntityTypeShape EntityType="Web_companyModel.Slider" Width="1.5" PointX="10.75" PointY="0.75" />
         <EntityTypeShape EntityType="Web_companyModel.SoftWare_Case" Width="1.5" PointX="10.75" PointY="3.75" />
         <EntityTypeShape EntityType="Web_companyModel.tbl_Uers" Width="1.5" PointX="4.75" PointY="10.75" />
-        <EntityTypeShape EntityType="Web_companyModel.tbl_Question_client" Width="1.5" PointX="6.75" PointY="10.75" />
-        <EntityTypeShape EntityType="Web_companyModel.tbl_Register_Software_Client" Width="1.5" PointX="10.75" PointY="7.75" />
-        <EntityTypeShape EntityType="Web_companyModel.tbl_Uers_Admin" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Web_companyModel.tbl_KH_Register_Receive_News" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Web_companyModel.tbl_Question_client" Width="1.5" PointX="10.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Web_companyModel.tbl_Register_Software_Client" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Web_companyModel.tbl_Uers_Admin" Width="1.5" PointX="10.75" PointY="10.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

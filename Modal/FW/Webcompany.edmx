@@ -226,6 +226,14 @@
           <Property Name="public_private" Type="int" />
           <Property Name="folow" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="tbl_KH_Register_Receive_News">
+          <Key>
+            <PropertyRef Name="Id_KH" />
+          </Key>
+          <Property Name="Id_KH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email_KH" Type="nvarchar" MaxLength="250" />
+          <Property Name="Time_KH" Type="datetime" />
+        </EntityType>
         <EntityType Name="tbl_Question_client">
           <Key>
             <PropertyRef Name="Id_question" />
@@ -288,6 +296,7 @@
           <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SoftWare_Case" EntityType="Self.SoftWare_Case" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Uers" EntityType="Self.tbl_Uers" Schema="dbo" Table="tbl.Uers" store:Type="Tables" />
+          <EntitySet Name="tbl_KH_Register_Receive_News" EntityType="Self.tbl_KH_Register_Receive_News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Question_client" EntityType="Self.tbl_Question_client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Register_Software_Client" EntityType="Self.tbl_Register_Software_Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tbl_Uers_Admin" EntityType="Self.tbl_Uers_Admin" Schema="dbo" store:Type="Tables" />
@@ -320,6 +329,7 @@
           <EntitySet Name="Slider" EntityType="Web_companyModel.Slider" />
           <EntitySet Name="SoftWare_Case" EntityType="Web_companyModel.SoftWare_Case" />
           <EntitySet Name="tbl_Uers" EntityType="Web_companyModel.tbl_Uers" />
+          <EntitySet Name="tbl_KH_Register_Receive_News" EntityType="Web_companyModel.tbl_KH_Register_Receive_News" />
           <EntitySet Name="tbl_Question_client" EntityType="Web_companyModel.tbl_Question_client" />
           <EntitySet Name="tbl_Register_Software_Client" EntityType="Web_companyModel.tbl_Register_Software_Client" />
           <EntitySet Name="tbl_Uers_Admin" EntityType="Web_companyModel.tbl_Uers_Admin" />
@@ -619,6 +629,14 @@
           <Property Name="type_uer" Type="Int32" />
           <Property Name="public_private" Type="Int32" />
           <Property Name="folow" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_KH_Register_Receive_News">
+          <Key>
+            <PropertyRef Name="Id_KH" />
+          </Key>
+          <Property Name="Id_KH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email_KH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Time_KH" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="tbl_Question_client">
           <Key>
@@ -1001,6 +1019,15 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_KH_Register_Receive_News">
+            <EntityTypeMapping TypeName="Web_companyModel.tbl_KH_Register_Receive_News">
+              <MappingFragment StoreEntitySet="tbl_KH_Register_Receive_News">
+                <ScalarProperty Name="Time_KH" ColumnName="Time_KH" />
+                <ScalarProperty Name="Email_KH" ColumnName="Email_KH" />
+                <ScalarProperty Name="Id_KH" ColumnName="Id_KH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

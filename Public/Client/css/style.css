@@ -2086,7 +2086,12 @@ li.dropdown:hover .tw-mega-menu {
 .features-text {
     position: relative;
 }
-
+p.features-text {
+    font-size: 20px;
+    color: #2c31cf;
+    text-align: -webkit-left;
+    font-weight: 700;
+}
     .features-text:after {
         position: absolute;
         left: -48px;
@@ -3343,7 +3348,28 @@ input.round-btn {
         background: linear-gradient(to right, #2c31cf, #3b3fd4,#2c31cf);
         color: #fff;
     }
-
+    #lepvc_dangkynhantin {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 12px 24px 12px 17px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        border: 1px solid #2c31cf;
+        background: linear-gradient(to right, #2c31cf, #3b3fd4,#2c31cf);
+        color: #fff;
+    }
+#lepvc_dangkynhantin_footer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px 24px 12px 17px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border: 1px solid #2c31cf;
+    background: linear-gradient(to right, #2c31cf, #3b3fd4,#2c31cf);
+    color: #fff;
+}
     .tw-footer-form button:hover {
         cursor: pointer;
     }

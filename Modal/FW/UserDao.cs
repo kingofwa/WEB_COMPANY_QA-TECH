@@ -21,7 +21,7 @@ namespace Web_congty.Modal.FW
         }
         public tbl_Uers_Admin GetById(string userName)
         {
-            return db.tbl_Uers_Admin.SingleOrDefault(x => x.Email_user == userName);
+            return db.tbl_Uers_Admin.FirstOrDefault(x => x.Email_user == userName);
         }
         public int login(string userName, string password)
         {

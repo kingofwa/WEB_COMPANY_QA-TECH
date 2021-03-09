@@ -1,0 +1,63 @@
+﻿
+<div class="modal fade" id="Modal_systems">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header bg-cyan">
+                <h4 class="modal-title">SYSTEM</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" id="Id_system" value="0"/>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="Ten_DuAn" class="col-1">Dự án</label>
+                            <input type="text" class="form-control col-5" id="Ten_DuAn">
+                            <label for="Ten_KySu" class="col-1">Kỹ sư</label>
+                            <input type="text" class="form-control col-5" id="Ten_KySu">
+                        </div>
+                        <div class="form-group row">
+                            <label for="Title" class="col-1">Mô tả </label>
+                            <input type="text" class="form-control col-5" id="Motangan">
+                            <label for="Diachi_DuAn" class="col-1">Địa chỉ </label>
+                            <input type="text" class="form-control col-5" id="Diachi_DuAn">
+                        </div>
+                        <div class="form-group row">
+                            <label for="" class="col-1">Khởi công </label>
+                            <input type="date" class="form-control col-5" id="Thoigiankhoicong">
+                            <label for="Thoigianhoanthanh" class="col-1">Hoàn thành </label>
+                            <input type="date" class="form-control col-5" id="Thoigianhoanthanh">
+                        </div>
+                        <div class="form-group row">
+                            <label for="Hinhanhmota" class="col-1">Ảnh chính</label>
+                            <p class="col-3"><a class="btn btn-primary btn-sm d-block" onclick="BrowseServer_Image_Mota()">Chọn hình</a></p>
+                            <input type="hidden" id="Hinhanhmota" />
+                           
+                            <label for="Hinhanhduan" class="col-1">Ảnh dự án</label>
+                            <p class="col-7"><a class="btn btn-primary btn-sm d-block" onclick="BrowseServer_Image_Du_An()">Chọn hình dự án</a></p>
+                            <input type="hidden" id="Hinhanhchitiet" />
+                        </div>
+                        <div class="form-group row" style="margin:0;padding:0;">
+                            <p class="col-4" id="show_image_Image_mota"></p>
+                            <p class="col-8" id="show_image_Image_duan"></p>
+                        </div>
+                        <div class="form-group row">
+                            <label for="Tongtien_DuAn" class="col-1">Tổng tiền</label>
+                            <input type="number" class="form-control col-3" id="Tongtien_DuAn">
+                            <label for="Tongtien_DuAn" class="col-1">Ghi chú</label>
+                            <input type="text" id="Ghi_chu" class="form-control col-7" />
+                        </div>
+                        <div class="form-group col-12">
+                            <textarea rows="10" cols="1" id="ChiTietDuAn" name="nameGoesHere"></textarea>
+                        </div>
+                    </div>
+                </form>
+                <button type="button" id="Save_system" class="btn btn-primary float-right">Lưu</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

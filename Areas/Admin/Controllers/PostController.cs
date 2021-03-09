@@ -67,6 +67,10 @@ namespace Web_congty.Areas.Admin.Controllers
                     db.Post.Add(postnew);
                     db.SaveChanges();
                     value = postnew.Id;
+
+
+
+
                 }
             }
             catch (Exception)

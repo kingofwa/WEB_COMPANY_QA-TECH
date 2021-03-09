@@ -1,0 +1,39 @@
+﻿@{
+    var list_service = ViewData["list_service"] as List<Web_congty.Modal.FW.Services>;
+}
+<div class="container">
+    <div class="row text-center" id="dichvu_footer">
+        <div class="col section-heading wow fadeInRight">
+            <h2>
+                <span>Dịch vụ</span>
+            </h2>
+            <span class="animate-border ml-auto mr-auto tw-mt-20"></span>
+        </div>
+        <!-- Title Col End -->
+    </div>
+    <!-- Title Row End -->
+    <div class="row">
+        @{
+            var so = 1;
+            foreach (var item in list_service)
+            {
+                <div class="col-md-4 text-center mt-5">
+                    <div class="tw-service-box">
+                        <div class="service-icon service-icon-bg-@so d-table wow fadeInDown">
+                            <div class="service-icon-inner d-table-cell">
+                                <img src="@item.Services_image" alt="search engine" class="img-fluid">
+                            </div>
+                        </div>
+                        <!-- Service icon end -->
+                        <div class="service-content wow fadeInLeft">
+                            <h3>@item.Services_name</h3>
+                            <p>@item.Services_title</p>
+                        </div>
+                    </div>
+                </div>
+                so++;
+            }
+        }
+    </div>
+</div>
+<!-- container -->

@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "Phần mềm ";
+    var list_softw = ViewData["list_softw"] as List<Web_congty.Modal.FW.SoftWare_Case>;
+}
+
+<div id="banner-area" class="banner-area" style="background-image: url(/public/Client/images/banner/banner5.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="banner-heading">
+                    <h1 class="banner-title">PHẦN MỀM </h1>
+                    @*<ol class="breadcrumb">
+                        <li>Trang chủ</li>
+                        <li><a href="#">Phần mềm</a></li>
+                    </ol>*@
+                </div>
+            </div>
+            <!-- Col end -->
+        </div>
+        <!-- Row end -->
+    </div>
+    <!-- Container end -->
+</div>
+<!-- Banner area end -->
+
+<section id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section-heading">
+                    <h2>
+                        Đang triển khai & đã <span>hoàn thành</span>
+                    </h2>
+                    <span class="animate-border border-offwhite tw-mt-20 tw-mb-40 ml-auto mr-auto"></span>
+                </div>
+            </div>
+            <!-- Title Col End -->
+        </div>
+        <!-- Title Row End -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tw-cases">
+                    @{
+                        var color = "";
+                        var so = 1;
+                        foreach (var item in list_softw)
+                        {
+                            switch (so)
+                            {
+                                case 1:
+                                    color = "bg-darkBlue";
+                                    break;
+                                case 2:
+                                    color = "bg-shrock";
+                                    break;
+                                case 3:
+                                    color = "bg-yellow";
+                                    break;
+                                case 4:
+                                    color = "bg-blue";
+                                    break;
+                                case 5:
+                                    color = "bg-pink";
+                                    break;
+                                case 6:
+                                    color = "bg-darkBlue";
+                                    break;
+                                case 7:
+                                    color = "bg-cyan";
+                                    break;
+                                default:
+                                    color = "bg-violet";
+                                    break;
+                            }
+                            <div class="cases-img  cases-bg @color">
+                                <a href="/chi-tiet-phan-mem-@item.Sw_title-@item.Sw_name-@item.Id">
+                                    <img src="@item.Sw_image" alt="" class="img-fluid">
+                                    <div class="p-3">
+                                        <h3>@item.Sw_name</h3>
+                                        <span>@item.Sw_title</span>
+                                    </div>
+                                </a>
+                            </div>
+                            so++;
+                        }
+                    }
+
+                </div>
+                <!-- Cases End -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Case Complete End -->
+
+

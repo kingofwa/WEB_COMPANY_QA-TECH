@@ -4,6 +4,9 @@
 /* Large Devices, Wide Screens */
 
 @media (min-width: 1200px) {
+    img.Logo {
+        width: 78%;
+    }
     /* Slider */
     .tw-hero-slider .owl-nav button {
         left: 40px;

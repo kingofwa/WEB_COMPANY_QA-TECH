@@ -24,6 +24,7 @@
     <EntitySet Name="Slider" EntityType="Web_companyModel.Slider" />
     <EntitySet Name="SoftWare_Case" EntityType="Web_companyModel.SoftWare_Case" />
     <EntitySet Name="tbl_Uers" EntityType="Web_companyModel.tbl_Uers" />
+    <EntitySet Name="tbl_KH_Register_Receive_News" EntityType="Web_companyModel.tbl_KH_Register_Receive_News" />
     <EntitySet Name="tbl_Question_client" EntityType="Web_companyModel.tbl_Question_client" />
     <EntitySet Name="tbl_Register_Software_Client" EntityType="Web_companyModel.tbl_Register_Software_Client" />
     <EntitySet Name="tbl_Uers_Admin" EntityType="Web_companyModel.tbl_Uers_Admin" />
@@ -323,6 +324,14 @@
     <Property Name="type_uer" Type="Int32" />
     <Property Name="public_private" Type="Int32" />
     <Property Name="folow" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_KH_Register_Receive_News">
+    <Key>
+      <PropertyRef Name="Id_KH" />
+    </Key>
+    <Property Name="Id_KH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email_KH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Time_KH" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="tbl_Question_client">
     <Key>
