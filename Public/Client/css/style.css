@@ -1,5 +1,20 @@
 /* Animated Title Border */
 @import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i");
+.owl-item {
+    line-height: 0.5;
+}
+.welcome-msg {
+    /* margin-top: 5px;
+    height: 24px;*/
+    overflow: hidden;
+    display: inline-block;
+}
+ul.list-inlines {
+    margin-bottom: 0;
+}
+ul.list-inlines li {
+    list-style:none;
+}
 #quetion_client_home {
     /* font-size: 14px; */
     display: inline-block;
@@ -4961,12 +4976,13 @@ ul {
 }
 
     .testimonial-slider .owl-dots button.owl-dot {
-        display: inline-block;
+        display: none;
         width: 7px;
         height: 7px;
         background: #CDCBCA;
         margin: 4px;
         border-radius: 50%;
+
     }
 
         .testimonial-slider .owl-dots button.owl-dot.active {

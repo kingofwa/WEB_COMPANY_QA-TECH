@@ -278,6 +278,7 @@
     </Compile>
     <Compile Include="Modal\FW\UserDao.cs" />
     <Compile Include="Modal\FW\View_model\Comment_Most.cs" />
+    <Compile Include="Modal\FW\View_model\list_news_comment_website.cs" />
     <Compile Include="Modal\FW\View_model\NextOrLast_News.cs" />
     <Compile Include="Modal\FW\View_model\ProjectNextOrLast.cs" />
     <Compile Include="Modal\FW\View_model\__Folow_me.cs" />

@@ -7,6 +7,7 @@ using Web_congty.DAO;
 using Web_congty.Modal.FW;
 using CaptchaMvc.HtmlHelpers;
 using CaptchaMvc;
+using Web_congty.Modal.FW.View_model;
 
 namespace Web_congty.Controllers
 {
@@ -35,6 +36,7 @@ namespace Web_congty.Controllers
             var list_post_pb = db.Post.Where(x => x.Status == true && x.Common_Pb == true).OrderByDescending(x => x.Id).ToList();
             ViewBag.baivietphobien = list_post_pb;
 
+            
 
             return View();
         }
@@ -69,6 +71,37 @@ namespace Web_congty.Controllers
             ViewData["list_danhmucmenu"] = list_danhmucmenu;
             var list_con = db.Brand.Where(x => x.status == true).ToList();
             ViewData["list_con"] = list_con;
+            // get data history chang website
+            List<list_news_comment_website> list_change_web = new List<list_news_comment_website>();
+            var list_comment_blog = db.Binhluan_blog().Where(x=>x.Status == true).OrderByDescending(x => x.Time).Take(3).ToList();
+            var list_comment_software = db.Binhlan_phanmem().Where(x => x.Status == true).OrderByDescending(x => x.Time).Take(3).ToList();
+            foreach (var item_commemnt_blog_ in list_comment_blog)
+            {
+                var list_change_web_show__ = new list_news_comment_website();
+                list_change_web_show__.id_custommer = item_commemnt_blog_.Id_uer;
+                var name_user = db.tbl_Uers.Find(list_change_web_show__.id_custommer);
+                list_change_web_show__.Name_custommer = name_user.name;
+                list_change_web_show__.id_post = item_commemnt_blog_.Id_post;
+                var post = db.Post.Find(list_change_web_show__.id_post);
+                list_change_web_show__.Name_post_news = post.Name;// lấy tên bài viết blog
+                list_change_web_show__.Time_change = (DateTime)item_commemnt_blog_.Time;
+                list_change_web.Add(list_change_web_show__);
+            }
+            foreach (var item_commemnt_software_ in list_comment_software)
+            {
+                var list_change_web_show__ = new list_news_comment_website();
+                list_change_web_show__.id_custommer = item_commemnt_software_.Id_uer;
+                var name_user = db.tbl_Uers.Find(list_change_web_show__.id_custommer);
+                list_change_web_show__.Name_custommer = name_user.name;
+                list_change_web_show__.id_software = item_commemnt_software_.Id_software;
+                var software = db.SoftWare_Case.Find(list_change_web_show__.id_software);
+                list_change_web_show__.Name_software = software.Sw_name;// lấy tên phần mềm
+                list_change_web_show__.Time_change = (DateTime)item_commemnt_software_.Time;
+                list_change_web.Add(list_change_web_show__);
+            }
+
+            ViewData["list_web_show__"] = list_change_web;
+
             return PartialView();
        }
 

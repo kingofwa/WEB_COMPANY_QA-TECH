@@ -1,6 +1,8 @@
 ﻿@{
     var list_danhmucmenu = ViewData["list_danhmucmenu"] as List<Web_congty.Modal.FW.Categories>;
     var list_con = ViewData["list_con"] as List<Web_congty.Modal.FW.Brand>;
+    var list_web_show__ = ViewData["list_web_show__"] as List<Web_congty.Modal.FW.View_model.list_news_comment_website>;
+
 }
 
 <div class="tw-head">
@@ -69,5 +71,34 @@
         <!-- End of Nav -->
     </div>
     <!-- End of Container -->
+    <nav class="tw-top-bar bg-white top-bar-lite">
+        <div class="container">
+            <ul class="list-inlines">
+                <li class="hidden-xs">
+                    <div class="testimonial-slider owl-carousel owl-loaded owl-drag">
+                        @foreach (var item_ in list_web_show__)
+                        {
+                            var time = DateTime.Now.ToString("HH");
+                            var time_change_ = Convert.ToInt32(time) - Convert.ToInt32(item_.Time_change.ToString("HH"));
+                            var phanmen = "vừa bình luận phần mềm";
+                            var baivietblog = "vừa bình luận bài viết";
+                        <div class="welcome-msg">
+                            <span class="badge badge-warning">@time_change_ giờ trước</span>
+                            <a href="/thong-tin-ca-nhan-@item_.Name_custommer-@item_.id_custommer">@item_.Name_custommer <i class="fa fa-commenting-o fa-1x"></i></a> 
+                            @if (item_.Name_post_news != null)
+                            {
+                               @baivietblog <a href="/chi-tiet-bai-viet-@item_.id_post">@item_.Name_post_news</a>  
+                            }
+                            @if (item_.Name_software != null)
+                            {
+                                 @phanmen <a href="/chi-tiet-phan-mem-@item_.Name_software-note-@item_.id_software">@item_.Name_software</a>
+                            }
+                        </div>
+                        }
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </div>
 <!-- End tw head -->
