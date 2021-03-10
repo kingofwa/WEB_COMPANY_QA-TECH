@@ -21,17 +21,16 @@ namespace Web_congty.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(tbl_Uers_Admin admin, HttpPostedFileBase image)
+        public ActionResult Index(tbl_Uers_Admin admin)
         {
+
             ViewData["list_user"] = db.tbl_Uers_Admin.ToList();
             if (ModelState.IsValid)
             {
-                if (image != null)
+                if(db.tbl_Uers_Admin.Where(x=>x.Email_user == admin.Email_user).Any())
                 {
-                    string file_name = System.IO.Path.GetFileName(image.FileName);
-                    string Url_image = Server.MapPath("~/Image/" + image);
-                    image.SaveAs(Url_image);
-                    admin.Image_user = "/Image/" + file_name;
+                    ViewBag.thongbao = "Email này đã tồn tại";
+                    return View();
                 }
                 admin.Status = true;
                 admin.Password_user = new CustommerDAO().MD5Hash(admin.Password_user);
@@ -39,7 +38,7 @@ namespace Web_congty.Areas.Admin.Controllers
                 db.SaveChanges();
                 ViewBag.thongbao = "Đăng ký thành công";
 
-                return View();
+                return RedirectToAction("Index", "Account");
             }
             else
             {

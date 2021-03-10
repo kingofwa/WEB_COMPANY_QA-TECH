@@ -71,34 +71,78 @@
         <!-- End of Nav -->
     </div>
     <!-- End of Container -->
-    <nav class="tw-top-bar bg-white top-bar-lite">
-        <div class="container">
-            <ul class="list-inlines">
-                <li class="hidden-xs">
-                    <div class="testimonial-slider owl-carousel owl-loaded owl-drag">
-                        @foreach (var item_ in list_web_show__)
-                        {
-                            var time = DateTime.Now.ToString("HH");
-                            var time_change_ = Convert.ToInt32(time) - Convert.ToInt32(item_.Time_change.ToString("HH"));
-                            var phanmen = "vừa bình luận phần mềm";
-                            var baivietblog = "vừa bình luận bài viết";
-                        <div class="welcome-msg">
-                            <span class="badge badge-warning">@time_change_ giờ trước</span>
-                            <a href="/thong-tin-ca-nhan-@item_.Name_custommer-@item_.id_custommer">@item_.Name_custommer <i class="fa fa-commenting-o fa-1x"></i></a> 
-                            @if (item_.Name_post_news != null)
+    @if (ViewBag.thongbao == null)
+    {
+        <nav class="tw-top-bar bg-white top-bar-lite">
+            <div class="container">
+                <ul class="list-inlines">
+                    <li class="hidden-xs">
+                        <div class="testimonial-slider owl-carousel owl-loaded owl-drag">
+                            @foreach (var item_ in list_web_show__)
                             {
-                               @baivietblog <a href="/chi-tiet-bai-viet-@item_.id_post">@item_.Name_post_news</a>  
+                                var stringtime = item_.Time_change.Split('|');
+                                var ngay = stringtime[0];
+                                var gio = stringtime[1];
+                                var phut = stringtime[2];
+                                if (ngay != "0")
+                                {
+                                    ngay = ngay + "ngày";
+                                }
+                                else
+                                {
+                                    ngay = "";
+                                }
+                                if (gio != "0")
+                                {
+                                    gio = gio + "giờ";
+                                }
+                                else
+                                {
+                                    gio = "";
+                                }
+                                if (phut != "0")
+                                {
+                                    phut = phut + "phút";
+                                }
+                                else
+                                {
+                                    phut = 1 + "phút";
+                                }
+                                var phanmen = "vừa bình luận phần mềm";
+                                var baivietblog = "vừa bình luận bài viết";
+                                var dangky = "vừa đăng ký sử dụng phần mềm";
+                                <div class="welcome-msg">
+                                    <span class="badge badge-warning text-white">@ngay @gio @phut trước</span>
+                                    <small>
+                                        @if (item_.id_custommer > 0)
+                                        {
+                                            <a href="/thong-tin-ca-nhan-@item_.Name_custommer-@item_.id_custommer">@item_.Name_custommer <i class="fa fa-commenting-o fa-1x"></i></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#">@item_.Name_custommer <small>(khách)</small> <i class="fa fa-commenting-o fa-1x"></i></a>
+                                        }
+                                        @if (item_.Name_post_news != null)
+                                        {
+                                            @baivietblog <a href="/chi-tiet-bai-viet-@item_.id_post">@item_.Name_post_news</a>
+                                        }
+                                        @if (item_.Name_software != null)
+                                        {
+                                            @phanmen <a href="/chi-tiet-phan-mem-@item_.Name_software-note-@item_.id_software">@item_.Name_software</a>
+                                        }
+                                        @if (item_.Name_register_software != null)
+                                        {
+                                            @dangky <a href="/chi-tiet-phan-mem-@item_.Name_register_software-note-@item_.id_register_software">@item_.Name_register_software</a>
+                                        }
+                                    </small>
+                                </div>
                             }
-                            @if (item_.Name_software != null)
-                            {
-                                 @phanmen <a href="/chi-tiet-phan-mem-@item_.Name_software-note-@item_.id_software">@item_.Name_software</a>
-                            }
+
                         </div>
-                        }
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    }
 </div>
 <!-- End tw head -->

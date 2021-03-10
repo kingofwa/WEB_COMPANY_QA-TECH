@@ -53,6 +53,7 @@ namespace Web_congty.Controllers
                     register_sw.Option_time = goidichvu;
                     register_sw.Option_sw = thoigiansudung;
                     register_sw.Id_Sw = _id;
+                    register_sw.Time_register = DateTime.Now;
                     register_sw.Pass_login = new CustommerDAO().MD5Hash(pass);
                     db.tbl_Register_Software_Client.Add(register_sw);
                     db.SaveChanges();

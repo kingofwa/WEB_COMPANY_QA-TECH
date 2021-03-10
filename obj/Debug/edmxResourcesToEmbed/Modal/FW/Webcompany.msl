@@ -364,6 +364,7 @@
     <EntitySetMapping Name="tbl_Register_Software_Client">
       <EntityTypeMapping TypeName="Web_companyModel.tbl_Register_Software_Client">
         <MappingFragment StoreEntitySet="tbl_Register_Software_Client">
+          <ScalarProperty Name="Time_register" ColumnName="Time_register" />
           <ScalarProperty Name="Option_time" ColumnName="Option_time" />
           <ScalarProperty Name="Id_Sw" ColumnName="Id_Sw" />
           <ScalarProperty Name="Option_sw" ColumnName="Option_sw" />

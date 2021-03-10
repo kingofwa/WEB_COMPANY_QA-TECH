@@ -38,7 +38,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_uer" Type="int" />
           <Property Name="Noi_dung" Type="nvarchar(max)" />
-          <Property Name="Time" Type="date" />
+          <Property Name="Time" Type="datetime" />
           <Property Name="Status" Type="bit" />
           <Property Name="felling" Type="int" />
           <Property Name="Vote" Type="int" />
@@ -261,6 +261,7 @@
           <Property Name="Option_sw" Type="int" />
           <Property Name="Id_Sw" Type="int" />
           <Property Name="Option_time" Type="int" />
+          <Property Name="Time_register" Type="datetime" />
         </EntityType>
         <EntityType Name="tbl_Uers_Admin">
           <Key>
@@ -442,7 +443,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_uer" Type="Int32" />
           <Property Name="Noi_dung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Time" Type="DateTime" Precision="0" />
+          <Property Name="Time" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="Boolean" />
           <Property Name="felling" Type="Int32" />
           <Property Name="Vote" Type="Int32" />
@@ -665,6 +666,7 @@
           <Property Name="Option_sw" Type="Int32" />
           <Property Name="Id_Sw" Type="Int32" />
           <Property Name="Option_time" Type="Int32" />
+          <Property Name="Time_register" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="tbl_Uers_Admin">
           <Key>
@@ -1045,6 +1047,7 @@
           <EntitySetMapping Name="tbl_Register_Software_Client">
             <EntityTypeMapping TypeName="Web_companyModel.tbl_Register_Software_Client">
               <MappingFragment StoreEntitySet="tbl_Register_Software_Client">
+                <ScalarProperty Name="Time_register" ColumnName="Time_register" />
                 <ScalarProperty Name="Option_time" ColumnName="Option_time" />
                 <ScalarProperty Name="Id_Sw" ColumnName="Id_Sw" />
                 <ScalarProperty Name="Option_sw" ColumnName="Option_sw" />

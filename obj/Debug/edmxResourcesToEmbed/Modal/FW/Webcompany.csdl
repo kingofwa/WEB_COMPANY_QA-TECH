@@ -137,7 +137,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Id_uer" Type="Int32" />
     <Property Name="Noi_dung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Time" Type="DateTime" Precision="0" />
+    <Property Name="Time" Type="DateTime" Precision="3" />
     <Property Name="Status" Type="Boolean" />
     <Property Name="felling" Type="Int32" />
     <Property Name="Vote" Type="Int32" />
@@ -360,6 +360,7 @@
     <Property Name="Option_sw" Type="Int32" />
     <Property Name="Id_Sw" Type="Int32" />
     <Property Name="Option_time" Type="Int32" />
+    <Property Name="Time_register" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="tbl_Uers_Admin">
     <Key>

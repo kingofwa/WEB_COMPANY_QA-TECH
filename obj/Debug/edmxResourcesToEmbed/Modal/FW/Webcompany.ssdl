@@ -33,7 +33,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Id_uer" Type="int" />
     <Property Name="Noi_dung" Type="nvarchar(max)" />
-    <Property Name="Time" Type="date" />
+    <Property Name="Time" Type="datetime" />
     <Property Name="Status" Type="bit" />
     <Property Name="felling" Type="int" />
     <Property Name="Vote" Type="int" />
@@ -256,6 +256,7 @@
     <Property Name="Option_sw" Type="int" />
     <Property Name="Id_Sw" Type="int" />
     <Property Name="Option_time" Type="int" />
+    <Property Name="Time_register" Type="datetime" />
   </EntityType>
   <EntityType Name="tbl_Uers_Admin">
     <Key>

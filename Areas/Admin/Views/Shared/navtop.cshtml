@@ -9,9 +9,13 @@
     <ul class="navbar-nav ml-auto">
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
+            @if (Session["TaikhoanAdmin"] != null)
+            {
+
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <small><b>@Session["TaikhoanAdmin"].ToString()</b></small> <i class="far fa-user"></i>
                 </a>
+            }
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="@Url.Action("LogOut", "Admin_login")" class="dropdown-item">
                     Đăng xuất
@@ -24,6 +28,6 @@
                 </a>
             </div>
         </li>
-       
+
     </ul>
 </nav>

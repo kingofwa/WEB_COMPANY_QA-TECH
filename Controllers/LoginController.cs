@@ -21,7 +21,7 @@ namespace Web_congty.Controllers
         public ActionResult Dangnhap(FormCollection l)
         {
             string sTaikhoan = l["textTendangnhap"].ToString();
-            string sMatkhau = l["matkhau"].ToString();
+            string sMatkhau = new CustommerDAO().MD5Hash(l["matkhau"].ToString());
             var dangnhap = db.tbl_Uers.Where(x => x.password == sMatkhau && x.email == sTaikhoan && x.Run_status == 0).ToList();
             if (dangnhap.Count() != 0)
             {

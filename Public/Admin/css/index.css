@@ -1,4 +1,8 @@
-﻿form#QA_admin_Modal_work_form_slide {
+﻿span.field-validation-error {
+    color: red;
+    font-size: 15px;
+}
+form#QA_admin_Modal_work_form_slide {
     padding: 40px;
 }
 

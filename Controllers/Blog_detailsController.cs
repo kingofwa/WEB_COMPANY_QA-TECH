@@ -109,22 +109,32 @@ namespace Web_congty.Controllers
         public ActionResult Comment(Comment cm, FormCollection f)
         {
             var id = f["ID"].ToString();
-            if (ModelState.IsValid)
+            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
             {
-                ViewBag.thongbao = "Bình luận thành công";
-                var tv = (tbl_Uers)Session["Taikhoan"];
-                cm.Id_uer = tv.Id;
-                cm.Time = DateTime.Now;
-                cm.Type_comment = 1;
-                cm.Id_post = Convert.ToInt32(id);
-                cm.Status = false;
-                cm.felling = 1;
-                db.Comment.Add(cm);
-                db.SaveChanges();
+                if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+                {
+                    return RedirectToAction("Dangky", "Register");
+                }
             }
             else
             {
-                ViewBag.thongbao = "Bình luận thất bại";
+                if (ModelState.IsValid)
+                {
+                    ViewBag.thongbao = "Bình luận thành công";
+                    var tv = (tbl_Uers)Session["Taikhoan"];
+                    cm.Id_uer = tv.Id;
+                    cm.Time = DateTime.Now;
+                    cm.Type_comment = 1;
+                    cm.Id_post = Convert.ToInt32(id);
+                    cm.Status = false;
+                    cm.felling = 1;
+                    db.Comment.Add(cm);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    ViewBag.thongbao = "Bình luận thất bại";
+                }
             }
             return Redirect("Detals_News/" + id);
         }

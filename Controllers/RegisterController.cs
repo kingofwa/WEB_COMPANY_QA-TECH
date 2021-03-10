@@ -31,6 +31,11 @@ namespace Web_congty.Controllers
             ViewBag.question = new SelectList(Loadding_cauhoi());
             //kiểm tra capcha hợp lệ 
             //var pass = new CustommerDAO().MD5Hash(tv.password);
+            if (db.tbl_Uers.Where(x => x.email == tv.email).Any())
+            {
+                ViewBag.thongbao = "Tài khoản email đã tồn tại";
+                return View();
+            }
             if (this.IsCaptchaValid("Mã capcha không đúng"))
             {
                 if (ModelState.IsValid)

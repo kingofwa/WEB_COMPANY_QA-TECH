@@ -27,5 +27,6 @@ namespace Web_congty.Modal.FW
         public Nullable<int> Option_sw { get; set; }
         public Nullable<int> Id_Sw { get; set; }
         public Nullable<int> Option_time { get; set; }
+        public Nullable<System.DateTime> Time_register { get; set; }
     }
 }
