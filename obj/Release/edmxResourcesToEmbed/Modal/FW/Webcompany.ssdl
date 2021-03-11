@@ -33,7 +33,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Id_uer" Type="int" />
     <Property Name="Noi_dung" Type="nvarchar(max)" />
-    <Property Name="Time" Type="date" />
+    <Property Name="Time" Type="datetime" />
     <Property Name="Status" Type="bit" />
     <Property Name="felling" Type="int" />
     <Property Name="Vote" Type="int" />
@@ -221,6 +221,14 @@
     <Property Name="public_private" Type="int" />
     <Property Name="folow" Type="varchar(max)" />
   </EntityType>
+  <EntityType Name="tbl_KH_Register_Receive_News">
+    <Key>
+      <PropertyRef Name="Id_KH" />
+    </Key>
+    <Property Name="Id_KH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email_KH" Type="nvarchar" MaxLength="250" />
+    <Property Name="Time_KH" Type="datetime" />
+  </EntityType>
   <EntityType Name="tbl_Question_client">
     <Key>
       <PropertyRef Name="Id_question" />
@@ -248,6 +256,7 @@
     <Property Name="Option_sw" Type="int" />
     <Property Name="Id_Sw" Type="int" />
     <Property Name="Option_time" Type="int" />
+    <Property Name="Time_register" Type="datetime" />
   </EntityType>
   <EntityType Name="tbl_Uers_Admin">
     <Key>
@@ -283,6 +292,7 @@
     <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SoftWare_Case" EntityType="Self.SoftWare_Case" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Uers" EntityType="Self.tbl_Uers" Schema="dbo" Table="tbl.Uers" store:Type="Tables" />
+    <EntitySet Name="tbl_KH_Register_Receive_News" EntityType="Self.tbl_KH_Register_Receive_News" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Question_client" EntityType="Self.tbl_Question_client" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Register_Software_Client" EntityType="Self.tbl_Register_Software_Client" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tbl_Uers_Admin" EntityType="Self.tbl_Uers_Admin" Schema="dbo" store:Type="Tables" />

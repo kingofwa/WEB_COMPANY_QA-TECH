@@ -13,6 +13,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Đăng ký tài khoản</h3>
                     </div>
+
                     @using (Html.BeginForm("Index", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
                     {
                         @Html.AntiForgeryToken()
@@ -32,15 +33,14 @@
                                 <label for="exampleInputPassword1">Nhập lại mật khẩu</label>
                                 <input type="password" class="form-control" onchange="KiemtraMK()" id="Password_user2" placeholder="Password">
                             </div>
-
-                            <div class="form-group">
-                                <label for="exampleInputFile">Avatar</label>
-                                @Html.TextBoxFor(model => model.Image_user, null, new { type = "file", @class = "form-control" })
-                            </div>
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Đăng ký</button>
                         </div>
+                    }
+                    @if (ViewBag.thongbao != null)
+                    {
+                        <h3 class="card-title text-center text-danger">@ViewBag.thongbao</h3>
                     }
                 </div>
             </div>

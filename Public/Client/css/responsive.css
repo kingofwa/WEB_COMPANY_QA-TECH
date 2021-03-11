@@ -525,19 +525,68 @@
 /* Smart Phone  Smart PhoneSmart PhoneSmart PhoneSmart PhoneSmart PhoneSmart PhoneSmart PhoneSmart PhoneSmart Phone*/
 
 @media (max-width: 767px) {
+    i.fa.fa-phone.fa-1x {
+        font-size: 20px;
+    }
+    h2.column-title {
+        font-size: 29px;
+    }
+    .post-footer .btn {
+        font-size: 14px;
+        padding: 3px 10px;
+        border: 1px solid #9295e4;
+        background: linear-gradient(to right, #2c31cf,#9093ec);
+    }
+    .banner-heading .banner-case-title span {
+        font-size: 30px;
+    }
+    .banner-title {
+        font-size: 30px;
+    }
+    .banner-heading, .banner-heading.case-banner-heading {
+        min-height: 150px;
+    }
+    span.post-author.lepvc_one {
+        font-size: 14px;
+    }
+    .tw-latest-post {
+        height: auto;
+    }
+    .latest-post-media.text-center {
+        height: auto;
+    }
+    .post-info.client {
+        margin-left: 10px;
+    }
+    h3.post-title {
+        margin-top: 25px;
+        font-size: 18px !important;
+    }
+    a.dangnhap {
+        font-size: 10px;
+    }
+    a.dangky {
+        font-size: 10px;
+    }
+    .welcome-msg {
+        font-size: 12px;
+        font-weight: 800;
+    }
     img.phanmem {
         max-width: 100% !important;
         position: relative !important;
     }
     .hotline-phone-ring-img-circle {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
+        top: 40px;
+        left: -40px;
     }
     .tw-client {
         padding-bottom: 50px;
     }
     img.Logo {
-        height: 56px;
+        height: 46px;
     }
     .hotline-phone-ring-circle-fill {
         width: 44px;
@@ -552,7 +601,7 @@
          border-top:none; 
     }
     .back-to-top .btn-dark {
-        background: #2c31cf;
+        background: linear-gradient(to right, #2c31cf, #696ce2,#2c31cf);
         border-color: #2c31cf;
     }
     .post-single .entry-content h3 {
@@ -560,8 +609,13 @@
     padding: 13px 0;
     }
     .entry-header .entry-title {
-        font-size: 25px;
-        margin: 10px 0;
+        font-size: 18px;
+        margin: 4px 0;
+    }
+    .post-navigation h3 {
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 2px 0 0;
     }
     a.xinchao {
         font-size: 10px;
@@ -570,7 +624,7 @@
         font-size: 10px;
     }
     .btn {
-        padding: 7px 25px;
+        padding: 3px 18px;
     }
     .title-normal {
         padding: 17px 0 17px;
@@ -673,19 +727,19 @@
         padding: 20px 0;
     }
     i.fa.fa-facebook {
-        font-size: 17px;
+        font-size: 14px;
         color: #4294ff;
     }
     i.fa.fa-twitter {
-        font-size: 17px;
+        font-size: 14px;
         color: #1582f7;
     }
     i.fa.fa-google-plus {
         color: #ff1f1f;
-        font-size: 17px;
+        font-size: 14px;
     }
     i.fa.fa-youtube-play {
-       font-size: 17px;
+        font-size: 14px;
         color: #ea3a0d;
     }
     .dropdown-menu.show {
@@ -972,7 +1026,7 @@
     /* Sub pages ================= */
     /* Recent Posts */
     .post-meta span {
-        margin-right: 5px;
+        margin-right: 18px;
     }
     /* Single News ================= */
     /*Share Item */
@@ -1117,9 +1171,18 @@
     }
     .top-social-links {
         text-align: center;
-        padding-bottom: 5px;
-        padding-top: 5px;
+        padding-bottom: 4px;
+        padding-top: 0px;
         padding-right: 45px;
+    }
+    .top-social-links a {
+        padding-left: 58px;
+    }
+    .tw-head {
+        border-top: 1px solid #f48024;
+    }
+    .tw-features-area .column-title {
+        margin-top: 20px;
     }
     .tw-head {
         -webkit-box-shadow: 0 7px 8px 0px rgba(0, 0, 0, 0.06);
@@ -1295,11 +1358,48 @@
     .post-body {
         padding-left: 0;
     }
+    /*.post-item-date {
+        position: relative;
+        float: left;
+        padding-left: 42px;
+    }*/
     .post-item-date {
         position: relative;
+        float: left;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .post-date {
-        margin: 0 auto;
+        width: 45px;
+        height: 45px;
+        background: #4d52ec;
+        border-radius: 50%;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        z-index: 3;
+        font-weight: 800;
+        font-size: 14px;
+        padding-top: 1px;
+    }
+    .process-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+    .tw-testimonial-box {
+        padding: 20px;
+    }
+    .tw-testimonial-box .testimonial-text p {
+        font-size: 15px;
+        font-family: unset;
+    }
+    .tw-case .btn-lg {
+        padding: 10px 56px;
+    }
+    #quetion_client_home {
+        padding: 13px 137px;
+        background: linear-gradient(to right, #585cde,#9093ec);
+        color: #f8f9fa;
     }
     .post-item-date:before,
     .post-item-date:after {
@@ -1320,6 +1420,18 @@
     .author-box .author-img {
         float: none;
         margin: 0 auto 20px;
+    }
+    .section-heading {
+        margin-bottom: 20px;
+    }
+    .section-heading h2 {
+        font-size: 28px;
+    }
+    .tw-testimonial-bg {
+        padding-bottom: 120px;
+    }
+    .navbar-light .navbar-toggler {
+        font-size: 10px;
     }
     .author-box .author-info {
         margin-left: 0;
@@ -1406,6 +1518,10 @@
     }
     .media-bodyy.vanle_pvc table tbody tr td p span strong {
         font-size: 10px;
+    }
+
+    .entry-header {
+        font-size: 13px;
     }
    
 }

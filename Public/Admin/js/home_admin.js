@@ -1,6 +1,4 @@
 ﻿$(document).ready(function () {
-    $('#myTable2').DataTable();
-    $('#myTable3').DataTable();
     $('#khachhangdangkysudungphanmem').DataTable();
     $(".nav-tabs a").click(function () {
         $(this).tab('show');

@@ -3,22 +3,86 @@
     ViewBag.Title = "Về chúng tôi";
 }
 
+@section scripts{
+    <script src="~/Public/Client/js/Map_vechungtoi.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWYmbl0boe3qZcg98VZ_4CemQ1cE_oqs4&callback=initMap"></script>
+}
+
+<input type="hidden" id="idContactDetails" value="Công ty cổ phần công nghệ QUỐC ANH" />
 
 <div id="banner-area" class="banner-area" style="background-image:url(/public/Client/images/banner/banner5.jpg)">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
                 <div class="banner-heading">
-                    <h1 class="banner-title">Quá trình hình thành và phát triển</h1>
+                    <h2 class="banner-title">Về chúng tôi</h2>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<section id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section-heading">
+                    <h2>
+                         <span>Chi tiết liên hệ</span>
+                    </h2>
+                    <span class="animate-border tw-mt-20 tw-mb-40 ml-auto mr-auto"></span>
+                </div>
+            </div>
+        </div>
+        <!-- End Title Row -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="tw-contact-box">
+                    <div class="contact-heading">
+                        <img src="/public/client/images/icon/place1.png" alt="" class="img-fluid">
+                        <h3>Hà Nội</h3>
+                    </div>
+                    <!-- End Content Heading -->
+                    <div class="contact-info-box-content">
+                        <i class="fa fa-map-marker"></i>
+                        <p> Số 1, Ngõ 98, Nguyễn Ngọc Nại, Thanh Xuân, Hà Nội</p>
+                        <i class="fa fa-phone"></i>
+                        <p>0978.886.126 || (024) 3200 9626</p>
+                        <i class="fa fa-envelope"></i>
+                        <p>info@qatg.com.vn</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Col -->
+            <div class="col-md-6">
+                <div class="tw-contact-box">
+                    <div class="contact-heading">
+                        <img src="/public/client/images/icon/place2.png" alt="" class="img-fluid">
+                        <h3>CN HỒ CHÍ MINH</h3>
+                    </div>
+                    <!-- End Content Heading -->
+                    <div class="contact-info-box-content">
+                        <i class="fa fa-map-marker"></i>
+                        <p>Số 302, Ung Văn Khiêm, P.25, Bình Thạnh, TP.HCM</p>
+                        <i class="fa fa-phone"></i>
+                        <p>0936.003.933</p>
+                        <i class="fa fa-envelope"></i>
+                        <p>thanglh@qatg.com.vn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Row -->
+        <div class="row">
+            <div id="canavas_map" style="width:100%;height:450px;margin-top:20px;"></div>
+        </div>
+    </div>
+</section>
 
 
-<section id="tw-timeline" class="tw-timeline">
+
+
+<section id="tw-timeline" class="tw-features-area">
     <div class="container">
         <h2 class="column-title">Lịch sử công ty</h2>
         <span class="animate-border tw-mb-40 tw-mt-20"></span>
@@ -115,5 +179,10 @@
         </div>
     </div>
 </section>
+
+
+
+
+
 
 

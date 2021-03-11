@@ -14,9 +14,9 @@ namespace Web_congty.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
-            var list_comment_phanmem = db.Binhlan_phanmem().OrderByDescending(x => x.Id).ToList();
+            var list_comment_phanmem = db.Binhlan_phanmem().Where(x=>x.Status == false).OrderByDescending(x => x.Id).ToList();
             ViewData["list_comment_phanmem"] = list_comment_phanmem;
-            var list_comment_baiviet = db.Binhluan_blog().OrderByDescending(x => x.Id).ToList();
+            var list_comment_baiviet = db.Binhluan_blog().Where(x => x.Status == false).OrderByDescending(x => x.Id).ToList();
             ViewData["list_comment_baiviet"] = list_comment_baiviet;
             var list_taikhoankhachhang = db.tbl_Uers.OrderByDescending(x => x.Id).ToList();
             ViewData["list_taikhoankhachhang"] = list_taikhoankhachhang;
@@ -112,7 +112,7 @@ namespace Web_congty.Areas.Admin.Controllers
                 string content = System.IO.File.ReadAllText(Server.MapPath("~/tempalate/traloikhachhang.html"));
                 content = content.Replace("{{email_datcauhoi}}", emailhoi);
                 content = content.Replace("{{cauhoi}}", cauhoi);
-                content = content.Replace("{{thoigianhoi}}", list_question.Time_question.GetValueOrDefault().ToString("dd/MM/yyyy HH:MI"));
+                content = content.Replace("{{thoigianhoi}}", list_question.Time_question.GetValueOrDefault().ToString("dd/MM/yyyy HH:mm:ss"));
                 content = content.Replace("{{cautraloi}}", cautraloi);
                 //var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();// gửi đến admin 
                 new MailHelper().SendMail(emailhoi, "Tin mới từ QUOCANH-TECH", content);

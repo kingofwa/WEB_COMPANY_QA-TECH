@@ -1,6 +1,8 @@
 ﻿@{
     var list_danhmucmenu = ViewData["list_danhmucmenu"] as List<Web_congty.Modal.FW.Categories>;
     var list_con = ViewData["list_con"] as List<Web_congty.Modal.FW.Brand>;
+    var list_web_show__ = ViewData["list_web_show__"] as List<Web_congty.Modal.FW.View_model.list_news_comment_website>;
+
 }
 
 <div class="tw-head">
@@ -18,7 +20,9 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav ">
                     <li class="nav-item"><a class="nav-link" href="/Cong-ty-co-phan-cong-nghe-va-thiet-bi-quoc-anh">Trang chủ</a></li>
-
+                    <li class="nav-item"><a class="nav-link" href="/Phan-mem-cong-ty-co-phan-cong-nghe-va-thiet-bi-quoc-anh">Phần mềm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/Danh-sach-du-an-ky-thuat-cty-quoc-anh">Kỹ thuật</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/tin-tuc">Blog</a></li>
                     <li class="nav-item dropdown tw-megamenu-wrapper show">
                         <a class="nav-link" href="/SoftWare/Index" data-toggle="dropdown" aria-expanded="true">
                             Danh mục
@@ -48,9 +52,6 @@
                         </div>
                     </li>
                     <!-- End Dropdown -->
-                    <li class="nav-item"><a class="nav-link" href="/Phan-mem-cong-ty-co-phan-cong-nghe-va-thiet-bi-quoc-anh">Phần mềm</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/Danh-sach-du-an-ky-thuat-cty-quoc-anh">Kỹ thuật</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/tin-tuc">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="/ve-chung-toi-qua-trinh-hinh-thanh-va-phat-trien-html">Về chúng tôi</a></li>
                 </ul>
                 <!-- End Navbar Nav -->
@@ -69,5 +70,78 @@
         <!-- End of Nav -->
     </div>
     <!-- End of Container -->
+    @if (ViewBag.thongbao == null)
+    {
+        <nav class="tw-top-bar bg-white top-bar-lite">
+            <div class="container">
+                <ul class="list-inlines">
+                    <li class="hidden-xs">
+                        <div class="testimonial-slider owl-carousel owl-loaded owl-drag">
+                            @foreach (var item_ in list_web_show__)
+                            {
+                                var stringtime = item_.Time_change.Split('|');
+                                var ngay = stringtime[0];
+                                var gio = stringtime[1];
+                                var phut = stringtime[2];
+                                if (ngay != "0")
+                                {
+                                    ngay = ngay + "ngày";
+                                }
+                                else
+                                {
+                                    ngay = "";
+                                }
+                                if (gio != "0")
+                                {
+                                    gio = gio + "giờ";
+                                }
+                                else
+                                {
+                                    gio = "";
+                                }
+                                if (phut != "0")
+                                {
+                                    phut = phut + "phút";
+                                }
+                                else
+                                {
+                                    phut = 1 + "phút";
+                                }
+                                var phanmen = "vừa bình luận phần mềm";
+                                var baivietblog = "vừa bình luận bài viết";
+                                var dangky = "vừa đăng ký sử dụng phần mềm";
+                                <div class="welcome-msg">
+                                    <span class="badge badge-warning text-white">@ngay @gio @phut trước</span>
+                                    <small>
+                                        @if (item_.id_custommer > 0)
+                                        {
+                                            <a href="/thong-tin-ca-nhan-@item_.Name_custommer-@item_.id_custommer">@item_.Name_custommer <i class="fa fa-commenting-o fa-1x"></i></a>
+                                        }
+                                        else
+                                        {
+                                            <a href="#">@item_.Name_custommer <small>(khách)</small> <i class="fa fa-commenting-o fa-1x"></i></a>
+                                        }
+                                        @if (item_.Name_post_news != null)
+                                        {
+                                            @baivietblog <a href="/chi-tiet-bai-viet-@item_.id_post">@item_.Name_post_news</a>
+                                        }
+                                        @if (item_.Name_software != null)
+                                        {
+                                            @phanmen <a href="/chi-tiet-phan-mem-@item_.Name_software-note-@item_.id_software">@item_.Name_software</a>
+                                        }
+                                        @if (item_.Name_register_software != null)
+                                        {
+                                            @dangky <a href="/chi-tiet-phan-mem-@item_.Name_register_software-note-@item_.id_register_software">@item_.Name_register_software</a>
+                                        }
+                                    </small>
+                                </div>
+                            }
+
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    }
 </div>
 <!-- End tw head -->

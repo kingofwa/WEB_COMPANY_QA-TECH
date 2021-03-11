@@ -155,6 +155,7 @@
     <Compile Include="Areas\Admin\Controllers\BaseControllerController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryyController.cs" />
+    <Compile Include="Areas\Admin\Controllers\Comment_ManagerController.cs" />
     <Compile Include="Areas\Admin\Controllers\FechBackController.cs" />
     <Compile Include="Areas\Admin\Controllers\IntroducController.cs" />
     <Compile Include="Areas\Admin\Controllers\PartnerController.cs" />
@@ -381,6 +382,7 @@
     <Content Include="Public\Admin\js\partner.js" />
     <Content Include="Public\Admin\js\post.js" />
     <Content Include="Public\Admin\js\project_system.js" />
+    <Content Include="Public\Admin\js\quanli_binhluan.js" />
     <Content Include="Public\Admin\js\Register_c.js" />
     <Content Include="Public\Admin\js\service.js" />
     <Content Include="Public\Admin\js\slide.js" />
@@ -13331,6 +13333,9 @@
     <Content Include="Areas\Admin\Views\Account\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\traloicauhoicuakhach.cshtml" />
     <Content Include="Areas\Admin\Views\Admin_login\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Comment_Manager\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Comment_Manager\quanliduyetbinhluan_blog.cshtml" />
+    <Content Include="Areas\Admin\Views\Comment_Manager\quanliduyetbinhluan_phanmem.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

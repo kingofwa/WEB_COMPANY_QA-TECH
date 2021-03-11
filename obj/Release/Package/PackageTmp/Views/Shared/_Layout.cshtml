@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Site Title- -->
     <title>@ViewBag.title</title>
-
     <!-- CSS
     ==================================================== -->
     <!--Font Awesome -->
@@ -46,21 +45,21 @@
         </form>
     </div>
     <!--End Search bar -->
-    @{ Html.RenderAction("Top_Header","Home");}
+    @{ Html.RenderAction("Top_Header", "Home");}
     <!-- nếu tên của action không trùng với tên của view cshtml thì phải return PartialView("tên file trùng với file.cshtml") -->
     <!-- header======================-->
     <header>
-        @{ Html.RenderAction("Header","Home");}
+        @{ Html.RenderAction("Header", "Home");}
     </header>
     <!-- End of Header area=-->
     @RenderBody()
 
 
     <section id="tw-client" class="tw-client">
-        @{ Html.RenderAction("Partner","Home");}
+        @{ Html.RenderAction("Partner", "Home");}
     </section>
     <footer id="tw-footer" class="tw-footer">
-        @{ Html.RenderAction("Footer","Home");}
+        @{ Html.RenderAction("Footer", "Home");}
     </footer>
     <!-- Javascripts File
        =============================================================================-->
@@ -86,8 +85,8 @@
     <script src="~/public/Client/js/main.js"></script>
     <script src="~/Public/Client/js/home/home.js"></script>
     <script src="~/Scripts/toastr.js"></script>
-    @RenderSection("scripts", required: false)
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Public/Client/js/dangkynhanbaiviet.js"></script>
     <script>
         $(document).ready(function () {
             $("#success-alert").fadeTo(2000, 1000).slideUp(1000, function () {
@@ -97,7 +96,11 @@
                 $("#success-alert").slideUp(500);
                 $("#myModal_Login").modal("show");
             });
+            $('.owl-carousel').owlCarousel({
+                dots: false,
+            });
         });
     </script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>

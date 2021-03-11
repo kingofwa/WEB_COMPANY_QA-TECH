@@ -341,6 +341,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tbl_KH_Register_Receive_News">
+      <EntityTypeMapping TypeName="Web_companyModel.tbl_KH_Register_Receive_News">
+        <MappingFragment StoreEntitySet="tbl_KH_Register_Receive_News">
+          <ScalarProperty Name="Time_KH" ColumnName="Time_KH" />
+          <ScalarProperty Name="Email_KH" ColumnName="Email_KH" />
+          <ScalarProperty Name="Id_KH" ColumnName="Id_KH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tbl_Question_client">
       <EntityTypeMapping TypeName="Web_companyModel.tbl_Question_client">
         <MappingFragment StoreEntitySet="tbl_Question_client">
@@ -355,6 +364,7 @@
     <EntitySetMapping Name="tbl_Register_Software_Client">
       <EntityTypeMapping TypeName="Web_companyModel.tbl_Register_Software_Client">
         <MappingFragment StoreEntitySet="tbl_Register_Software_Client">
+          <ScalarProperty Name="Time_register" ColumnName="Time_register" />
           <ScalarProperty Name="Option_time" ColumnName="Option_time" />
           <ScalarProperty Name="Id_Sw" ColumnName="Id_Sw" />
           <ScalarProperty Name="Option_sw" ColumnName="Option_sw" />
