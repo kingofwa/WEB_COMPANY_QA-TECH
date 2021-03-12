@@ -36,6 +36,7 @@
                                         @if (item.Status == 1)
                                         {
                                             <a data-info="@item.Email_question" data-other-info="@item.Conten_question" id="cauhoicuakhach_@item.Id_question" onclick="Traloi_cauhoi(@item.Id_question)" class="badge badge-warning" )>Trả lời <i class="fas fa-edit"></i></a>
+                                           
                                         }
                                     </td>
                                 </tr>
@@ -62,11 +63,15 @@
             <div class="modal-body">
                 <p><b class="text-danger">Câu hỏi</b>: <span id="cauhoi_khachhang"></span></p>
                 <label class="text-success">Câu trả lời</label>
-                <input type="text" id="cautraloi" class="form-control"/>
+                <input type="text" id="cautraloi" value="Dạ ," class="form-control"/>
                 <input type="hidden"  id="id_cautraloi"/>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="guicautraloichokhachhang" >Gửi</button>
+                <button type="button" class="btn btn-primary" id="guicautraloichokhachhang">Gửi</button>
+                <button class="btn btn-primary d-none" id="loadding_send" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Đang gửi...
+                </button>
             </div>
         </div>
     </div>

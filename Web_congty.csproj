@@ -11857,6 +11857,7 @@
     <Content Include="Public\Client\images\about\home-10-about.png" />
     <Content Include="Public\Client\images\about\intro-illustration.png" />
     <Content Include="Public\Client\images\about\laptop.png" />
+    <Content Include="Public\Client\images\about\login.png" />
     <Content Include="Public\Client\images\about\our_mission.png" />
     <Content Include="Public\Client\images\banner\baner.jpg" />
     <Content Include="Public\Client\images\banner\banner5.jpg" />

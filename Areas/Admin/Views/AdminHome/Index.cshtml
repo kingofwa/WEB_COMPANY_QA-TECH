@@ -25,7 +25,6 @@
                             <th>Phần mềm</th>
                             <th>Thời gian</th>
                             <th>Dịch vụ</th>
-                            <th>Cấp quyền</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -90,7 +89,7 @@
                                             }
                                         }
                                     </td>
-                                    <td>
+                                    @*<td>
                                         @if (item_khachhang.Status == 1)
                                         {
                                             <a id="binhluan_color_status_@item_khachhang.Id" class="badge badge-warning" onclick=(@item_khachhang.Id)>Xử lí</a>
@@ -99,7 +98,7 @@
                                         {
                                             <a id="binhluan_color_status_@item_khachhang.Id" class="badge badge-success" onclick=(@item_khachhang.Id)>Xong</a>
                                         }
-                                    </td>
+                                    </td>*@
                                 </tr>
                                 j++;
                             }

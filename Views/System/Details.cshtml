@@ -9,7 +9,7 @@
     var list_project_sidebar = ViewData["list_project_sidebar"] as List<Web_congty.Modal.FW.Project_system>;
 
 }
-@*@Html.Raw(System.Web.HttpUtility.HtmlDecode(@item.ChiTietDuAn))*@
+
 @{
     foreach (var item in ViewBag.details)
     {
@@ -47,7 +47,7 @@
                                             <div class="col-md-4">
                                                 <div class="tw-case-study-box">
                                                     <div class="case-img study-bg-lepvc">
-                                                        <a href=""><img src="@item_hinhanh" alt="QA_TECH" class="img-fluid lepvc__"></a>
+                                                        <img src="@item_hinhanh" alt="QA_TECH" class="img-fluid lepvc__">
                                                     </div>
                                                 </div>
                                             </div>
@@ -108,5 +108,4 @@
         </section>
     }
 }
-
 

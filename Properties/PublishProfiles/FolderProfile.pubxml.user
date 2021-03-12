@@ -17,25 +17,25 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/10/2021 16:15:22</publishTime>
     </File>
     <File Include="Areas/Admin/Views/AdminHome/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 14:54:30</publishTime>
     </File>
     <File Include="Areas/Admin/Views/AdminHome/Taikhoankhachhang.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/AdminHome/traloicauhoicuakhach.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 15:19:42</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Admin_login/Login.cshtml">
       <publishTime>03/09/2021 08:39:23</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Category/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 10:30:37</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Category/modal/add_category.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Categoryy/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 10:30:18</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Categoryy/modal/add_categoryy.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
@@ -50,31 +50,31 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/10/2021 16:41:13</publishTime>
     </File>
     <File Include="Areas/Admin/Views/FechBack/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 10:30:10</publishTime>
     </File>
     <File Include="Areas/Admin/Views/FechBack/modal/add_fechback.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Introduc/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 10:30:00</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Introduc/modal/add_intro.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Partner/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 10:29:54</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Partner/modal/add_partner.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Post/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 10:29:46</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Post/modal/add_post.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Project_System/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 10:29:38</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Project_System/modal/add_system.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
@@ -83,7 +83,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/10/2021 15:35:28</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Service/Index.cshtml">
-      <publishTime>03/08/2021 14:19:55</publishTime>
+      <publishTime>03/11/2021 10:29:27</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Service/modal/add_service.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
@@ -101,13 +101,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/10/2021 15:32:47</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Slide/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 10:29:14</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Slide/modal/add_slide.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
     </File>
     <File Include="Areas/Admin/Views/SoftWare/Index.cshtml">
-      <publishTime>03/08/2021 08:49:58</publishTime>
+      <publishTime>03/11/2021 10:29:01</publishTime>
     </File>
     <File Include="Areas/Admin/Views/SoftWare/modal/add_software.cshtml">
       <publishTime>03/08/2021 08:49:58</publishTime>
@@ -197,10 +197,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/08/2021 08:50:19</publishTime>
     </File>
     <File Include="bin/Web_congty.dll">
-      <publishTime>03/10/2021 16:49:14</publishTime>
+      <publishTime>03/11/2021 16:45:50</publishTime>
     </File>
     <File Include="bin/Web_congty.pdb">
-      <publishTime>03/10/2021 16:49:14</publishTime>
+      <publishTime>03/11/2021 16:45:50</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>03/08/2021 08:49:58</publishTime>
@@ -482,7 +482,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/08/2021 08:49:59</publishTime>
     </File>
     <File Include="Public/Admin/js/home_admin.js">
-      <publishTime>03/10/2021 16:14:16</publishTime>
+      <publishTime>03/11/2021 15:25:11</publishTime>
     </File>
     <File Include="Public/Admin/js/intro.js">
       <publishTime>03/08/2021 08:49:59</publishTime>
@@ -38645,10 +38645,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/08/2021 08:50:16</publishTime>
     </File>
     <File Include="Public/Client/css/responsive.css">
-      <publishTime>03/10/2021 17:45:56</publishTime>
+      <publishTime>03/11/2021 14:32:59</publishTime>
     </File>
     <File Include="Public/Client/css/style.css">
-      <publishTime>03/10/2021 17:41:11</publishTime>
+      <publishTime>03/11/2021 14:22:37</publishTime>
     </File>
     <File Include="Public/Client/fonts/fontawesome-webfont3e6e.eot">
       <publishTime>03/08/2021 08:50:16</publishTime>
@@ -38712,6 +38712,9 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Public/Client/images/about/laptop.png">
       <publishTime>03/08/2021 08:50:16</publishTime>
+    </File>
+    <File Include="Public/Client/images/about/login.png">
+      <publishTime>03/11/2021 14:44:59</publishTime>
     </File>
     <File Include="Public/Client/images/about/our_mission.png">
       <publishTime>03/08/2021 08:50:16</publishTime>
@@ -39245,7 +39248,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/08/2021 15:43:47</publishTime>
     </File>
     <File Include="Views/Home/Blog_PB.cshtml">
-      <publishTime>03/08/2021 08:50:17</publishTime>
+      <publishTime>03/11/2021 14:16:51</publishTime>
     </File>
     <File Include="Views/Home/FechBack.cshtml">
       <publishTime>03/08/2021 08:50:17</publishTime>
@@ -39257,7 +39260,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/09/2021 09:03:18</publishTime>
     </File>
     <File Include="Views/Home/Maketting.cshtml">
-      <publishTime>03/08/2021 14:13:59</publishTime>
+      <publishTime>03/11/2021 10:22:00</publishTime>
     </File>
     <File Include="Views/Home/Question.cshtml">
       <publishTime>03/08/2021 08:50:17</publishTime>
@@ -39293,7 +39296,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/10/2021 15:38:13</publishTime>
     </File>
     <File Include="Views/Shared/Header.cshtml">
-      <publishTime>03/10/2021 14:44:42</publishTime>
+      <publishTime>03/11/2021 08:45:37</publishTime>
     </File>
     <File Include="Views/Shared/Partner.cshtml">
       <publishTime>03/08/2021 08:50:17</publishTime>
@@ -39329,7 +39332,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/08/2021 08:50:18</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/10/2021 21:08:25</publishTime>
+      <publishTime>03/11/2021 14:41:10</publishTime>
     </File>
   </ItemGroup>
 </Project>

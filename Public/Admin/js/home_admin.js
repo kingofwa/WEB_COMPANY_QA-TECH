@@ -137,11 +137,13 @@ function Traloi_cauhoi(id) {
 //guicautraloichokhachhang
 $("html").on("click", "#guicautraloichokhachhang", function () {
     debugger
+    $("#loadding_send").removeClass("d-none");
+    $("#guicautraloichokhachhang").addClass("d-none");
     let id = $("#id_cautraloi").val();
     let noidungcauhoi = $("#cauhoi_khachhang").html();
     let email = $("#email_khachhanghoi").html();
     let cautraloi = $("#cautraloi").val();
-    if (cautraloi != "") {
+    if (cautraloi != "Dạ ," && cautraloi != "") {
         var data = JSON.stringify({
             emailhoi: email,
             cauhoi: noidungcauhoi,
@@ -156,9 +158,11 @@ $("html").on("click", "#guicautraloichokhachhang", function () {
             data: data,
             success: function (result) {
                 if (result == true) {
+                    $("#loadding_send").addClass("d-none");
+                    $("#guicautraloichokhachhang").removeClass("d-none");
                     $("#hide_reply_" + id).remove();
                     $("#traloicauhoikhachhang").modal("hide");
-                    toastr.success("Đã phản hồi lại !");
+                    toastr.success("Đã gửi câu trả lời thành công !");
                 } else {
                     toastr.warning("Lỗi hệ thống !");
                 }
@@ -168,6 +172,8 @@ $("html").on("click", "#guicautraloichokhachhang", function () {
             }
         });
     } else {
+        $("#loadding_send").addClass("d-none",400);
+        $("#guicautraloichokhachhang").removeClass("d-none");
         toastr.warning("Nhập câu trả lời !");
     }
 })
