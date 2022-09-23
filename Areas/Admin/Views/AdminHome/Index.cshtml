@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "Quản lí trang chủ";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+    var list_client_register = ViewData["list_client_register"] as List<Web_congty.Modal.FW.Client_register_now_software_Result>;
+}
+@section Scripts{
+    <script src="~/Public/Admin/js/home_admin.js"></script>
+}
+<div class="waraper_home pt-2">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">KHÁCH HÀNG ĐĂNG KÝ SỬ DỤNG PHẦN MỀM</h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered" id="khachhangdangkysudungphanmem">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Họ & tên</th>
+                            <th>SĐT</th>
+                            <th>Email</th>
+                            <th>Địa chỉ</th>
+                            <th>Doanh nghiệp</th>
+                            <th>Phần mềm</th>
+                            <th>Thời gian</th>
+                            <th>Dịch vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            var colorofstatus = "";
+                            var j = 1;
+                            foreach (var item_khachhang in list_client_register)
+                            {
+                                if (item_khachhang.Option_sw == 0)
+                                {
+                                    colorofstatus = "dungthu";
+                                }
+                                else if (item_khachhang.Option_sw == 1)
+                                {
+                                    colorofstatus = "dungthang";
+                                }
+                                else if (item_khachhang.Option_sw == 2)
+                                {
+                                    colorofstatus = "dungnam";
+                                }
+                                <tr class="@colorofstatus">
+                                    <td>@j</td>
+                                    <td>@item_khachhang.Name_Client</td>
+                                    <td>@item_khachhang.Phone_Client</td>
+                                    <td data-toggle="tooltip" data-placement="right" title="@item_khachhang.Email_CLient">@item_khachhang.Email_CLient</td>
+                                    <td data-toggle="tooltip" data-placement="right" title="@item_khachhang.Addred_Client">@item_khachhang.Addred_Client</td>
+                                    <td data-toggle="tooltip" data-placement="top" title="@item_khachhang.Name_Businet">@item_khachhang.Name_Businet</td>
+                                    <td data-toggle="tooltip" data-placement="right" title="@item_khachhang.Sw_name">@item_khachhang.Sw_name</td>
+                                    <td class="text-uppercase">
+                                        @{
+                                            if (item_khachhang.Option_sw == 1)
+                                            {
+                                                <b>Tháng</b>
+                                            }
+                                            else if (item_khachhang.Option_sw == 2)
+                                            {
+                                                <b>Năm</b>
+                                            }
+                                            else if (item_khachhang.Option_sw == 0)
+                                            {
+                                                <b>Dùng thử</b>
+                                            }
+                                        }
+                                    </td>
+                                    <td>
+                                        @{
+                                            if (item_khachhang.Option_time == 1)
+                                            {
+                                                <span>Entrepreneur</span>
+                                            }
+                                            else if (item_khachhang.Option_time == 2)
+                                            {
+                                                <span>Growing Business</span>
+                                            }
+                                            else if (item_khachhang.Option_time == 3)
+                                            {
+                                                <span>Pro Business</span>
+                                            }
+                                            else if (item_khachhang.Option_time == 0)
+                                            {
+                                                <span>Dùng thử</span>
+                                            }
+                                        }
+                                    </td>
+                                    @*<td>
+                                        @if (item_khachhang.Status == 1)
+                                        {
+                                            <a id="binhluan_color_status_@item_khachhang.Id" class="badge badge-warning" onclick=(@item_khachhang.Id)>Xử lí</a>
+                                        }
+                                        else
+                                        {
+                                            <a id="binhluan_color_status_@item_khachhang.Id" class="badge badge-success" onclick=(@item_khachhang.Id)>Xong</a>
+                                        }
+                                    </td>*@
+                                </tr>
+                                j++;
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+
+<div class="waraper_home pt-2">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-md-8">
+                <section class="content">
+                    <div class="container-fluid">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#home">
+                                    BÌNH LUẬN PHẦN MỀM
+                                    <span class="badge badge-warning">@ViewBag.danhsach_comment_phanmem</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#menu2">
+                                    BÌNH LUẬN BLOG
+                                    <span class="badge badge-warning">@ViewBag.danhsach_comment_baiviet</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#menu1">
+                                    CHƯA TRẢ LỜI KHÁCH
+                                    <span class="badge badge-warning">@ViewBag.danhsach_cauhoicuakhachhang</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="home" class=" tab-pane active">
+                                @RenderPage("duyetbinhluan_phanmem.cshtml")
+                            </div>
+                            <div id="menu1" class="tab-pane fade">
+                                @RenderPage("traloicauhoicuakhach.cshtml")
+                            </div>
+                            <div id="menu2" class="tab-pane fade">
+                                @RenderPage("duyetbinhluan_blog.cshtml")
+                            </div>
+                        </div>
+                    </div><!-- /.container-fluid -->
+                </section>
+            </div>
+            <div class="col-md-4">
+                @RenderPage("Taikhoankhachhang.cshtml")
+            </div>
+        </div>
+    </div>
+</div>

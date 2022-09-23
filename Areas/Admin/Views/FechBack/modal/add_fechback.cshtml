@@ -1,0 +1,41 @@
+﻿
+
+<div class="modal fade" id="Modal_fechbacks">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-cyan">
+                <h5 class="card-title text-white  text-uppercase">Thông tin</h5>
+                <span class="text-danger" data-dismiss="modal" aria-label="Close" aria-hidden="true"><i class="fa fa-times"></i></span>
+            </div>
+            <div class="QA_modal-body">
+                <form id="QA_admin_Modal_work_form_slide" class="row">
+                    <input type="hidden" id="Id_fechback" value="0">
+                    <div class="form-group col-12">
+                        <label for="">Tên <code>*</code></label>
+                        <input type="text" id="F_name" class="form-control">
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="">Nội dung<code>*</code></label>
+                        <input type="text" id="F_content" class="form-control">
+                    </div>
+                    <div class="form-group col-12">
+                        <label for="">Email<code>*</code></label>
+                        <input type="text" id="F_email" class="form-control">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="">Hình</label>
+                        <p><a class="btn btn-primary btn-sm d-block" onclick="BrowseServerFechBack()">Chọn ảnh</a></p>
+                        <input type="hidden" id="F_image" />
+                        <p id="show_image_fechback"></p>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-room justify-content-between d-inline-block black">
+                <button type="submit" id="Save_fechback" class="btn btn-xs btn-primary float-right mt-2 m-2"><i class="fa fa-save"></i> Lưu</button>
+                <button class="btn btn-xs btn-danger float-right mt-2 m-2" data-dismiss="modal"><i class="fa fa-times"></i> Hủy</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

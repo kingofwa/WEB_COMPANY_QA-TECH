@@ -1,0 +1,76 @@
+﻿@{
+        var list_partner = ViewData["list_partner"] as List<Web_congty.Modal.FW.Partner_DT>;
+    }
+@section Scripts{
+    <script src="~/Public/Admin/js/partner.js"></script>
+    <script src="~/Public/Admin/plugins/ckfinder/ckfinder.js"></script>
+}
+<div class="QA_warapper-content-category">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-content">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="menu-crud float-lg-right mt-2">
+                                <ul>
+                                    <li class="d-inline-block mr-2">
+                                        <a id="Modal_partner" class="btn btn-xs btn-success " href="#"><i class="fas fa-plus mr-1"></i> Thêm</a>
+                                    </li>
+                                    <li class="d-inline-block mr-2">
+                                        <a class="btn btn-xs btn-warning text-white disabled" id="edit_partner"><i class="fas fa-user-edit mr-1"></i> Sửa</a>
+                                    </li>
+                                    <li class="d-inline-block">
+                                        <a class="btn btn-xs btn-danger text-white disabled" id="delete_partner"><i class="fas fa-trash-alt mr-1"></i> Xóa</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <div class="col-md-12">
+                <div class="content-category">
+                    <table class="table text-center table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width:5%;">#</th>
+                                <th>Tên đối tác</th>
+                                <th>Logo</th>
+                                <th>Status</th>
+                                <th style="width:35%;">Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody id="show-body">
+                            @{
+                                foreach (var item in list_partner)
+                                {
+                                    <tr id="row_@item.Id">
+                                        <td>
+                                            <input type="radio" name="radiocheck" class="activecheckedit" id="typehide_@item.Id" value="@item.Id" />
+                                        </td>
+                                        <td> @item.Name_partner</td>
+                                        <td><img style="width:40px;height:30px;" src="@item.image_partner" alt="Alternate Text" /></td>
+                                        <td>
+                                            @if (@item.Status == 1)
+                                            {
+                                                <a id="color_status_@item.Id" class="btn btn-xs btn-success" onclick='Partner(@item.Id)'>Kích hoạt</a>
+                                            }
+                                            else
+                                            {
+                                                <a id="color_status_@item.Id" class="btn btn-xs btn-danger" onclick='Partner(@item.Id)'>Khóa</a>
+                                            }
+                                        </td>
+                                        <td> </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- het col-md-12 category -->
+        </div><!-- het row -->
+    </div><!-- het col-md-12 -->
+</div><!--/QA_warapper-content-category-->
+@RenderPage("modal/add_partner.cshtml")
+

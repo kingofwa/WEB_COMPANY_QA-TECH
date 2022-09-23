@@ -1,0 +1,53 @@
+﻿@{
+    //var list_post_pb = ViewData["list_post_pb"] as List<Web_congty.Modal.FW.Post>;
+    var list_post_pb = @ViewBag.baivietphobien;
+}
+
+<div class="container">
+    <div class="row text-center">
+        <div class="col section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay=".5s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInDown;">
+            <h2>
+                <small>Blog</small>
+                Tin tức
+                <span>Phổ biến</span>
+            </h2>
+        </div>
+    </div>
+    <!-- Row End -->
+    <div class="row wow fadeInUp" data-wow-duration="1s" data-wow-delay=".2s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+        @foreach (var item in list_post_pb)
+        {
+
+            <div class="col-lg-4 col-md-12">
+                <div class="tw-latest-post">
+                    <div class="latest-post-media text-center">
+                        <img src="@item.Image" alt="blog_image_one" class="" style="max-width:100%;max-height:100%;">
+                    </div>
+                    <div class="post-body">
+                        <div class="post-item-date">
+                            <div class="post-date">
+                                <span class="date">@item.Time_up_post.Date.ToString("dd")</span>
+                                <span class="month"><b>@item.Time_up_post.Month</b></span>
+                            </div>
+                        </div>
+                        <div class="post-info client">
+                            <div class="post-meta">
+                                <span class="post-author lepvc_one">Tác giả<a href="#"> @item.Author</a> <i class="fa fa-eye ml-2"></i>@item.View_client lượt xem</span>
+                            </div>
+                            <h3 class="post-title">
+                                <a href="/Blog_details/Detals_News/@item.Id">@item.Name</a>
+                            </h3>
+                            <div class="entry-content client_pvc">
+                                <p>
+                                    @item.Title
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
+<!-- Container End -->

@@ -1,0 +1,92 @@
+﻿span.field-validation-error {
+    color: red;
+    font-size: 15px;
+}
+form#QA_admin_Modal_work_form_slide {
+    padding: 40px;
+}
+
+p#show_image_Image_duan {
+    position: relative;
+    text-align: center;
+}
+
+i.fa.fa-minus {
+    color: red;
+    cursor: pointer;
+    position: absolute;
+    margin: -42px;
+    bottom: 26px;
+    cursor: pointer;
+}
+
+.badge {
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+.card-body.lepvc {
+    padding: 0.25rem;
+}
+
+/* ------------------------style table------------------*/
+tr.dungthu {
+    background-color: #99d6a7 !important;
+}
+tr.dungthang {
+    background-color: #7eb8c1 !important;
+}
+tr.dungnam {
+    background-color: #5695d8 !important;
+}
+
+span.badge.badge-warning {
+    position: absolute;
+    top: -8px;
+    font-size: 14px;
+}

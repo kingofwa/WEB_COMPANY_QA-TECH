@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Web_companyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="About_custommers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="AC_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="AC_email" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="150" />
+    <Property Name="id_categories" Type="int" />
+    <Property Name="status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="C_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="C_status" Type="bit" />
+    <Property Name="C_note" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_uer" Type="int" />
+    <Property Name="Noi_dung" Type="nvarchar(max)" />
+    <Property Name="Time" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="felling" Type="int" />
+    <Property Name="Vote" Type="int" />
+    <Property Name="Type_comment" Type="int" />
+    <Property Name="Id_post" Type="int" />
+    <Property Name="Id_reply" Type="int" />
+    <Property Name="id_user_vote" Type="varchar" MaxLength="250" />
+    <Property Name="Id_software" Type="int" />
+  </EntityType>
+  <EntityType Name="FechBack_Cus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="F_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="F_content" Type="nvarchar" MaxLength="250" />
+    <Property Name="F_email" Type="varchar" MaxLength="150" />
+    <Property Name="F_Status" Type="int" />
+    <Property Name="F_image" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Information_company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name_CPN" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone_hot" Type="int" />
+    <Property Name="Bank_number" Type="int" />
+    <Property Name="Email_true" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="Facebook" Type="varchar" MaxLength="250" />
+    <Property Name="Email_CPN" Type="varchar" MaxLength="250" />
+    <Property Name="Youtube" Type="varchar" MaxLength="250" />
+    <Property Name="Google" Type="varchar" MaxLength="250" />
+    <Property Name="Viber" Type="varchar" MaxLength="250" />
+    <Property Name="Slogan" Type="nvarchar" MaxLength="250" />
+    <Property Name="Addred" Type="nvarchar" MaxLength="150" />
+    <Property Name="Logo" Type="varchar" MaxLength="250" />
+    <Property Name="Register" Type="date" />
+    <Property Name="Notification_TB" Type="nvarchar" MaxLength="500" />
+    <Property Name="Advertisement_QC" Type="varchar" MaxLength="500" />
+    <Property Name="Best_Company" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Introduction">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Intro_name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Intro_desc" Type="nvarchar(max)" />
+    <Property Name="Intro_image" Type="varchar" MaxLength="150" />
+    <Property Name="Intro_link" Type="varchar" MaxLength="250" />
+    <Property Name="Intro_title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Intro_status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Maketting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="M_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="M_title" Type="nvarchar" MaxLength="250" />
+    <Property Name="M_link" Type="varchar" MaxLength="250" />
+    <Property Name="M_image" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Partner_DT">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name_partner" Type="nvarchar" MaxLength="250" />
+    <Property Name="image_partner" Type="varchar" MaxLength="150" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Id_brand" Type="int" />
+    <Property Name="Image" Type="varchar" MaxLength="250" />
+    <Property Name="Author" Type="nvarchar" MaxLength="150" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Details" Type="nvarchar(max)" />
+    <Property Name="Prominence_Nb" Type="bit" />
+    <Property Name="Common_Pb" Type="bit" />
+    <Property Name="Time_up_post" Type="date" />
+    <Property Name="Type_post" Type="bit" />
+    <Property Name="View_client" Type="int" />
+  </EntityType>
+  <EntityType Name="Post_user">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Id_uer" Type="int" />
+    <Property Name="Id_brand" Type="int" />
+    <Property Name="Image" Type="varchar" MaxLength="500" />
+    <Property Name="Author" Type="nvarchar" MaxLength="150" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Details" Type="nvarchar(max)" />
+    <Property Name="View_client" Type="int" />
+    <Property Name="Time_up" Type="datetime" />
+    <Property Name="Type_post" Type="bit" />
+    <Property Name="Common" Type="bit" />
+  </EntityType>
+  <EntityType Name="Project_system">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Ten_DuAn" Type="nvarchar" MaxLength="150" />
+    <Property Name="Ten_KySu" Type="nvarchar" MaxLength="150" />
+    <Property Name="Tongtien_DuAn" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Diachi_DuAn" Type="nvarchar" MaxLength="250" />
+    <Property Name="Thoigiankhoicong" Type="date" />
+    <Property Name="Thoigianhoanthanh" Type="date" />
+    <Property Name="Hinhanhchitiet" Type="nvarchar(max)" />
+    <Property Name="Hinhanhmota" Type="varchar" MaxLength="250" />
+    <Property Name="Motangan" Type="nvarchar" MaxLength="250" />
+    <Property Name="ChiTietDuAn" Type="nvarchar(max)" />
+    <Property Name="Ghi_chu" Type="nvarchar" MaxLength="500" />
+    <Property Name="TheLoai_DuAn" Type="int" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Services_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="Services_title" Type="nvarchar" MaxLength="250" />
+    <Property Name="Services_link" Type="varchar" MaxLength="250" />
+    <Property Name="Services_image" Type="varchar" MaxLength="250" />
+    <Property Name="Services_desc" Type="nvarchar(max)" />
+    <Property Name="Services_status" Type="bit" />
+    <Property Name="Services_maketting" Type="bit" />
+    <Property Name="Services_note" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="S_name" Type="nvarchar" MaxLength="250" />
+    <Property Name="S_description" Type="nvarchar" MaxLength="500" />
+    <Property Name="S_link" Type="varchar" MaxLength="250" />
+    <Property Name="S_image" Type="varchar" MaxLength="150" />
+    <Property Name="S_active" Type="bit" />
+  </EntityType>
+  <EntityType Name="SoftWare_Case">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Sw_title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Sw_name" Type="nvarchar" MaxLength="150" />
+    <Property Name="Sw_image" Type="varchar" MaxLength="250" />
+    <Property Name="Sw_link" Type="varchar" MaxLength="250" />
+    <Property Name="Sw_Status" Type="bit" />
+    <Property Name="Sw_note" Type="nvarchar" MaxLength="500" />
+    <Property Name="Sw_desc" Type="nvarchar(max)" />
+    <Property Name="Sw_author" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_Uers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="150" />
+    <Property Name="email" Type="nvarchar" MaxLength="250" />
+    <Property Name="password" Type="nvarchar" MaxLength="150" />
+    <Property Name="Image_cus" Type="nvarchar" MaxLength="250" />
+    <Property Name="Day" Type="date" />
+    <Property Name="Run_status" Type="int" />
+    <Property Name="phone" Type="int" />
+    <Property Name="question" Type="nvarchar" MaxLength="500" />
+    <Property Name="reply" Type="nvarchar" MaxLength="500" />
+    <Property Name="addred" Type="nvarchar" MaxLength="250" />
+    <Property Name="type_uer" Type="int" />
+    <Property Name="public_private" Type="int" />
+    <Property Name="folow" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="tbl_KH_Register_Receive_News">
+    <Key>
+      <PropertyRef Name="Id_KH" />
+    </Key>
+    <Property Name="Id_KH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email_KH" Type="nvarchar" MaxLength="250" />
+    <Property Name="Time_KH" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Question_client">
+    <Key>
+      <PropertyRef Name="Id_question" />
+    </Key>
+    <Property Name="Id_question" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Conten_question" Type="nvarchar(max)" />
+    <Property Name="Email_question" Type="nvarchar" MaxLength="250" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Time_question" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Register_Software_Client">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_login" Type="nvarchar" MaxLength="150" />
+    <Property Name="Pass_login" Type="nvarchar" MaxLength="150" />
+    <Property Name="Name_Client" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone_Client" Type="int" />
+    <Property Name="Email_CLient" Type="varchar" MaxLength="250" />
+    <Property Name="Addred_Client" Type="nvarchar" MaxLength="500" />
+    <Property Name="Name_Businet" Type="nvarchar" MaxLength="500" />
+    <Property Name="Send_messenger" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Option_sw" Type="int" />
+    <Property Name="Id_Sw" Type="int" />
+    <Property Name="Option_time" Type="int" />
+    <Property Name="Time_register" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_Uers_Admin">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email_user" Type="nvarchar" MaxLength="250" />
+    <Property Name="Password_user" Type="nvarchar" MaxLength="250" />
+    <Property Name="Image_user" Type="nvarchar" MaxLength="250" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <Function Name="f__Count_post" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="__Count_post" />
+  <Function Name="Binhlan_phanmem" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Binhluan_blog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="Client_register_now_software" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="DANH_MUC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="list_comment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="List_reply_comment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Web_companyModelStoreContainer">
+    <EntitySet Name="About_custommers" EntityType="Self.About_custommers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FechBack_Cus" EntityType="Self.FechBack_Cus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Information_company" EntityType="Self.Information_company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Introduction" EntityType="Self.Introduction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Maketting" EntityType="Self.Maketting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Partner_DT" EntityType="Self.Partner_DT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Post_user" EntityType="Self.Post_user" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project_system" EntityType="Self.Project_system" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SoftWare_Case" EntityType="Self.SoftWare_Case" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Uers" EntityType="Self.tbl_Uers" Schema="dbo" Table="tbl.Uers" store:Type="Tables" />
+    <EntitySet Name="tbl_KH_Register_Receive_News" EntityType="Self.tbl_KH_Register_Receive_News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Question_client" EntityType="Self.tbl_Question_client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Register_Software_Client" EntityType="Self.tbl_Register_Software_Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Uers_Admin" EntityType="Self.tbl_Uers_Admin" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

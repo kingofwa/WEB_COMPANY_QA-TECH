@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Web_companyModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="About_custommers">
+      <EntityTypeMapping TypeName="Web_companyModel.About_custommers">
+        <MappingFragment StoreEntitySet="About_custommers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AC_name" ColumnName="AC_name" />
+          <ScalarProperty Name="AC_email" ColumnName="AC_email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Brand">
+      <EntityTypeMapping TypeName="Web_companyModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="Web_companyModel.Categories">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="C_name" ColumnName="C_name" />
+          <ScalarProperty Name="C_status" ColumnName="C_status" />
+          <ScalarProperty Name="C_note" ColumnName="C_note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comment">
+      <EntityTypeMapping TypeName="Web_companyModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_uer" ColumnName="Id_uer" />
+          <ScalarProperty Name="Noi_dung" ColumnName="Noi_dung" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="felling" ColumnName="felling" />
+          <ScalarProperty Name="Vote" ColumnName="Vote" />
+          <ScalarProperty Name="Type_comment" ColumnName="Type_comment" />
+          <ScalarProperty Name="Id_post" ColumnName="Id_post" />
+          <ScalarProperty Name="Id_reply" ColumnName="Id_reply" />
+          <ScalarProperty Name="id_user_vote" ColumnName="id_user_vote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FechBack_Cus">
+      <EntityTypeMapping TypeName="Web_companyModel.FechBack_Cus">
+        <MappingFragment StoreEntitySet="FechBack_Cus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="F_name" ColumnName="F_name" />
+          <ScalarProperty Name="F_content" ColumnName="F_content" />
+          <ScalarProperty Name="F_email" ColumnName="F_email" />
+          <ScalarProperty Name="F_Status" ColumnName="F_Status" />
+          <ScalarProperty Name="F_image" ColumnName="F_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Information_company">
+      <EntityTypeMapping TypeName="Web_companyModel.Information_company">
+        <MappingFragment StoreEntitySet="Information_company">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name_CPN" ColumnName="Name_CPN" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+          <ScalarProperty Name="Email_CPN" ColumnName="Email_CPN" />
+          <ScalarProperty Name="Youtube" ColumnName="Youtube" />
+          <ScalarProperty Name="Google" ColumnName="Google" />
+          <ScalarProperty Name="Viber" ColumnName="Viber" />
+          <ScalarProperty Name="Slogan" ColumnName="Slogan" />
+          <ScalarProperty Name="Addred" ColumnName="Addred" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="Register" ColumnName="Register" />
+          <ScalarProperty Name="Notification_TB" ColumnName="Notification_TB" />
+          <ScalarProperty Name="Advertisement_QC" ColumnName="Advertisement_QC" />
+          <ScalarProperty Name="Best_Company" ColumnName="Best_Company" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Introduction">
+      <EntityTypeMapping TypeName="Web_companyModel.Introduction">
+        <MappingFragment StoreEntitySet="Introduction">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Intro_name" ColumnName="Intro_name" />
+          <ScalarProperty Name="Intro_desc" ColumnName="Intro_desc" />
+          <ScalarProperty Name="Intro_image" ColumnName="Intro_image" />
+          <ScalarProperty Name="Intro_link" ColumnName="Intro_link" />
+          <ScalarProperty Name="Intro_title" ColumnName="Intro_title" />
+          <ScalarProperty Name="Intro_status" ColumnName="Intro_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maketting">
+      <EntityTypeMapping TypeName="Web_companyModel.Maketting">
+        <MappingFragment StoreEntitySet="Maketting">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="M_name" ColumnName="M_name" />
+          <ScalarProperty Name="M_title" ColumnName="M_title" />
+          <ScalarProperty Name="M_link" ColumnName="M_link" />
+          <ScalarProperty Name="M_image" ColumnName="M_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Partner_DT">
+      <EntityTypeMapping TypeName="Web_companyModel.Partner_DT">
+        <MappingFragment StoreEntitySet="Partner_DT">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name_partner" ColumnName="Name_partner" />
+          <ScalarProperty Name="image_partner" ColumnName="image_partner" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Post">
+      <EntityTypeMapping TypeName="Web_companyModel.Post">
+        <MappingFragment StoreEntitySet="Post">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id_brand" ColumnName="Id_brand" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Prominence_Nb" ColumnName="Prominence_Nb" />
+          <ScalarProperty Name="Common_Pb" ColumnName="Common_Pb" />
+          <ScalarProperty Name="Time_up_post" ColumnName="Time_up_post" />
+          <ScalarProperty Name="Type_post" ColumnName="Type_post" />
+          <ScalarProperty Name="View_client" ColumnName="View_client" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Project_system">
+      <EntityTypeMapping TypeName="Web_companyModel.Project_system">
+        <MappingFragment StoreEntitySet="Project_system">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Ten_DuAn" ColumnName="Ten_DuAn" />
+          <ScalarProperty Name="Ten_KySu" ColumnName="Ten_KySu" />
+          <ScalarProperty Name="Tongtien_DuAn" ColumnName="Tongtien_DuAn" />
+          <ScalarProperty Name="Diachi_DuAn" ColumnName="Diachi_DuAn" />
+          <ScalarProperty Name="Thoigiankhoicong" ColumnName="Thoigiankhoicong" />
+          <ScalarProperty Name="Thoigianhoanthanh" ColumnName="Thoigianhoanthanh" />
+          <ScalarProperty Name="Hinhanhchitiet" ColumnName="Hinhanhchitiet" />
+          <ScalarProperty Name="Hinhanhmota" ColumnName="Hinhanhmota" />
+          <ScalarProperty Name="Motangan" ColumnName="Motangan" />
+          <ScalarProperty Name="ChiTietDuAn" ColumnName="ChiTietDuAn" />
+          <ScalarProperty Name="Ghi_chu" ColumnName="Ghi_chu" />
+          <ScalarProperty Name="TheLoai_DuAn" ColumnName="TheLoai_DuAn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="Web_companyModel.Services">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Services_name" ColumnName="Services_name" />
+          <ScalarProperty Name="Services_title" ColumnName="Services_title" />
+          <ScalarProperty Name="Services_link" ColumnName="Services_link" />
+          <ScalarProperty Name="Services_image" ColumnName="Services_image" />
+          <ScalarProperty Name="Services_desc" ColumnName="Services_desc" />
+          <ScalarProperty Name="Services_status" ColumnName="Services_status" />
+          <ScalarProperty Name="Services_maketting" ColumnName="Services_maketting" />
+          <ScalarProperty Name="Services_note" ColumnName="Services_note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slider">
+      <EntityTypeMapping TypeName="Web_companyModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="S_name" ColumnName="S_name" />
+          <ScalarProperty Name="S_description" ColumnName="S_description" />
+          <ScalarProperty Name="S_link" ColumnName="S_link" />
+          <ScalarProperty Name="S_image" ColumnName="S_image" />
+          <ScalarProperty Name="S_active" ColumnName="S_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SoftWare_Case">
+      <EntityTypeMapping TypeName="Web_companyModel.SoftWare_Case">
+        <MappingFragment StoreEntitySet="SoftWare_Case">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sw_title" ColumnName="Sw_title" />
+          <ScalarProperty Name="Sw_name" ColumnName="Sw_name" />
+          <ScalarProperty Name="Sw_image" ColumnName="Sw_image" />
+          <ScalarProperty Name="Sw_link" ColumnName="Sw_link" />
+          <ScalarProperty Name="Sw_Status" ColumnName="Sw_Status" />
+          <ScalarProperty Name="Sw_note" ColumnName="Sw_note" />
+          <ScalarProperty Name="Sw_desc" ColumnName="Sw_desc" />
+          <ScalarProperty Name="Sw_author" ColumnName="Sw_author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Uers">
+      <EntityTypeMapping TypeName="Web_companyModel.tbl_Uers">
+        <MappingFragment StoreEntitySet="tbl_Uers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Image_cus" ColumnName="Image_cus" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="Run_status" ColumnName="Run_status" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="reply" ColumnName="reply" />
+          <ScalarProperty Name="addred" ColumnName="addred" />
+          <ScalarProperty Name="type_uer" ColumnName="type_uer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="f__Count_post" FunctionName="Web_companyModel.Store.f__Count_post">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Web_companyModel.f__Count_post_Result">
+          <ScalarProperty Name="count_post" ColumnName="count_post" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DANH_MUC" FunctionName="Web_companyModel.Store.DANH_MUC">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Web_companyModel.DANH_MUC_Result">
+          <ScalarProperty Name="C_name" ColumnName="C_name" />
+          <ScalarProperty Name="C_status" ColumnName="C_status" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="id_categories" ColumnName="id_categories" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="list_comment" FunctionName="Web_companyModel.Store.list_comment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Web_companyModel.list_comment_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Image_cus" ColumnName="Image_cus" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="felling" ColumnName="felling" />
+          <ScalarProperty Name="Id_post" ColumnName="Id_post" />
+          <ScalarProperty Name="Id_reply" ColumnName="Id_reply" />
+          <ScalarProperty Name="Id_uer" ColumnName="Id_uer" />
+          <ScalarProperty Name="Noi_dung" ColumnName="Noi_dung" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Type_comment" ColumnName="Type_comment" />
+          <ScalarProperty Name="Vote" ColumnName="Vote" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="List_reply_comment" FunctionName="Web_companyModel.Store.List_reply_comment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Web_companyModel.List_reply_comment_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="Image_cus" ColumnName="Image_cus" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Noi_dung" ColumnName="Noi_dung" />
+          <ScalarProperty Name="Id_comment" ColumnName="Id_comment" />
+          <ScalarProperty Name="Id_post" ColumnName="Id_post" />
+          <ScalarProperty Name="Type_comment" ColumnName="Type_comment" />
+          <ScalarProperty Name="Id_reply" ColumnName="Id_reply" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

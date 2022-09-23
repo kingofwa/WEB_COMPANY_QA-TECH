@@ -1,0 +1,169 @@
+﻿
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 col-lg-4">
+            <div class="tw-footer-info-box">
+                <a href="/Home/index" class="footer-logo">
+                    <img class="img-fluid Logo" src="" alt="footer_logo">
+                </a>
+                <p class="footer-info-text">
+                    <b class="Slogan"></b>
+                </p>
+                <div class="footer-social-link">
+                    <h3>Theo dõi</h3>
+                    <ul>
+                        <li><a class="Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a class="Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a class="Google" href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a class="Youtube" href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <!-- End Social link -->
+            </div>
+            <!-- End Footer info -->
+            <div class="footer-awarad">
+                <img src="~/public/Client/images/icon/best.png" alt="">
+                <p class="tieude"></p>
+            </div>
+        </div>
+        <!-- End Col -->
+        <div class="col-md-12 col-lg-8">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-us">
+                        <div class="contact-icon">
+                            <i class="icon icon-map2"></i>
+                        </div>
+                        <!-- End contact Icon -->
+                        <div class="contact-info">
+                            <h3 class="diachi"></h3>
+                        </div>
+                        <!-- End Contact Info -->
+                    </div>
+                    <!-- End Contact Us -->
+                </div>
+                <!-- End Col -->
+                <div class="col-md-6">
+                    <div class="contact-us contact-us-last">
+                        <div class="contact-icon">
+                            <i class="icon icon-phone3"></i>
+                        </div>
+                        <!-- End contact Icon -->
+                        <div class="contact-info">
+                            <h3 class="sodienthoai">009-215-5596</h3>
+                            <p>Gọi cho chúng tôi</p>
+                        </div>
+                        <!-- End Contact Info -->
+                    </div>
+                    <!-- End Contact Us -->
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Contact Row -->
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <div class="footer-widget footer-left-widget">
+                        <div class="section-heading">
+                            <h3>Danh mục</h3>
+                            <span class="animate-border border-black"></span>
+                        </div>
+                        <ul>
+                            @{
+                                var chan = 0;
+                                foreach (var item in ViewBag.danhmuccha)
+                                {
+                                    if (chan % 2 == 0)
+                                    {
+                                        <li><a href="/ListOfBlog/Index/@item.Id">@item.Name</a></li>
+                                    }
+                                    chan++;
+                                }
+                            }
+                        </ul>
+                        <ul>
+                            @{
+                                var le = 0;
+                                foreach (var item in ViewBag.danhmuccha)
+                                {
+                                    if (le % 2 != 0)
+                                    {
+                                        <li><a href="/ListOfBlog/Index/@item.Id">@item.Name</a></li>
+                                    }
+                                    le++;
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <!-- End col -->
+                <div class="col-md-12 col-lg-6">
+                    <div class="footer-widget">
+                        <div class="section-heading">
+                            <h3>Đăng ký</h3>
+                            <span class="animate-border border-black"></span>
+                        </div>
+                        <p>Đăng ký để nhận thông tin...</p>
+                        <div class="form-row">
+                            <div class="col tw-footer-form">
+                                <input type="email" id="Email_dangky_nhantin_footer" class="form-control text-white" placeholder="Email của bạn">
+                                <button id="lepvc_dangkynhantin_footer"><i class="fa fa-send"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact Container -->
+
+
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <span>Copyright &copy;2020 - @DateTime.Now.Year, All Right Reserved QuocAnh</span>
+            </div>
+            <!-- End Col -->
+            <div class="col-md-6">
+                <div class="copyright-menu">
+                    <ul>
+                        <li><a href="/Cong-ty-co-phan-cong-nghe-va-thiet-bi-quoc-anh">Trang chủ</a></li>
+                        <li><a href="/Phan-mem-cong-ty-co-phan-cong-nghe-va-thiet-bi-quoc-anh">Phần mềm</a></li>
+                        <li><a href="/Danh-sach-du-an-ky-thuat-cty-quoc-anh">Kỹ thuật</a></li>
+                        <li><a href="/tin-tuc">Blog</a></li>
+                        <li><a href="/ve-chung-toi-qua-trinh-hinh-thanh-va-phat-trien-html">Về chúng tôi</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Copyright Container -->
+</div>
+<div class="hotline-phone-ring-wrap">
+    <div class="hotline-phone-ring">
+        <div class="hotline-phone-ring-circle"></div>
+        <div class="hotline-phone-ring-circle-fill"></div>
+        <div class="hotline-phone-ring-img-circle">
+            <a href="tel:000000000000" class="pps-btn-img">
+                <i class="fa fa-phone fa-1x" aria-hidden="true" alt="QA_TECH" width="50"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="hotline-bar">
+        <a href="tel:000000000000">
+            <span class="text-hotline sodienthoai"></span>
+        </a>
+    </div>
+
+</div>
+
+<!-- End Copyright -->
+<!-- Back to top -->
+<div id="back-to-top" class="back-to-top">
+    <button class="btn btn-dark" title="Back to Top">
+        <i class="fa fa-angle-up"></i>
+    </button>
+</div>
+<!-- End Back to top -->

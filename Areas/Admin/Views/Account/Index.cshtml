@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.title = "Tài khoản";
+    var list_user = ViewData["list_user"] as List<Web_congty.Modal.FW.tbl_Uers_Admin>;
+}
+@using Web_congty.Modal.FW
+@model tbl_Uers_Admin
+<div class="QA_warapper-content-category pt-5">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Đăng ký tài khoản</h3>
+                    </div>
+
+                    @using (Html.BeginForm("Index", "Account", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true)
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="">Email</label>
+                                @Html.TextBoxFor(model => model.Email_user, new { @class = "form-control", placeholder = "Email" })
+                                @Html.ValidationMessageFor(model => model.Email_user)
+                            </div>
+                            <div class="form-group">
+                                <label for="">Mật khẩu</label>
+                                @Html.TextBoxFor(model => model.Password_user, new { @class = "form-control", placeholder = "Mật khẩu" })
+                                @Html.ValidationMessageFor(model => model.Password_user)
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Nhập lại mật khẩu</label>
+                                <input type="password" class="form-control" onchange="KiemtraMK()" id="Password_user2" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Đăng ký</button>
+                        </div>
+                    }
+                    @if (ViewBag.thongbao != null)
+                    {
+                        <h3 class="card-title text-center text-danger">@ViewBag.thongbao</h3>
+                    }
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="content-category">
+                    <table class="table text-center table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width:5%;">#</th>
+                                <th>Tài khoản</th>
+                                <th>Trạng thái</th>
+                                <th style="width:35%;">Ghi chú</th>
+                            </tr>
+                        </thead>
+                        <tbody id="show-body">
+                            @{
+                                var i = 1;
+                                foreach (var item in list_user)
+                                {
+                                    <tr>
+                                        <td>@i</td>
+                                        <td> @item.Email_user</td>
+                                        <td>
+                                            @if (@item.Status == true)
+                                            {
+                                                <a id="color_status_@item.Id_user" class="btn btn-xs btn-success" onclick=(@item.Id_user)>Kích hoạt</a>
+                                            }
+                                            else
+                                            {
+                                                <a id="color_status_@item.Id_user" class="btn btn-xs btn-danger" onclick=(@item.Id_user)>Khóa</a>
+                                            }
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    i++;
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function KiemtraMK() {
+        let mk = document.getElementById("Password_user");
+        let mk2 = document.getElementById("Password_user2")
+        if (mk != mk2) {
+            toastr.warning("Mật khẩu không khớp !");
+        }
+    }
+</script>

@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Đăng ký sử dụng phần mềm";
+}
+@using Web_congty.Modal.FW
+@model tbl_Register_Software_Client
+<div class="container">
+    <div class="dangkymuaphanmem">
+        <div class="row">
+            <div class="col-md-8">
+                <section id="tw-contact-us" class="tw-contact-us">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="section-heading text-center">
+                                    <h3>
+                                        <span>Đăng Ký Sử Dụng @ViewBag.phanmem</span>
+                                    </h3>
+                                    <span class="animate-border border-ash ml-auto mr-auto tw-mt-20 tw-mb-40"></span>
+                                </div>
+                            </div>
+                        </div>
+                        @if (ViewBag.thongbao != null)
+                        {
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert" id="success-alert">
+                                <strong><b class="text-danger">@ViewBag.thongbao</b> !!!</strong>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        }
+                        <!-- Row End -->
+                        <div class="contact-us-form">
+                            @using (Html.BeginForm("Choose", "Register_Software"))
+                            {
+                                @Html.AntiForgeryToken()
+                                @Html.ValidationSummary(true)
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Name_login, new { @class = "form-control", placeholder = "Tài khoản (VD:NguyenVanA)" })
+                                            @Html.ValidationMessageFor(model => model.Name_login)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            @Html.PasswordFor(model => model.Pass_login, new { @class = "form-control", placeholder = "Mật khẩu (ít nhất 6 ký tự)" })
+                                            @Html.ValidationMessageFor(model => model.Pass_login)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Name_Client, new { @class = "form-control", placeholder = "Họ & tên" })
+                                            @Html.ValidationMessageFor(model => model.Name_Client)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Phone_Client, new { @class = "form-control", placeholder = "Số diện thoại" })
+                                            @Html.ValidationMessageFor(model => model.Phone_Client)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Email_CLient, new { @class = "form-control", placeholder = "Email" })
+                                            @Html.ValidationMessageFor(model => model.Email_CLient)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Addred_Client, new { @class = "form-control", placeholder = "Địa chỉ", type = "phone" })
+                                            @Html.ValidationMessageFor(model => model.Addred_Client)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Name_Businet, new { @class = "form-control", placeholder = "Tên doanh nghiệp" })
+                                            @Html.ValidationMessageFor(model => model.Name_Businet)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            @Html.TextBoxFor(model => model.Send_messenger, new { @class = "form-control", placeholder = "Lời nhắn đến chúng tôi..." })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary tw-mt-30">Đăng ký</button>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="col-md-4">
+                <section>
+                    <ul class="list-group">
+                        <li class="list-group-item"><b>Ngân hàng...</b>: @ViewBag.bank</li>
+                        <li class="list-group-item"><b>Hot line</b>: @ViewBag.sdt</li>
+                        <li class="list-group-item"><b>Email</b>: @ViewBag.email</li>
+                    </ul>
+                </section>
+                <div class="overflow-hidden">
+                    <img class="phanmem" src="@ViewBag.hinhanhphanmem" style="max-width:95%;position: absolute;top:36%;" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

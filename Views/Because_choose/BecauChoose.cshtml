@@ -1,0 +1,40 @@
+﻿
+@{
+    var visaochon = ViewData["visaochon"] as List<Web_congty.Modal.FW.Introduction>;
+}
+
+
+<div id="banner-area" class="banner-area" style="background-image: url(/public/Client/images/banner/banner5.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="banner-heading">
+                    <h1 class="banner-title">Vì sao lại nên chọn chúng tôi</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="section-heading">
+                    <h2>
+                        Chức năng & <span>Giải pháp</span>
+                    </h2>
+                    <span class="animate-border ml-auto mr-auto tw-mt-20 tw-mb-40"></span>
+                </div>
+            </div>
+        </div>
+        <div class="media-bodyy vanle_pvc">
+            @{
+                foreach (var item in visaochon)
+                {
+                    @Html.Raw(System.Web.HttpUtility.HtmlDecode(@item.Intro_desc))
+                }
+            }
+        </div>
+    </div>
+</section>

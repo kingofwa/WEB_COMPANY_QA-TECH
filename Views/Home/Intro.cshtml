@@ -1,0 +1,22 @@
+﻿@{
+    var list_intro= ViewData["list_intro"] as List<Web_congty.Modal.FW.Introduction>;
+}
+<div class="container">
+    <div class="row">
+        @foreach (var item in list_intro)
+        {
+            <div class="col-lg-6 col-md-12 text-lg-right text-md-center wow fadeInLeft" data-wow-duration="1s">
+                <img src="@item.Intro_image" alt="" class="img-fluid">
+            </div>
+            <div class="col-lg-5 ml-auto col-md-12 wow fadeInRight" data-wow-duration="1s">
+                <h2 class="column-title">@item.Intro_name</h2>
+                <span class="animate-border tw-mb-40"></span>
+                <p>
+                   @item.Intro_title
+                </p>
+                <a href="/vi-sao-lai-nen-chon-san-pham-cua-chung-toi-@item.Intro_name" class="btn btn-primary">Chi tiết</a>
+            </div>
+        }
+    </div>
+</div>
+<!-- End Container -->

@@ -1,0 +1,79 @@
+﻿
+@{
+    var list_introduction = ViewData["list_introduction"] as List<Web_congty.Modal.FW.Introduction>;
+}
+@section Scripts{
+    <script src="~/Public/Admin/js/intro.js"></script>
+    <script src="~/Public/Admin/plugins/ckfinder/ckfinder.js"></script>
+    <script src="~/Public/Admin/plugins/ckeditor4-major/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('Intro_desc')
+    </script>
+}
+<div class="QA_warapper-content-category">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="header-content">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="menu-crud float-lg-right mt-2">
+                                <ul>
+                                    <li class="d-inline-block mr-2">
+                                        <a id="Modal_intro" class="btn btn-xs btn-success " href="#"><i class="fas fa-plus mr-1"></i> Thêm</a>
+                                    </li>
+                                    <li class="d-inline-block mr-2">
+                                        <a class="btn btn-xs btn-warning text-white disabled" id="edit_intro"><i class="fas fa-user-edit mr-1"></i> Sửa</a>
+                                    </li>
+                                    <li class="d-inline-block">
+                                        <a class="btn btn-xs btn-danger text-white disabled" id="delete_intro"><i class="fas fa-trash-alt mr-1"></i> Xóa</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <div class="col-md-12">
+                <div class="content-category">
+                    <table class="table text-center table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th style="width:5%;">#</th>
+                                <th>Tên </th>
+                                <th>Mô tả</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="show-body">
+                            @{
+                                foreach (var item in list_introduction)
+                                {
+                                    <tr id="row_@item.Id">
+                                        <td>
+                                            <input type="radio" name="radiocheck" class="activecheckedit" id="typehide_@item.Id" value="@item.Id" />
+                                        </td>
+                                        <td id="Intro_name_@item.Id" class="maume"> @item.Intro_name</td>
+                                        <td id="Intro_title_@item.Id">@item.Intro_title</td>
+                                        <td id="Intro_status_@item.Id">
+                                            @if (@item.Intro_status == true)
+                                            {
+                                                <a id="color_status_@item.Id" class="btn btn-xs btn-success" onclick='Introduction(@item.Id)'>Kích hoạt</a>
+                                            }
+                                            else
+                                            {
+                                                <a id="color_status_@item.Id" class="btn btn-xs btn-danger" onclick='Introduction(@item.Id)'>Khóa</a>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- het col-md-12 category -->
+        </div><!-- het row -->
+    </div><!-- het col-md-12 -->
+</div><!--/QA_warapper-content-category-->
+@RenderPage("modal/add_intro.cshtml")
+

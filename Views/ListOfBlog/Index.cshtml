@@ -1,0 +1,99 @@
+﻿
+@model PagedList.IPagedList<Web_congty.Modal.FW.Post>
+@using PagedList.Mvc;
+
+<div id="banner-area" class="banner-area" style="background-image:url(/public/Client/images/banner/banner5.jpg)">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="banner-heading">
+                    <h1 class="banner-title">@ViewBag.danhmuc_cate</h1>
+                    <ol class="breadcrumb">
+                        <li><a href="/Home/index">Trang chủ</a></li>
+                        <li><a href="#" class="active">Blog</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- Col end -->
+        </div>
+        <!-- Row end -->
+    </div>
+    <!-- Container end -->
+</div>
+
+<section id="main-container" class="main-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                @{
+                    foreach (var item in Model)
+                    {
+                        <article class="post tw-news-post">
+                            @{
+                                if (item.Type_post == true)
+                                {
+                                    <div class="post-media post-image">
+                                        <img src="@item.Image" class="img-fluid" alt="QA_TECH">
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="post-media post-video">
+                                        <img src="@item.Image" class="img-fluid" alt="">
+                                        <a class="video-popup" href="">
+                                            <div class="video-icon">
+                                                <i class="icon icon-play"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            }
+                            <div class="post-body">
+                                <div class="post-item-date">
+                                    <div class="post-date">
+                                        <span class="date">@item.Time_up_post.GetValueOrDefault().Date.ToString("dd")</span>
+                                        <span class="month"><b>@item.Time_up_post.GetValueOrDefault().Month</b></span>
+                                    </div>
+                                </div>
+                                <!-- End Post Item Date -->
+                                <div class="entry-header">
+                                    <div class="post-meta">
+                                        <span class="post-author">
+                                            Đăng bởi<a href="#"> @item.Author</a>
+                                        </span>
+                                        <span class="post-cat">
+                                            <i class="icon icon-folder"></i><a href="#">@ViewBag.danhmuc_cate</a>
+                                        </span>
+                                        <span class="post-comment"><i class="fa fa-eye" aria-hidden="true"></i>@item.View_client <a href="#" class="comments-link">Lượt xem</a></span>
+                                    </div>
+                                    <h2 class="entry-title">
+                                        <a href="/Blog_details/Detals_News/@item.Id">@item.Name</a>
+                                    </h2>
+                                </div>
+                                <div class="entry-content">
+                                    <p>
+                                        @item.Title
+                                    </p>
+                                </div>
+                                <div class="post-footer">
+                                    <a href="/Blog_details/Detals_News/@item.Id" class="btn btn-dark">Chi tiết <i class="icon icon-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+                    }
+                }
+                <div class="paging text-center">
+                    <ul class="pagination justify-content-center">
+                        @Html.PagedListPager(Model, pageNumber => Url.Action("Index", "ListOfBlog", new { pageNumber, pageSize = Model.PageSize }))
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                @{ Html.RenderAction("Sidebar", "Blog");}
+            </div>
+        </div>
+    </div>
+</section>
+
+
